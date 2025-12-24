@@ -100,6 +100,10 @@ const htmlToJSdoc = (text) => {
 
     text = text.replace(/\n{3,}/g, "\n\n");
 
+    // Resolve local links to www.mediawiki.org.
+    // {@link /X Y} --> {@link https://www.mediawiki.org/X Y}
+    text = text.replace(/\{@link \//g, "{@link https://www.mediawiki.org/");
+
     // Move code blocks out of links.
     // `{@link X Y}` --> {@link X `Y`}
     text = text.replace(/`\{@link (.*?) (.*?)\}`/g, "{@link $1 `$2`}");
