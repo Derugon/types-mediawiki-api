@@ -80,8 +80,8 @@ const htmlToJSdoc = (text) => {
     // p --> paragraph
     text = text.replace(/<p.*?>/g, "").replace(/<\/p>\s*/g, "\n\n");
 
-    // em, strong --> bold
-    text = text.replace(/<\/?(em|strong).*?>/g, "**");
+    // b, em, strong --> bold
+    text = text.replace(/<\/?(b|em|strong).*?>/g, "**");
 
     // i --> italic
     text = text.replace(/<\/?i.*?>/g, "_");
