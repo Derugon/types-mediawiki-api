@@ -4910,7 +4910,7 @@ export interface ApiQueryParams extends ApiParams {
      * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
      * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
      * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwikisets wikisets}**: Enumerate all wiki sets.
-     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcheckuser checkuser}**: Deprecated. <b>This API has been disabled by the site administrators. Querying the API will return no data.</b> Check which IP addresses are used by a given username or which usernames are used by a given IP address.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcheckuser checkuser}**: Deprecated. **This API has been disabled by the site administrators. Querying the API will return no data.** Check which IP addresses are used by a given username or which usernames are used by a given IP address.
      * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bdeletedrevs deletedrevs}**: Deprecated. List deleted revisions.
      * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
      * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
@@ -9511,7 +9511,7 @@ export interface ApiCentralNoticeLogsParams extends ApiQueryParams {
 }
 
 /**
- * <b>This API has been disabled by the site administrators. Querying the API will return no data.</b> Check which IP addresses are used by a given username or which usernames are used by a given IP address.
+ * **This API has been disabled by the site administrators. Querying the API will return no data.** Check which IP addresses are used by a given username or which usernames are used by a given IP address.
  *
  * @deprecated
  * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:CheckUser#API
