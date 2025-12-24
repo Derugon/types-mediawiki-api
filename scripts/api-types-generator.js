@@ -207,7 +207,17 @@ function getInterfaceName(module) {
 }
 
 function processModuleInfo(parent, module) {
+    const jsdoc = new JSdoc();
+    jsdoc.description = htmlToJSdoc(module.description);
+    jsdoc.seelinks = module.helpurls;
+    if (module.internal) {
+        jsdoc.private = true;
+    }
+    if (module.deprecated) {
+        jsdoc.deprecated = true;
+    }
     return [
+        jsdoc.toString(),
         `export interface ${getInterfaceName(module)}Params extends ${parent}Params {`,
         ...module.parameters.map((param) =>
             processParamInfo(module.prefix, param).replace(/^/gm, "\t"),

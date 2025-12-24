@@ -67,6 +67,11 @@ export {};
 
 // AUTOMATICALLY GENERATED FROM HERE:
 
+/**
+ * Check to see if an AbuseFilter matches a set of variables, an edit, or a logged AbuseFilter event.
+ *
+ * vars, rcid or logid is required however only one may be used.
+ */
 export interface AbuseFilterApiCheckMatchParams extends ApiParams {
     /**
      * The full filter text to check for a match.
@@ -86,6 +91,9 @@ export interface AbuseFilterApiCheckMatchParams extends ApiParams {
     logid?: number;
 }
 
+/**
+ * Check syntax of an AbuseFilter filter.
+ */
 export interface AbuseFilterApiCheckSyntaxParams extends ApiParams {
     /**
      * The full filter text to check syntax on.
@@ -93,6 +101,9 @@ export interface AbuseFilterApiCheckSyntaxParams extends ApiParams {
     filter?: string;
 }
 
+/**
+ * Evaluates an AbuseFilter expression.
+ */
 export interface AbuseFilterApiEvalExpressionParams extends ApiParams {
     /**
      * The expression to evaluate.
@@ -104,6 +115,9 @@ export interface AbuseFilterApiEvalExpressionParams extends ApiParams {
     prettyprint?: boolean;
 }
 
+/**
+ * Unblocks a user from receiving autopromotions due to an abusefilter consequence.
+ */
 export interface AbuseFilterApiUnblockAutopromoteParams extends ApiParams {
     /**
      * Username of the user you want to unblock.
@@ -117,6 +131,9 @@ export interface AbuseFilterApiUnblockAutopromoteParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * View private details of an AbuseLog entry.
+ */
 export interface AbuseFilterApiAbuseLogPrivateDetailsParams extends ApiParams {
     /**
      * The ID of the AbuseLog entry to be checked.
@@ -136,8 +153,16 @@ export interface AbuseFilterApiAbuseLogPrivateDetailsParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Acquire a temporary user username and stash it in the current session, if temp account creation is enabled and the current user is logged out. If a name has already been stashed, returns the same name.
+ *
+ * If the user later performs an action that results in temp account creation, the stashed username will be used for their account. It may also be used in previews. However, the account is not created yet, and the name is not visible to other users.
+ */
 export interface ApiAcquireTempUserNameParams extends ApiParams {}
 
+/**
+ * Check a username against AntiSpoof's normalisation checks.
+ */
 export interface AntiSpoofApiAntiSpoofParams extends ApiParams {
     /**
      * The username to check against AntiSpoof.
@@ -145,6 +170,11 @@ export interface AntiSpoofApiAntiSpoofParams extends ApiParams {
     username?: string;
 }
 
+/**
+ * Block a user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Block
+ */
 export interface ApiBlockParams extends ApiParams {
     /**
      * ID of the block to modify (obtained through `list=blocks`). Cannot be used together with `user`, `reblock`, or `newblock`.
@@ -240,6 +270,12 @@ export interface ApiBlockParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Receive a bounce email and process it to handle the failing recipient.
+ *
+ * @private
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BounceHandler#API
+ */
 export interface BounceHandlerApiBounceHandlerParams extends ApiParams {
     /**
      * The bounced email.
@@ -247,6 +283,11 @@ export interface BounceHandlerApiBounceHandlerParams extends ApiParams {
     email?: string;
 }
 
+/**
+ * Internal module for the CategoryTree extension.
+ *
+ * @private
+ */
 export interface CategoryTreeApiCategoryTreeParams extends ApiParams {
     /**
      * Title in the category namespace, prefix will be ignored if given.
@@ -258,8 +299,16 @@ export interface CategoryTreeApiCategoryTreeParams extends ApiParams {
     options?: string;
 }
 
+/**
+ * Fetch a centralauthtoken for making an authenticated request to an attached wiki.
+ *
+ * Returns a token that can be use to authenticate API requests on other wikis. For action API requests, put it in the `centralauthtoken` GET parameter. For REST API requests, add an `Authorization: CentralAuthToken {token}` header. In MediaWiki frontend logic, you can use the `mediawiki.ForeignApi` ResourceLoader module.
+ */
 export interface CentralAuthApiCentralAuthTokenParams extends ApiParams {}
 
+/**
+ * Request the purge of banner content stored in the CDN (front-end) cache for anonymous users, for the requested banner and language
+ */
 export interface ApiCentralNoticeCdnCacheUpdateBannerParams extends ApiParams {
     /**
      * Name of the banner whose content should be purged
@@ -277,6 +326,9 @@ export interface ApiCentralNoticeCdnCacheUpdateBannerParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Get data needed to choose a banner for a given project and language
+ */
 export interface ApiCentralNoticeChoiceDataParams extends ApiParams {
     /**
      * The project to get banner choice data for.
@@ -288,6 +340,9 @@ export interface ApiCentralNoticeChoiceDataParams extends ApiParams {
     language?: string;
 }
 
+/**
+ * Get all configuration settings for a campaign.
+ */
 export interface ApiCentralNoticeQueryCampaignParams extends ApiParams {
     /**
      * Campaign name. Separate multiple values with a "|" (vertical bar).
@@ -295,6 +350,11 @@ export interface ApiCentralNoticeQueryCampaignParams extends ApiParams {
     campaign?: string;
 }
 
+/**
+ * Change authentication data for the current user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Manage_authentication_data
+ */
 export interface ApiChangeAuthenticationDataParams extends ApiParams {
     /**
      * Use this authentication request, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=change`.
@@ -308,6 +368,11 @@ export interface ApiChangeAuthenticationDataParams extends ApiParams {
     changeauthtoken?: string;
 }
 
+/**
+ * Change the content model of a page
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Help:ChangeContentModel
+ */
 export interface ApiChangeContentModelParams extends ApiParams {
     /**
      * Title of the page to change the contentmodel of. Cannot be used together with `pageid`.
@@ -353,6 +418,11 @@ export interface ApiChangeContentModelParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Retrieve current count of how many unique Chart page usages there are. Multiple uses of the same chart on the same page are considered a single use.
+ *
+ * @private
+ */
 export interface ChartApiChartInfoParams extends ApiParams {
     /**
      * Set to true to include all connected wikis instead of the local wiki only.
@@ -360,6 +430,11 @@ export interface ChartApiChartInfoParams extends ApiParams {
     global?: boolean;
 }
 
+/**
+ * Check the validity of a token from {@link /wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Checktoken
+ */
 export interface ApiCheckTokenParams extends ApiParams {
     /**
      * Type of token being tested.
@@ -386,6 +461,11 @@ export interface ApiCheckTokenParams extends ApiParams {
     maxtokenage?: number;
 }
 
+/**
+ * Reports on the correctness of a range of page ids in the search index
+ *
+ * @private
+ */
 export interface CirrusSearchApiCheckSanityParams extends ApiParams {
     /**
      * The search cluster to check indices in
@@ -413,6 +493,11 @@ export interface CirrusSearchApiCheckSanityParams extends ApiParams {
     rerenderfrequency?: number;
 }
 
+/**
+ * Dump of CirrusSearch configuration.
+ *
+ * @private
+ */
 export interface CirrusSearchApiConfigDumpParams extends ApiParams {
     /**
      * Type of configuration variables to dump
@@ -424,8 +509,18 @@ export interface CirrusSearchApiConfigDumpParams extends ApiParams {
     >;
 }
 
+/**
+ * Dump of CirrusSearch mapping for this wiki.
+ *
+ * @private
+ */
 export interface CirrusSearchApiMappingDumpParams extends ApiParams {}
 
+/**
+ * Dump of CirrusSearch profiles for this wiki.
+ *
+ * @private
+ */
 export interface CirrusSearchApiProfilesDumpParams extends ApiParams {
     /**
      * Dump the profiles content
@@ -433,10 +528,36 @@ export interface CirrusSearchApiProfilesDumpParams extends ApiParams {
     verbose?: boolean;
 }
 
+/**
+ * Dump of CirrusSearch settings for this wiki.
+ *
+ * @private
+ */
 export interface CirrusSearchApiSettingsDumpParams extends ApiParams {}
 
+/**
+ * Clears the `hasmsg` flag for the current user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:ClearHasMsg
+ */
 export interface ApiClearHasMsgParams extends ApiParams {}
 
+/**
+ * Log in to the wiki using the interactive flow.
+ *
+ * The general procedure to use this module is:
+ *
+ * - Fetch the fields available from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=login`, and a `login` token from {@link /wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
+ * - Present the fields to the user, and obtain their submission.
+ * - Post to this module, supplying `loginreturnurl` and any relevant fields.
+ * - Check the `status` in the response.
+ * - If you received `PASS` or `FAIL`, you're done. The operation either succeeded or it didn't.
+ * - If you received `UI`, present the new fields to the user and obtain their submission. Then post to this module with `logincontinue` and the relevant fields set, and repeat step 4.
+ * - If you received `REDIRECT`, direct the user to the `redirecttarget` and wait for the return to `loginreturnurl`. Then post to this module with `logincontinue` and any fields passed to the return URL, and repeat step 4.
+ * - If you received `RESTART`, that means the authentication worked but we don't have a linked user account. You might treat this as `UI` or as `FAIL`.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Login
+ */
 export interface ApiClientLoginParams extends ApiParams {
     /**
      * Only use these authentication requests, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=login` or from a previous response from this module.
@@ -474,6 +595,11 @@ export interface ApiClientLoginParams extends ApiParams {
     logintoken?: string;
 }
 
+/**
+ * API module for performing various operations on a wiki user's collection.
+ *
+ * @private
+ */
 export interface CollectionApiCollectionParams extends ApiParams {
     /**
      * Submodule for performing various operations on a wiki user's collection.
@@ -514,6 +640,9 @@ export interface CollectionApiCollectionParams extends ApiParams {
         | "suggestundoarticleaction";
 }
 
+/**
+ * Change the content of a configuration provider in Community configuration
+ */
 export interface CommunityConfigurationApiEditParams extends ApiParams {
     /**
      * Provider key
@@ -548,6 +677,13 @@ export interface CommunityConfigurationApiEditParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Get the difference between two pages.
+ *
+ * A revision number, a page title, a page ID, text, or a relative reference for both "from" and "to" must be passed.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Compare
+ */
 export interface ApiComparePagesParams extends ApiParams {
     /**
      * First title to compare.
@@ -737,6 +873,22 @@ export interface ApiComparePagesParams extends ApiParams {
     difftype?: "inline" | "table" | "unified";
 }
 
+/**
+ * Create a new user account.
+ *
+ * The general procedure to use this module is:
+ *
+ * - Fetch the fields available from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=create`, and a `createaccount` token from {@link /wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
+ * - Present the fields to the user, and obtain their submission.
+ * - Post to this module, supplying `createreturnurl` and any relevant fields.
+ * - Check the `status` in the response.
+ * - If you received `PASS` or `FAIL`, you're done. The operation either succeeded or it didn't.
+ * - If you received `UI`, present the new fields to the user and obtain their submission. Then post to this module with `createcontinue` and the relevant fields set, and repeat step 4.
+ * - If you received `REDIRECT`, direct the user to the `redirecttarget` and wait for the return to `createreturnurl`. Then post to this module with `createcontinue` and any fields passed to the return URL, and repeat step 4.
+ * - If you received `RESTART`, that means the authentication worked but we don't have a linked user account. You might treat this as `UI` or as `FAIL`.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Account_creation
+ */
 export interface ApiAMCreateAccountParams extends ApiParams {
     /**
      * Only use these authentication requests, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=create` or from a previous response from this module.
@@ -776,6 +928,9 @@ export interface ApiAMCreateAccountParams extends ApiParams {
     createtoken?: string;
 }
 
+/**
+ * Forcibly create a local account. The central account must exist.
+ */
 export interface CentralAuthApiCreateLocalAccountParams extends ApiParams {
     /**
      * User to create the local account for.
@@ -793,6 +948,11 @@ export interface CentralAuthApiCreateLocalAccountParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Used by browsers to report violations of the Content Security Policy. This module should never be used, except when used automatically by a CSP compliant web browser.
+ *
+ * @private
+ */
 export interface ApiCSPReportParams extends ApiParams {
     /**
      * Mark as being a report from a monitoring policy, not an enforced policy
@@ -806,9 +966,17 @@ export interface ApiCSPReportParams extends ApiParams {
     source?: string;
 }
 
+/**
+ * Check if any fast, unreviewed translation has been published recently for the current user.
+ *
+ * @private
+ */
 export interface ContentTranslationActionApiContentTranslationUnreviewedCheckParams
     extends ApiParams {}
 
+/**
+ * Delete a draft translation created using the Content Translation extension.
+ */
 export interface ContentTranslationActionApiContentTranslationDeleteParams extends ApiParams {
     /**
      * The source language code.
@@ -830,6 +998,11 @@ export interface ContentTranslationActionApiContentTranslationDeleteParams exten
     token?: string;
 }
 
+/**
+ * Add or remove a favorite suggestion to the current user's list.
+ *
+ * @private
+ */
 export interface ContentTranslationActionApiContentTranslationFavoriteSuggestionsParams
     extends ApiParams {
     /**
@@ -856,6 +1029,11 @@ export interface ContentTranslationActionApiContentTranslationFavoriteSuggestion
     token?: string;
 }
 
+/**
+ * Save a page created using the Content Translation extension.
+ *
+ * @private
+ */
 export interface ContentTranslationActionApiContentTranslationPublishParams extends ApiParams {
     /**
      * The title of the page to perform actions on.
@@ -905,6 +1083,11 @@ export interface ContentTranslationActionApiContentTranslationPublishParams exte
     token?: string;
 }
 
+/**
+ * Save a section created using the Content Translation extension's section translation feature.
+ *
+ * @private
+ */
 export interface ContentTranslationActionApiSectionTranslationPublishParams extends ApiParams {
     /**
      * The title of the page to perform actions on.
@@ -966,6 +1149,11 @@ export interface ContentTranslationActionApiSectionTranslationPublishParams exte
     token?: string;
 }
 
+/**
+ * This module allows to save draft translations by section to save bandwidth and to collect parallel corpora.
+ *
+ * @private
+ */
 export interface ContentTranslationActionApiContentTranslationSaveParams extends ApiParams {
     /**
      * The source language code.
@@ -1015,6 +1203,11 @@ export interface ContentTranslationActionApiContentTranslationSaveParams extends
     token?: string;
 }
 
+/**
+ * Create and save a section translation to database, for every translated section of the given article translation
+ *
+ * @private
+ */
 export interface ContentTranslationActionApiContentTranslationSplitParams extends ApiParams {
     /**
      * The id of the translation, for which the section translations will be created.
@@ -1028,6 +1221,9 @@ export interface ContentTranslationActionApiContentTranslationSplitParams extend
     token?: string;
 }
 
+/**
+ * Get JWT tokens to authenticate with cxserver.
+ */
 export interface ContentTranslationActionApiContentTranslationTokenParams extends ApiParams {
     /**
      * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
@@ -1037,6 +1233,11 @@ export interface ContentTranslationActionApiContentTranslationTokenParams extend
     token?: string;
 }
 
+/**
+ * Delete a page.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Delete
+ */
 export interface ApiDeleteParams extends ApiParams {
     /**
      * Title of the page to delete. Cannot be used together with `pageid`.
@@ -1092,6 +1293,9 @@ export interface ApiDeleteParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Delete a global user.
+ */
 export interface CentralAuthApiDeleteGlobalAccountParams extends ApiParams {
     /**
      * User to delete.
@@ -1109,6 +1313,11 @@ export interface CentralAuthApiDeleteGlobalAccountParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Get information about comment changes between two page revisions.
+ *
+ * @private
+ */
 export interface DiscussionToolsApiDiscussionToolsCompareParams extends ApiParams {
     /**
      * First title to compare.
@@ -1128,6 +1337,9 @@ export interface DiscussionToolsApiDiscussionToolsCompareParams extends ApiParam
     torev?: number;
 }
 
+/**
+ * Post a message on a discussion page.
+ */
 export interface DiscussionToolsApiDiscussionToolsEditParams extends ApiParams {
     /**
      * Action to perform.
@@ -1242,6 +1454,9 @@ export interface DiscussionToolsApiDiscussionToolsEditParams extends ApiParams {
     mobileformat?: boolean;
 }
 
+/**
+ * Find a comment by its ID or name.
+ */
 export interface DiscussionToolsApiDiscussionToolsFindCommentParams extends ApiParams {
     /**
      * Comment ID or name
@@ -1257,6 +1472,9 @@ export interface DiscussionToolsApiDiscussionToolsFindCommentParams extends ApiP
     page?: string;
 }
 
+/**
+ * Get the subscription statuses of given topics.
+ */
 export interface DiscussionToolsApiDiscussionToolsGetSubscriptionsParams extends ApiParams {
     /**
      * Names of the topics to check
@@ -1264,6 +1482,11 @@ export interface DiscussionToolsApiDiscussionToolsGetSubscriptionsParams extends
     commentname?: string | string[];
 }
 
+/**
+ * Returns metadata required to initialize the discussion tools.
+ *
+ * @private
+ */
 export interface DiscussionToolsApiDiscussionToolsPageInfoParams extends ApiParams {
     /**
      * The page to perform actions on.
@@ -1288,6 +1511,11 @@ export interface DiscussionToolsApiDiscussionToolsPageInfoParams extends ApiPara
     excludesignatures?: boolean;
 }
 
+/**
+ * Preview a message on a discussion page.
+ *
+ * @private
+ */
 export interface DiscussionToolsApiDiscussionToolsPreviewParams extends ApiParams {
     /**
      * Type of message to preview
@@ -1330,6 +1558,9 @@ export interface DiscussionToolsApiDiscussionToolsPreviewParams extends ApiParam
     mobileformat?: boolean;
 }
 
+/**
+ * Subscribe (or unsubscribe) to receive notifications about a topic.
+ */
 export interface DiscussionToolsApiDiscussionToolsSubscribeParams extends ApiParams {
     /**
      * A page on which the topic appears
@@ -1351,6 +1582,9 @@ export interface DiscussionToolsApiDiscussionToolsSubscribeParams extends ApiPar
     subscribe?: boolean;
 }
 
+/**
+ * Send a public thank-you notification for a comment.
+ */
 export interface DiscussionToolsApiDiscussionToolsThankParams extends ApiParams {
     /**
      * The page to perform actions on.
@@ -1368,6 +1602,11 @@ export interface DiscussionToolsApiDiscussionToolsThankParams extends ApiParams 
     token?: string;
 }
 
+/**
+ * Manually trigger a notification to a user
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Echo_(Notifications)/API
+ */
 export interface NotificationsApiEchoCreateEventParams extends ApiParams {
     /**
      * User to send the notification to
@@ -1403,6 +1642,11 @@ export interface NotificationsApiEchoCreateEventParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Mark notifications as read for the current user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Echo_(Notifications)/API
+ */
 export interface NotificationsApiEchoMarkReadParams extends ApiParams {
     /**
      * List of wikis to mark notification as read (defaults to only current wiki).
@@ -1434,6 +1678,11 @@ export interface NotificationsApiEchoMarkReadParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Mark notifications as seen for the current user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Echo_(Notifications)/API
+ */
 export interface NotificationsApiEchoMarkSeenParams extends ApiParams {
     /**
      * Type of notifications to mark as seen: 'alert', 'message' or 'all'.
@@ -1447,6 +1696,9 @@ export interface NotificationsApiEchoMarkSeenParams extends ApiParams {
     timestampFormat?: "ISO_8601" | "MW";
 }
 
+/**
+ * Mute or unmute notifications from certain users or pages.
+ */
 export interface NotificationsApiEchoMuteParams extends ApiParams {
     /**
      * Which mute list to add to or remove from
@@ -1468,6 +1720,12 @@ export interface NotificationsApiEchoMuteParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Manage push subscriptions for the current user.
+ *
+ * @private
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Echo#API
+ */
 export interface NotificationsPushApiEchoPushSubscriptionsParams extends ApiParams {
     /**
      * Action to perform.
@@ -1484,6 +1742,11 @@ export interface NotificationsPushApiEchoPushSubscriptionsParams extends ApiPara
     token?: string;
 }
 
+/**
+ * Create and edit pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Edit
+ */
 export interface ApiEditPageParams extends ApiParams {
     /**
      * Title of the page to edit. Cannot be used together with `pageid`.
@@ -1675,6 +1938,11 @@ export interface ApiEditPageParams extends ApiParams {
     discussiontoolsautosubscribe?: "no" | "preferences" | "yes";
 }
 
+/**
+ * Check the status of a URL for use as a reference.
+ *
+ * @private
+ */
 export interface VisualEditorEditCheckApiEditCheckReferenceUrlParams extends ApiParams {
     /**
      * URL to check.
@@ -1682,6 +1950,11 @@ export interface VisualEditorEditCheckApiEditCheckReferenceUrlParams extends Api
     url?: string;
 }
 
+/**
+ * Edit a mass message delivery list.
+ *
+ * @see https://www.mediawiki.org/wiki/Extension:MassMessage/API
+ */
 export interface MassMessageApiEditMassMessageListParams extends ApiParams {
     /**
      * Title of the delivery list to update.
@@ -1717,6 +1990,11 @@ export interface MassMessageApiEditMassMessageListParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Email a user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Email
+ */
 export interface ApiEmailUserParams extends ApiParams {
     /**
      * User to send the email to.
@@ -1742,6 +2020,11 @@ export interface ApiEmailUserParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Expands all templates within wikitext.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Expandtemplates
+ */
 export interface ApiExpandTemplatesParams extends ApiParams {
     /**
      * Title of the page.
@@ -1843,8 +2126,16 @@ export interface ApiExpandTemplatesParams extends ApiParams {
         | "unknown/unknown";
 }
 
+/**
+ * Get a new FancyCaptcha.
+ *
+ * @private
+ */
 export interface ConfirmEditFancyCaptchaApiFancyCaptchaReloadParams extends ApiParams {}
 
+/**
+ * Returns a featured content feed.
+ */
 export interface FeaturedFeedsApiFeaturedFeedsParams extends ApiParams {
     /**
      * The format of the feed.
@@ -1862,6 +2153,11 @@ export interface FeaturedFeedsApiFeaturedFeedsParams extends ApiParams {
     language?: string;
 }
 
+/**
+ * Returns a user's contributions feed.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Feedcontributions
+ */
 export interface ApiFeedContributionsParams extends ApiParams {
     /**
      * The format of the feed.
@@ -1913,6 +2209,11 @@ export interface ApiFeedContributionsParams extends ApiParams {
     showsizediff?: boolean;
 }
 
+/**
+ * Returns a recent changes feed.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Feedrecentchanges
+ */
 export interface ApiFeedRecentChangesParams extends ApiParams {
     /**
      * The format of the feed.
@@ -1994,6 +2295,11 @@ export interface ApiFeedRecentChangesParams extends ApiParams {
     showlinkedto?: boolean;
 }
 
+/**
+ * Returns a watchlist feed.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Watchlist_feed
+ */
 export interface ApiFeedWatchlistParams extends ApiParams {
     /**
      * The format of the feed.
@@ -2060,6 +2366,11 @@ export interface ApiFeedWatchlistParams extends ApiParams {
     wlexcludeuser?: string;
 }
 
+/**
+ * Revert a file to an old version.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Filerevert
+ */
 export interface ApiFileRevertParams extends ApiParams {
     /**
      * Target filename, without the File: prefix.
@@ -2083,8 +2394,20 @@ export interface ApiFileRevertParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Get basic information about review flag configuration for this site.
+ *
+ * The following parameters are returned for each tag:
+ *
+ * - **name**: The key name of this tag.
+ * - **levels**: Number of levels the tag has (above "not tagged").
+ * Flagged revisions have an assigned level for each tag. The highest tier that all the tags meet is the review tier of the entire revision.
+ */
 export interface ApiFlagConfigParams extends ApiParams {}
 
+/**
+ * Globally block or unblock a user.
+ */
 export interface GlobalBlockingApiGlobalBlockParams extends ApiParams {
     /**
      * ID of the global block to modify or unblock (obtained through `list=globalblocks`). Cannot be used together with `target`.
@@ -2150,6 +2473,13 @@ export interface GlobalBlockingApiGlobalBlockParams extends ApiParams {
     "token"?: string;
 }
 
+/**
+ * Change local overrides for global preferences for the current user.
+ *
+ * Global values for affected preferences will be ignored.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:GlobalPreferences/API
+ */
 export interface GlobalPreferencesApiGlobalPreferenceOverridesParams extends ApiParams {
     /**
      * Reset local overrides. Removes all, or, depending on the value of the `resetkinds` parameter, some types of local overrides and makes them global again.
@@ -2189,6 +2519,13 @@ export interface GlobalPreferencesApiGlobalPreferenceOverridesParams extends Api
     token?: string;
 }
 
+/**
+ * Change global preferences of the current user.
+ *
+ * Only preferences registered for the current wiki can be changed locally.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Globalpreferences
+ */
 export interface GlobalPreferencesApiGlobalPreferencesParams extends ApiParams {
     /**
      * Reset global preferences. Removes all, or, depending on the value of the `resetkinds` parameter, some types of global preferences and make them not global anymore.
@@ -2228,6 +2565,11 @@ export interface GlobalPreferencesApiGlobalPreferencesParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Add/remove a user to/from global groups.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:User_group_membership
+ */
 export interface CentralAuthApiGlobalUserRightsParams extends ApiParams {
     /**
      * Global username.
@@ -2323,6 +2665,18 @@ export interface CentralAuthApiGlobalUserRightsParams extends ApiParams {
     tags?: string | string[];
 }
 
+/**
+ * Invalidate an image recommendation.
+ *
+ * Calling this API will:
+ *
+ * - Reset the {@link https://www.mediawiki.org/wiki/wikitech:Add_Image "hasrecommendation:image" weighted tag} for the article, so the article is no longer returned in search results for image suggestions.
+ * - Add the article to a short-lived cache, which the {@link https://www.mediawiki.org/wiki/Extension:GrowthExperiments GrowthExperiments} extension's ImageRecommendationFilter consults to decide if the article should be excluded from the user's suggested edits queue when accessed on {@link /wiki/Special:Homepage Special:Homepage} or via the {@link /wiki/Special:ApiHelp/query%2Bgrowthtasks action=query&list=growthtasks} API.
+ * - Generate and send an event to EventGate to the {@link https://schema.wikimedia.org/#!/secondary/jsonschema/mediawiki/page/image-suggestions-feedback image-suggestion-feedback stream}. This allows improvements in the image suggestion pipeline, as the code in the pipeline can account for user feedback when generating recommendations.
+ * Further reading: {@link https://www.mediawiki.org/wiki/Special:MyLanguage/Growth/Personalized_first_day/Structured_tasks/Add_an_image mediawiki.org}
+ *
+ * @private
+ */
 export interface GrowthExperimentsApiInvalidateImageRecommendationParams extends ApiParams {
     /**
      * Task type (top-level or section-level)
@@ -2354,6 +2708,11 @@ export interface GrowthExperimentsApiInvalidateImageRecommendationParams extends
     token?: string;
 }
 
+/**
+ * Invalidates a suggestion of a praiseworthy mentee in the Personalized praise module on the Mentor dashboard
+ *
+ * @private
+ */
 export interface GrowthExperimentsApiInvalidatePersonalizedPraiseSuggestionParams
     extends ApiParams {
     /**
@@ -2376,6 +2735,11 @@ export interface GrowthExperimentsApiInvalidatePersonalizedPraiseSuggestionParam
     token?: string;
 }
 
+/**
+ * Drop a 'Revise Tone' recommendation for a given page.
+ *
+ * @private
+ */
 export interface GrowthExperimentsApiInvalidateReviseToneRecommendationParams extends ApiParams {
     /**
      * Title of the page for which to drop the recommendation, without namespace.
@@ -2389,6 +2753,9 @@ export interface GrowthExperimentsApiInvalidateReviseToneRecommendationParams ex
     token?: string;
 }
 
+/**
+ * Manage information in the structured mentor list (usually stored in {@link /wiki/MediaWiki:GrowthMentors.json MediaWiki:GrowthMentors.json}). This module can be used by both current and future mentors (to add themselves or change their details) and administrators (for all users).
+ */
 export interface GrowthExperimentsApiManageMentorListParams extends ApiParams {
     /**
      * Action
@@ -2428,6 +2795,9 @@ export interface GrowthExperimentsApiManageMentorListParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Schedule an extraordinary update of the mentee overview module in the mentor dashboard. You can only schedule one update per two hours for performance reasons.
+ */
 export interface GrowthExperimentsApiMentorDashboardUpdateDataParams extends ApiParams {
     /**
      * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
@@ -2437,6 +2807,9 @@ export interface GrowthExperimentsApiMentorDashboardUpdateDataParams extends Api
     token?: string;
 }
 
+/**
+ * Set mentee's status (allows mentees to enable/disable mentorship module, or to opt-out entirely, which deletes the mentee/mentor relationship)
+ */
 export interface GrowthExperimentsApiSetMenteeStatusParams extends ApiParams {
     /**
      * New status of the mentee (warning: setting this to optout will permanently deletes mentee/mentor relationship)
@@ -2454,6 +2827,9 @@ export interface GrowthExperimentsApiSetMenteeStatusParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Set user's mentor. Change will be publicly logged.
+ */
 export interface GrowthExperimentsApiSetMentorParams extends ApiParams {
     /**
      * Mentee's username
@@ -2477,6 +2853,9 @@ export interface GrowthExperimentsApiSetMentorParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Mark or unmark a mentee as starred by current user (stored privately and not logged)
+ */
 export interface GrowthExperimentsApiStarMenteeParams extends ApiParams {
     /**
      * Action to take (`star` or `unstar`)
@@ -2494,6 +2873,13 @@ export interface GrowthExperimentsApiStarMenteeParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Display help for the specified modules.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Main_page
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:FAQ
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Quick_start_guide
+ */
 export interface ApiHelpParams extends ApiParams {
     /**
      * Modules to display help for (values of the `action` and `format` parameters, or `main`). Can specify submodules with a `+`.
@@ -2519,6 +2905,11 @@ export interface ApiHelpParams extends ApiParams {
     toc?: boolean;
 }
 
+/**
+ * Handle questions posted via the help panel for the current user.
+ *
+ * @private
+ */
 export interface GrowthExperimentsApiHelpPanelPostQuestionParams extends ApiParams {
     /**
      * The text of the question provided by the user.
@@ -2553,6 +2944,9 @@ export interface GrowthExperimentsApiHelpPanelPostQuestionParams extends ApiPara
     token?: string;
 }
 
+/**
+ * Obtain formatted questions posted via homepage modules
+ */
 export interface GrowthExperimentsApiQuestionStoreParams extends ApiParams {
     /**
      * The storage location of the questions.
@@ -2560,8 +2954,18 @@ export interface GrowthExperimentsApiQuestionStoreParams extends ApiParams {
     storage?: "growthexperiments-helppanel-questions" | "growthexperiments-mentor-questions";
 }
 
+/**
+ * This module has been disabled.
+ */
 export interface ApiDisabledParams extends ApiParams {}
 
+/**
+ * Import a page from another wiki, or from an XML file.
+ *
+ * Note that the HTTP POST must be done as a file upload (i.e. using multipart/form-data) when sending a file for the `xml` parameter.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Import
+ */
 export interface ApiImportParams extends ApiParams {
     /**
      * Log entry import summary.
@@ -2625,6 +3029,11 @@ export interface ApiImportParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Output data in JSON format.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Data_formats
+ */
 export interface ApiFormatJsonParams extends ApiParams {
     /**
      * If specified, wraps the output into a given function call. For safety, all user-specific data will be restricted.
@@ -2650,6 +3059,9 @@ export interface ApiFormatJsonParams extends ApiParams {
     formatversion?: "1" | "2" | "latest";
 }
 
+/**
+ * Allows direct access to JsonConfig subsystem.
+ */
 export interface JsonConfigJCApiParams extends ApiParams {
     /**
      * Which sub-action to perform on JsonConfig:
@@ -2673,6 +3085,11 @@ export interface JsonConfigJCApiParams extends ApiParams {
     title?: string;
 }
 
+/**
+ * Retrieve localized JSON data.
+ *
+ * @private
+ */
 export interface JsonConfigJCDataApiParams extends ApiParams {
     /**
      * Title to get. By default assumes namespace to be "Data:"
@@ -2680,6 +3097,11 @@ export interface JsonConfigJCDataApiParams extends ApiParams {
     title?: string;
 }
 
+/**
+ * Output data in JSON format (pretty-print in HTML).
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Data_formats
+ */
 export interface ApiFormatJsonParams extends ApiParams {
     /**
      * Return the pretty-printed HTML and associated ResourceLoader modules as a JSON object.
@@ -2709,6 +3131,11 @@ export interface ApiFormatJsonParams extends ApiParams {
     formatversion?: "1" | "2" | "latest";
 }
 
+/**
+ * Retrieve JSON data transformed by a Lua function.
+ *
+ * @private
+ */
 export interface JsonConfigJCTransformApiParams extends ApiParams {
     /**
      * Title to process without namespace prefix.
@@ -2728,6 +3155,11 @@ export interface JsonConfigJCTransformApiParams extends ApiParams {
     jtargs?: string | string[];
 }
 
+/**
+ * Search for language names in any script.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Languagesearch
+ */
 export interface ApiLanguageSearchParams extends ApiParams {
     /**
      * Search string.
@@ -2741,6 +3173,22 @@ export interface ApiLanguageSearchParams extends ApiParams {
     typos?: number;
 }
 
+/**
+ * Link an account from a third-party provider to the current user.
+ *
+ * The general procedure to use this module is:
+ *
+ * - Fetch the fields available from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=link`, and a `csrf` token from {@link /wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
+ * - Present the fields to the user, and obtain their submission.
+ * - Post to this module, supplying `linkreturnurl` and any relevant fields.
+ * - Check the `status` in the response.
+ * - If you received `PASS` or `FAIL`, you're done. The operation either succeeded or it didn't.
+ * - If you received `UI`, present the new fields to the user and obtain their submission. Then post to this module with `linkcontinue` and the relevant fields set, and repeat step 4.
+ * - If you received `REDIRECT`, direct the user to the `redirecttarget` and wait for the return to `linkreturnurl`. Then post to this module with `linkcontinue` and any fields passed to the return URL, and repeat step 4.
+ * - If you received `RESTART`, that means the authentication worked but we don't have a linked user account. You might treat this as `UI` or as `FAIL`.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Linkaccount
+ */
 export interface ApiLinkAccountParams extends ApiParams {
     /**
      * Only use these authentication requests, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=link` or from a previous response from this module.
@@ -2774,6 +3222,13 @@ export interface ApiLinkAccountParams extends ApiParams {
     linktoken?: string;
 }
 
+/**
+ * Log in and get authentication cookies.
+ *
+ * This action should only be used in combination with {@link /wiki/Special:BotPasswords Special:BotPasswords}; use for main-account login is deprecated and may fail without warning. To safely log in to the main account, use {@link /wiki/Special:ApiHelp/clientlogin `action=clientlogin`}.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Login
+ */
 export interface ApiLoginParams extends ApiParams {
     /**
      * Username.
@@ -2797,6 +3252,11 @@ export interface ApiLoginParams extends ApiParams {
     lgtoken?: string;
 }
 
+/**
+ * Log out and clear session data.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Logout
+ */
 export interface ApiLogoutParams extends ApiParams {
     /**
      * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
@@ -2812,6 +3272,11 @@ export interface ApiLogoutParams extends ApiParams {
     checkuserclienthints?: string;
 }
 
+/**
+ * Perform management tasks relating to change tags.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Tag_management
+ */
 export interface ApiManageTagsParams extends ApiParams {
     /**
      * Which operation to perform:
@@ -2848,6 +3313,11 @@ export interface ApiManageTagsParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Send a message to a list of pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Extension:MassMessage/API
+ */
 export interface MassMessageApiMassMessageParams extends ApiParams {
     /**
      * Page containing list of pages to leave a message on.
@@ -2873,6 +3343,11 @@ export interface MassMessageApiMassMessageParams extends ApiParams {
     "token"?: string;
 }
 
+/**
+ * Merge page histories.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Mergehistory
+ */
 export interface ApiMergeHistoryParams extends ApiParams {
     /**
      * Title of the page from which history will be merged. Cannot be used together with `fromid`.
@@ -2912,6 +3387,11 @@ export interface ApiMergeHistoryParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Move a page.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Move
+ */
 export interface ApiMoveParams extends ApiParams {
     /**
      * Title of the page to rename. Cannot be used together with `fromid`.
@@ -2969,8 +3449,18 @@ export interface ApiMoveParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Output nothing.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Data_formats
+ */
 export interface ApiFormatNoneParams extends ApiParams {}
 
+/**
+ * Validate a two-factor authentication (OATH) token.
+ *
+ * @private
+ */
 export interface OATHAuthApiModuleApiOATHValidateParams extends ApiParams {
     /**
      * User to validate token for. Defaults to the current user.
@@ -2988,6 +3478,11 @@ export interface OATHAuthApiModuleApiOATHValidateParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Search the wiki using the OpenSearch protocol.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Opensearch
+ */
 export interface ApiOpenSearchParams extends ApiParams {
     /**
      * Search string.
@@ -3044,6 +3539,13 @@ export interface ApiOpenSearchParams extends ApiParams {
     warningsaserror?: boolean;
 }
 
+/**
+ * Change preferences of the current user.
+ *
+ * Only options which are registered in core or in one of installed extensions, or options with keys prefixed with `userjs-` (intended to be used by user scripts), can be set.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Options
+ */
 export interface ApiOptionsParams extends ApiParams {
     /**
      * Resets preferences to the site defaults.
@@ -3094,6 +3596,9 @@ export interface ApiOptionsParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Mark an article as reviewed or unreviewed.
+ */
 export interface PageTriageApiPageTriageActionParams extends ApiParams {
     /**
      * ID for the page that the action is performed on.
@@ -3127,6 +3632,9 @@ export interface PageTriageApiPageTriageActionParams extends ApiParams {
     tags?: string | string[];
 }
 
+/**
+ * Get a list of page IDs for building a PageTriage queue.
+ */
 export interface PageTriageApiPageTriageListParams extends ApiParams {
     /**
      * Whether to include predicted class stub
@@ -3276,6 +3784,9 @@ export interface PageTriageApiPageTriageListParams extends ApiParams {
     dir?: "newestfirst" | "newestreview" | "oldestfirst" | "oldestreview";
 }
 
+/**
+ * Get the stats for page triage.
+ */
 export interface PageTriageApiPageTriageStatsParams extends ApiParams {
     /**
      * Whether to include predicted class stub
@@ -3403,6 +3914,11 @@ export interface PageTriageApiPageTriageStatsParams extends ApiParams {
     date_range_to?: timestamp;
 }
 
+/**
+ * Tag a revision as a likely copyright violation.
+ *
+ * The revision is shown on Special:NewPagesFeed. Requires the pagetriage-copyvio right.
+ */
 export interface PageTriageApiPageTriageTagCopyvioParams extends ApiParams {
     /**
      * Revision ID to tag as a likely copyright violation
@@ -3420,6 +3936,9 @@ export interface PageTriageApiPageTriageTagCopyvioParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Add tags to an article.
+ */
 export interface PageTriageApiPageTriageTaggingParams extends ApiParams {
     /**
      * The article for which to be tagged.
@@ -3451,6 +3970,11 @@ export interface PageTriageApiPageTriageTaggingParams extends ApiParams {
     taglist?: string | string[];
 }
 
+/**
+ * Obtain information about API modules.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Parameter_information
+ */
 export interface ApiParamInfoParams extends ApiParams {
     /**
      * List of module names (values of the `action` and `format` parameters, or `main`). Can specify submodules with a `+`, or all submodules with `+*`, or all submodules recursively with `+**`.
@@ -3627,6 +4151,19 @@ export interface ApiParamInfoParams extends ApiParams {
     >;
 }
 
+/**
+ * Parses content and returns parser output.
+ *
+ * See the various prop-modules of {@link /wiki/Special:ApiHelp/query `action=query`} to get information from the current version of a page.
+ *
+ * There are several ways to specify the text to parse:
+ *
+ * - Specify a page or revision, using `page`, `pageid`, or `oldid`.
+ * - Specify content explicitly, using `text`, `title`, `revid`, and `contentmodel`.
+ * - Specify only a summary to parse. `prop` should be given an empty value.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Parsing_wikitext
+ */
 export interface ApiParseParams extends ApiParams {
     /**
      * Title of page the text belongs to. If omitted, `contentmodel` must be specified, and {@link /wiki/API API} will be used as the title.
@@ -3918,6 +4455,11 @@ export interface ApiParseParams extends ApiParams {
         | "unknown/unknown";
 }
 
+/**
+ * Parse a page with two different parser configurations.
+ *
+ * @private
+ */
 export interface ParserMigrationApiParserMigrationParams extends ApiParams {
     /**
      * The title of the page to load and parse.
@@ -3938,6 +4480,11 @@ export interface ParserMigrationApiParserMigrationParams extends ApiParams {
     redirect?: string;
 }
 
+/**
+ * Patrol a page or revision.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Patrol
+ */
 export interface ApiPatrolParams extends ApiParams {
     /**
      * Recentchanges ID to patrol.
@@ -3959,6 +4506,11 @@ export interface ApiPatrolParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Output data in serialized PHP format.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Data_formats
+ */
 export interface ApiFormatPhpParams extends ApiParams {
     /**
      * Output formatting
@@ -3972,6 +4524,11 @@ export interface ApiFormatPhpParams extends ApiParams {
     formatversion?: "1" | "2" | "latest";
 }
 
+/**
+ * Output data in serialized PHP format (pretty-print in HTML).
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Data_formats
+ */
 export interface ApiFormatPhpParams extends ApiParams {
     /**
      * Return the pretty-printed HTML and associated ResourceLoader modules as a JSON object.
@@ -3989,6 +4546,11 @@ export interface ApiFormatPhpParams extends ApiParams {
     formatversion?: "1" | "2" | "latest";
 }
 
+/**
+ * Change the protection level of a page.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Protect
+ */
 export interface ApiProtectParams extends ApiParams {
     /**
      * Title of the page to (un)protect. Cannot be used together with pageid.
@@ -4048,6 +4610,11 @@ export interface ApiProtectParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Purge the cache for the given titles.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Purge
+ */
 export interface ApiPurgeParams extends ApiParams {
     /**
      * Update the links tables and do other secondary data updates.
@@ -4178,6 +4745,16 @@ export interface ApiPurgeParams extends ApiParams {
     converttitles?: boolean;
 }
 
+/**
+ * Fetch data from and about MediaWiki.
+ *
+ * All data modifications will first have to use query to acquire a token to prevent abuse from malicious sites.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Query
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Meta
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Properties
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Lists
+ */
 export interface ApiQueryParams extends ApiParams {
     /**
      * Which properties to get for the queried pages.
@@ -4616,6 +5193,11 @@ export interface ApiQueryParams extends ApiParams {
     converttitles?: boolean;
 }
 
+/**
+ * Output data, including debugging elements, in JSON format (pretty-print in HTML).
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Data_formats
+ */
 export interface ApiFormatJsonParams extends ApiParams {
     /**
      * Return the pretty-printed HTML and associated ResourceLoader modules as a JSON object.
@@ -4623,6 +5205,14 @@ export interface ApiFormatJsonParams extends ApiParams {
     wrappedhtml?: boolean;
 }
 
+/**
+ * Reading list write operations.
+ *
+ * Create/update/delete/sort reading lists and entries. See the documentation of the various commands for details.
+ *
+ * @private
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReadingLists#API
+ */
 export interface ReadingListsApiReadingListsParams extends ApiParams {
     /**
      * Command (API submodule) for reading list write operations.
@@ -4644,6 +5234,11 @@ export interface ReadingListsApiReadingListsParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Remove authentication data for the current user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Manage_authentication_data
+ */
 export interface ApiRemoveAuthenticationDataParams extends ApiParams {
     /**
      * Use this authentication request, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=remove`.
@@ -4657,6 +5252,11 @@ export interface ApiRemoveAuthenticationDataParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Send a password reset email to a user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Manage_authentication_data
+ */
 export interface ApiResetPasswordParams extends ApiParams {
     /**
      * User being reset.
@@ -4674,6 +5274,9 @@ export interface ApiResetPasswordParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Review a revision by approving or de-approving it.
+ */
 export interface ApiReviewParams extends ApiParams {
     /**
      * The revision ID for which to set the flags.
@@ -4695,6 +5298,11 @@ export interface ApiReviewParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Delete and undelete revisions.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Revisiondelete
+ */
 export interface ApiRevisionDeleteParams extends ApiParams {
     /**
      * Type of revision deletion being performed.
@@ -4738,6 +5346,13 @@ export interface ApiRevisionDeleteParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Undo the last edit to the page.
+ *
+ * If the last user who edited the page made multiple edits in a row, they will all be rolled back.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Rollback
+ */
 export interface ApiRollbackParams extends ApiParams {
     /**
      * Title of the page to roll back. Cannot be used together with `pageid`.
@@ -4785,8 +5400,18 @@ export interface ApiRollbackParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Export an RSD (Really Simple Discovery) schema.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Rsd
+ */
 export interface ApiRsdParams extends ApiParams {}
 
+/**
+ * Performs data validation for Kartographer extension
+ *
+ * @private
+ */
 export interface KartographerApiSanitizeMapDataParams extends ApiParams {
     /**
      * Title of page on which this GeoJSON is supposed to be located. If no title is provided, a dummy one will be used.
@@ -4800,6 +5425,11 @@ export interface KartographerApiSanitizeMapDataParams extends ApiParams {
     text?: string;
 }
 
+/**
+ * Internal module for servicing XHR requests from the Scribunto console.
+ *
+ * @private
+ */
 export interface ScribuntoApiScribuntoConsoleParams extends ApiParams {
     /**
      * The title of the module to test.
@@ -4829,6 +5459,11 @@ export interface ScribuntoApiScribuntoConsoleParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Allows a remote wiki to authenticate users before granting access to vote in the election.
+ *
+ * @private
+ */
 export interface SecurePollApiSecurePollAuthParams extends ApiParams {
     /**
      * A token based on the user's login token.
@@ -4840,6 +5475,9 @@ export interface SecurePollApiSecurePollAuthParams extends ApiParams {
     id?: number;
 }
 
+/**
+ * Hide or lock (or unhide or unlock) a global user account.
+ */
 export interface CentralAuthApiSetGlobalAccountStatusParams extends ApiParams {
     /**
      * User to change the status of.
@@ -4869,6 +5507,13 @@ export interface CentralAuthApiSetGlobalAccountStatusParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Update the notification timestamp for watched pages.
+ *
+ * This affects the highlighting of changed pages in the watchlist and history, and the sending of email when the "Email me when a page or a file on my watchlist is changed" preference is enabled.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:SetNotificationTimestamp
+ */
 export interface ApiSetNotificationTimestampParams extends ApiParams {
     /**
      * Work on all watched pages.
@@ -5013,6 +5658,15 @@ export interface ApiSetNotificationTimestampParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Change the language of a page.
+ *
+ * Changing the language of a page is not allowed on this wiki.
+ *
+ * Enable {@link https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:$wgPageLanguageUseDB `$wgPageLanguageUseDB`} to use this action.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:SetPageLanguage
+ */
 export interface ApiSetPageLanguageParams extends ApiParams {
     /**
      * Title of the page whose language you wish to change. Cannot be used together with `pageid`.
@@ -5588,6 +6242,9 @@ export interface ApiSetPageLanguageParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Shorten a long URL into a shorter one.
+ */
 export interface UrlShortenerApiShortenUrlParams extends ApiParams {
     /**
      * URL to be shortened.
@@ -5599,6 +6256,13 @@ export interface UrlShortenerApiShortenUrlParams extends ApiParams {
     qrcode?: boolean;
 }
 
+/**
+ * Get Wikimedia sites list.
+ *
+ * The code (technically dbname/wikiid) is either the language code + project code for content projects or the subdomain + main domain for all the others.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Sitematrix
+ */
 export interface SiteMatrixApiSiteMatrixParams extends ApiParams {
     /**
      * Filter the Site Matrix by type:
@@ -5639,6 +6303,11 @@ export interface SiteMatrixApiSiteMatrixParams extends ApiParams {
     smcontinue?: string;
 }
 
+/**
+ * Validate one or more URLs against the spam block list.
+ *
+ * @see https://www.mediawiki.org/wiki/Extension:SpamBlacklist/API
+ */
 export interface SpamBlacklistApiSpamBlacklistParams extends ApiParams {
     /**
      * URLs to validate against the block list.
@@ -5646,6 +6315,9 @@ export interface SpamBlacklistApiSpamBlacklistParams extends ApiParams {
     url?: string | string[];
 }
 
+/**
+ * Configure review-protection settings for a page.
+ */
 export interface ApiStabilizeProtectParams extends ApiParams {
     /**
      * The review-protection level.
@@ -5677,6 +6349,14 @@ export interface ApiStabilizeProtectParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Prepare an edit in shared cache.
+ *
+ * This is intended to be used via AJAX from the edit form to improve the performance of the page save.
+ *
+ * @private
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Stashedit
+ */
 export interface ApiStashEditParams extends ApiParams {
     /**
      * Title of the page being edited.
@@ -5750,6 +6430,11 @@ export interface ApiStashEditParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Exposes event stream config. Returns only format=json with formatversion=2.
+ *
+ * @see https://www.mediawiki.org/wiki/Extension:EventStreamConfig
+ */
 export interface EventStreamConfigApiStreamConfigsParams extends ApiParams {
     /**
      * List of streams to get config for
@@ -5767,6 +6452,9 @@ export interface EventStreamConfigApiStreamConfigsParams extends ApiParams {
     all_settings?: boolean;
 }
 
+/**
+ * Allows admins to strike or unstrike a vote.
+ */
 export interface SecurePollApiStrikeVoteParams extends ApiParams {
     /**
      * Which action to take: strike or unstrike a vote.
@@ -5791,6 +6479,9 @@ export interface SecurePollApiStrikeVoteParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Delete the draft section translation and its parallel corpora from database.
+ */
 export interface ContentTranslationActionApiSectionTranslationDeleteParams extends ApiParams {
     /**
      * The section translation id associated with the draft section translation.
@@ -5812,6 +6503,11 @@ export interface ContentTranslationActionApiSectionTranslationDeleteParams exten
     token?: string;
 }
 
+/**
+ * Save the draft section translation and store the parallel corpora
+ *
+ * @private
+ */
 export interface ContentTranslationActionApiSectionTranslationSaveParams extends ApiParams {
     /**
      * The source language code.
@@ -5865,6 +6561,11 @@ export interface ContentTranslationActionApiSectionTranslationSaveParams extends
     token?: string;
 }
 
+/**
+ * Add or remove change tags from individual revisions or log entries.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Tag
+ */
 export interface ApiTagParams extends ApiParams {
     /**
      * One or more recent changes IDs from which to add or remove the tag.
@@ -5944,6 +6645,11 @@ export interface ApiTagParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Fetch data stored by the TemplateData extension.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:TemplateData
+ */
 export interface TemplateDataApiTemplateDataParams extends ApiParams {
     /**
      * Return data about titles even if they are missing or lack TemplateData. By default titles are only returned if they exist and have TemplateData.
@@ -6076,6 +6782,11 @@ export interface TemplateDataApiTemplateDataParams extends ApiParams {
     converttitles?: boolean;
 }
 
+/**
+ * Send a thank-you notification to an editor.
+ *
+ * @see https://www.mediawiki.org/wiki/Extension:Thanks#API_Documentation
+ */
 export interface ThanksApiCoreThankParams extends ApiParams {
     /**
      * Revision ID to thank someone for. This or 'log' must be provided.
@@ -6097,6 +6808,12 @@ export interface ThanksApiCoreThankParams extends ApiParams {
     source?: string;
 }
 
+/**
+ * Provides timed text content for usage by <track> elements
+ *
+ * @private
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:TimedMediaHandler
+ */
 export interface TimedMediaHandlerApiTimedTextParams extends ApiParams {
     /**
      * The media file title for which to retrieve timed text
@@ -6116,6 +6833,9 @@ export interface TimedMediaHandlerApiTimedTextParams extends ApiParams {
     lang?: string;
 }
 
+/**
+ * Validate a page title, filename, or username against the TitleBlacklist.
+ */
 export interface TitleBlacklistApiTitleBlacklistParams extends ApiParams {
     /**
      * The string to validate against the blacklist.
@@ -6133,6 +6853,9 @@ export interface TitleBlacklistApiTitleBlacklistParams extends ApiParams {
     tbnooverride?: boolean;
 }
 
+/**
+ * Check if an IP address is blocked as a Tor exit node.
+ */
 export interface TorBlockApiTorBlockParams extends ApiParams {
     /**
      * The IP address to check.
@@ -6140,6 +6863,9 @@ export interface TorBlockApiTorBlockParams extends ApiParams {
     ip?: string;
 }
 
+/**
+ * Users with the 'transcode-reset' right can reset and re-run a transcode job.
+ */
 export interface TimedMediaHandlerApiTranscodeResetParams extends ApiParams {
     /**
      * The media file title.
@@ -6157,6 +6883,11 @@ export interface TimedMediaHandlerApiTranscodeResetParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Get the localization of ULS in the given language.
+ *
+ * @private
+ */
 export interface UniversalLanguageSelectorApiULSLocalizationParams extends ApiParams {
     /**
      * Language code.
@@ -6164,6 +6895,11 @@ export interface UniversalLanguageSelectorApiULSLocalizationParams extends ApiPa
     language?: string;
 }
 
+/**
+ * Update user's preferred interface language.
+ *
+ * @private
+ */
 export interface UniversalLanguageSelectorApiULSSetLanguageParams extends ApiParams {
     /**
      * The preferred language code.
@@ -6177,6 +6913,11 @@ export interface UniversalLanguageSelectorApiULSSetLanguageParams extends ApiPar
     token?: string;
 }
 
+/**
+ * Unblock a user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Block
+ */
 export interface ApiUnblockParams extends ApiParams {
     /**
      * ID of the block to unblock (obtained through `list=blocks`). Cannot be used together with `user`.
@@ -6218,6 +6959,13 @@ export interface ApiUnblockParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Undelete revisions of a deleted page.
+ *
+ * A list of deleted revisions (including timestamps) can be retrieved through {@link /wiki/Special:ApiHelp/query%2Bdeletedrevisions prop=deletedrevisions}, and a list of deleted file IDs can be retrieved through {@link /wiki/Special:ApiHelp/query%2Bfilearchive list=filearchive}.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Undelete
+ */
 export interface ApiUndeleteParams extends ApiParams {
     /**
      * Title of the page to undelete.
@@ -6263,6 +7011,11 @@ export interface ApiUndeleteParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Remove a linked third-party account from the current user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Manage_authentication_data
+ */
 export interface ApiRemoveAuthenticationDataParams extends ApiParams {
     /**
      * Use this authentication request, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=unlink`.
@@ -6276,6 +7029,19 @@ export interface ApiRemoveAuthenticationDataParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Upload a file, or get the status of pending uploads.
+ *
+ * Several methods are available:
+ *
+ * - Upload file contents directly, using the `file` parameter.
+ * - Upload the file in pieces, using the `filesize`, `chunk`, and `offset` parameters.
+ * - Have the MediaWiki server fetch a file from a URL, using the `url` parameter.
+ * - Complete an earlier upload that failed due to warnings, was uploaded in pieces, or stored otherwise in the upload stash, using the `filekey` parameter.
+ * Note that the HTTP POST must be done as a file upload (i.e. using `multipart/form-data`) when sending the `file` or `chunk`.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Upload
+ */
 export interface ApiUploadParams extends ApiParams {
     /**
      * Target filename.
@@ -6365,6 +7131,11 @@ export interface ApiUploadParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Change a user's group membership.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:User_group_membership
+ */
 export interface ApiUserrightsParams extends ApiParams {
     /**
      * User.
@@ -6480,6 +7251,13 @@ export interface ApiUserrightsParams extends ApiParams {
     watchlistexpiry?: expiry;
 }
 
+/**
+ * Validate a password against the wiki's password policies.
+ *
+ * Validity is reported as `Good` if the password is acceptable, `Change` if the password may be used for login but must be changed, or `Invalid` if the password is not usable.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Validatepassword
+ */
 export interface ApiValidatePasswordParams extends ApiParams {
     /**
      * Password to validate.
@@ -6501,6 +7279,11 @@ export interface ApiValidatePasswordParams extends ApiParams {
     realname?: string;
 }
 
+/**
+ * Returns HTML5 for a page from the Parsoid service.
+ *
+ * @private
+ */
 export interface VisualEditorApiVisualEditorParams extends ApiParams {
     /**
      * The page to perform actions on.
@@ -6554,6 +7337,11 @@ export interface VisualEditorApiVisualEditorParams extends ApiParams {
     preloadparams?: string | string[];
 }
 
+/**
+ * Save an HTML5 page to MediaWiki (converted to wikitext via the Parsoid service).
+ *
+ * @private
+ */
 export interface VisualEditorApiVisualEditorEditParams extends ApiParams {
     /**
      * Action to perform.
@@ -6678,6 +7466,11 @@ export interface VisualEditorApiVisualEditorEditParams extends ApiParams {
     mobileformat?: boolean;
 }
 
+/**
+ * Add or remove pages from the current user's watchlist.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Watch
+ */
 export interface ApiWatchParams extends ApiParams {
     /**
      * The page to (un)watch. Use `titles` instead.
@@ -6820,8 +7613,14 @@ export interface ApiWatchParams extends ApiParams {
     token?: string;
 }
 
+/**
+ * Returns a webapp manifest.
+ */
 export interface MobileFrontendApiWebappManifestParams extends ApiParams {}
 
+/**
+ * API Module to communicate between server and client during registration/authentication process.
+ */
 export interface WebAuthnApiWebAuthnParams extends ApiParams {
     /**
      * Name of the requested function to be executed.
@@ -6836,6 +7635,11 @@ export interface WebAuthnApiWebAuthnParams extends ApiParams {
     passkeyMode?: boolean;
 }
 
+/**
+ * Give WikiLove to another user.
+ *
+ * WikiLove is a positive message posted to a user's talk page through a convenient interface with preset or locally defined templates. This action adds the specified wikitext to a certain talk page. For statistical purposes, the type and other data are logged.
+ */
 export interface WikiLoveApiWikiLoveParams extends ApiParams {
     /**
      * Full pagename of the user page or user talk page of the user to send WikiLove to.
@@ -6873,6 +7677,11 @@ export interface WikiLoveApiWikiLoveParams extends ApiParams {
     tags?: string | string[];
 }
 
+/**
+ * Log information about blocked edit attempts
+ *
+ * @private
+ */
 export interface WikimediaEventsApiWikimediaEventsBlockedEditParams extends ApiParams {
     /**
      * A page on which an edit attempt was made
@@ -6888,6 +7697,11 @@ export interface WikimediaEventsApiWikimediaEventsBlockedEditParams extends ApiP
     platform?: "desktop" | "mobile";
 }
 
+/**
+ * Log edit diff when hCaptcha challenge is shown but edit is incomplete
+ *
+ * @private
+ */
 export interface WikimediaEventsApiWikimediaEventsHCaptchaEditAttemptParams extends ApiParams {
     /**
      * Page title
@@ -6907,6 +7721,11 @@ export interface WikimediaEventsApiWikimediaEventsHCaptchaEditAttemptParams exte
     revision_id?: number;
 }
 
+/**
+ * Output data in XML format.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Data_formats
+ */
 export interface ApiFormatXmlParams extends ApiParams {
     /**
      * If specified, adds an XML namespace.
@@ -6914,6 +7733,11 @@ export interface ApiFormatXmlParams extends ApiParams {
     includexmlnamespace?: boolean;
 }
 
+/**
+ * Output data in XML format (pretty-print in HTML).
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Data_formats
+ */
 export interface ApiFormatXmlParams extends ApiParams {
     /**
      * Return the pretty-printed HTML and associated ResourceLoader modules as a JSON object.
@@ -6925,6 +7749,9 @@ export interface ApiFormatXmlParams extends ApiParams {
     includexmlnamespace?: boolean;
 }
 
+/**
+ * Show details of the edit filters.
+ */
 export interface AbuseFilterApiQueryAbuseFiltersParams extends ApiQueryParams {
     /**
      * The filter ID to start enumerating from.
@@ -6979,6 +7806,9 @@ export interface AbuseFilterApiQueryAbuseFiltersParams extends ApiQueryParams {
     >;
 }
 
+/**
+ * Show events that were caught by one of the edit filters.
+ */
 export interface AbuseFilterApiQueryAbuseLogParams extends ApiQueryParams {
     /**
      * Show an entry with the given log ID.
@@ -7035,6 +7865,11 @@ export interface AbuseFilterApiQueryAbuseLogParams extends ApiQueryParams {
     >;
 }
 
+/**
+ * Enumerate all categories.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Allcategories
+ */
 export interface ApiQueryAllCategoriesParams extends ApiQueryParams {
     /**
      * The category to start enumerating from.
@@ -7083,6 +7918,11 @@ export interface ApiQueryAllCategoriesParams extends ApiQueryParams {
     acprop?: OneOrMore<"hidden" | "size">;
 }
 
+/**
+ * List all deleted revisions by a user or in a namespace.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Alldeletedrevisions
+ */
 export interface ApiQueryAllDeletedRevisionsParams extends ApiQueryParams {
     /**
      * Which properties to get for each revision:
@@ -7248,6 +8088,11 @@ export interface ApiQueryAllDeletedRevisionsParams extends ApiQueryParams {
     adrgeneratetitles?: boolean;
 }
 
+/**
+ * List all file usages, including non-existing.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Allfileusages
+ */
 export interface ApiQueryAllLinksParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -7293,6 +8138,11 @@ export interface ApiQueryAllLinksParams extends ApiQueryParams {
     afdir?: "ascending" | "descending";
 }
 
+/**
+ * Enumerate all images sequentially.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Allimages
+ */
 export interface ApiQueryAllImagesParams extends ApiQueryParams {
     /**
      * Property to sort by.
@@ -7412,6 +8262,11 @@ export interface ApiQueryAllImagesParams extends ApiQueryParams {
     ailimit?: limit;
 }
 
+/**
+ * Enumerate all links that point to a given namespace.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Alllinks
+ */
 export interface ApiQueryAllLinksParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -7463,6 +8318,11 @@ export interface ApiQueryAllLinksParams extends ApiQueryParams {
     aldir?: "ascending" | "descending";
 }
 
+/**
+ * Return messages from this site.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Allmessages
+ */
 export interface ApiQueryAllMessagesParams extends ApiQueryParams {
     /**
      * Which messages to output. `*` (default) means all messages.
@@ -7523,6 +8383,11 @@ export interface ApiQueryAllMessagesParams extends ApiQueryParams {
     amprefix?: string;
 }
 
+/**
+ * Enumerate all pages sequentially in a given namespace.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Allpages
+ */
 export interface ApiQueryAllPagesParams extends ApiQueryParams {
     /**
      * The page title to start enumerating from.
@@ -7608,6 +8473,11 @@ export interface ApiQueryAllPagesParams extends ApiQueryParams {
     apdir?: "ascending" | "descending";
 }
 
+/**
+ * List all redirects to a namespace.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Allredirects
+ */
 export interface ApiQueryAllLinksParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -7661,6 +8531,11 @@ export interface ApiQueryAllLinksParams extends ApiQueryParams {
     ardir?: "ascending" | "descending";
 }
 
+/**
+ * List all revisions.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Allrevisions
+ */
 export interface ApiQueryAllRevisionsParams extends ApiQueryParams {
     /**
      * Which properties to get for each revision:
@@ -7810,6 +8685,11 @@ export interface ApiQueryAllRevisionsParams extends ApiQueryParams {
     arvgeneratetitles?: boolean;
 }
 
+/**
+ * List all transclusions (pages embedded using {{x}}), including non-existing.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Alltransclusions
+ */
 export interface ApiQueryAllLinksParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -7861,6 +8741,11 @@ export interface ApiQueryAllLinksParams extends ApiQueryParams {
     atdir?: "ascending" | "descending";
 }
 
+/**
+ * Enumerate all registered users.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Allusers
+ */
 export interface ApiQueryAllUsersParams extends ApiQueryParams {
     /**
      * The username to start enumerating from.
@@ -8219,6 +9104,11 @@ export interface ApiQueryAllUsersParams extends ApiQueryParams {
     auexcludetemp?: boolean;
 }
 
+/**
+ * Retrieve information about the current authentication status.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Authmanagerinfo
+ */
 export interface ApiQueryAuthManagerInfoParams extends ApiQueryParams {
     /**
      * Test whether the user's current authentication status is sufficient for the specified security-sensitive operation.
@@ -8249,6 +9139,9 @@ export interface ApiQueryAuthManagerInfoParams extends ApiQueryParams {
     amimessageformat?: "html" | "none" | "raw" | "wikitext";
 }
 
+/**
+ * Fetch the list of sitelinks for the article that corresponds to a given Wikidata ID, ordered by article size.
+ */
 export interface ContentTranslationActionApiQueryAutomaticTranslationDenseLanguagesParams
     extends ApiQueryParams {
     /**
@@ -8267,6 +9160,9 @@ export interface ContentTranslationActionApiQueryAutomaticTranslationDenseLangua
     "limit"?: number;
 }
 
+/**
+ * Get information about what languages the user knows
+ */
 export interface BabelApiQueryBabelParams extends ApiQueryParams {
     /**
      * User to get information about
@@ -8274,6 +9170,11 @@ export interface BabelApiQueryBabelParams extends ApiQueryParams {
     babuser?: string;
 }
 
+/**
+ * Find all pages that link to the given page.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Backlinks
+ */
 export interface ApiQueryBacklinksParams extends ApiQueryParams {
     /**
      * Title to search. Cannot be used together with `blpageid`.
@@ -8315,6 +9216,11 @@ export interface ApiQueryBacklinksParams extends ApiQueryParams {
     blredirect?: boolean;
 }
 
+/**
+ * List all BetaFeatures
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BetaFeatures
+ */
 export interface BetaFeaturesApiQueryBetaFeaturesParams extends ApiQueryParams {
     /**
      * Whether to fetch how many users have enabled a certain preference.
@@ -8322,6 +9228,11 @@ export interface BetaFeaturesApiQueryBetaFeaturesParams extends ApiQueryParams {
     bfcounts?: string;
 }
 
+/**
+ * List all blocked users and IP addresses.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Blocks
+ */
 export interface ApiQueryBlocksParams extends ApiQueryParams {
     /**
      * The timestamp to start enumerating from.
@@ -8404,6 +9315,11 @@ export interface ApiQueryBlocksParams extends ApiQueryParams {
     bkcontinue?: string;
 }
 
+/**
+ * List all categories the pages belong to.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Categories
+ */
 export interface ApiQueryCategoriesParams extends ApiQueryParams {
     /**
      * Which additional properties to get for each category:
@@ -8439,6 +9355,11 @@ export interface ApiQueryCategoriesParams extends ApiQueryParams {
     cldir?: "ascending" | "descending";
 }
 
+/**
+ * Returns information about the given categories.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Categoryinfo
+ */
 export interface ApiQueryCategoryInfoParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -8446,6 +9367,11 @@ export interface ApiQueryCategoryInfoParams extends ApiQueryParams {
     cicontinue?: string;
 }
 
+/**
+ * List all pages in a given category.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Categorymembers
+ */
 export interface ApiQueryCategoryMembersParams extends ApiQueryParams {
     /**
      * Which category to enumerate (required). Must include the `Category:` prefix. Cannot be used together with `cmpageid`.
@@ -8540,6 +9466,9 @@ export interface ApiQueryCategoryMembersParams extends ApiQueryParams {
     cmendsortkey?: string;
 }
 
+/**
+ * Get a list of currently active campaigns with start and end dates and associated banners.
+ */
 export interface ApiCentralNoticeQueryActiveCampaignsParams extends ApiQueryParams {
     /**
      * Include enabled future campaigns (as well as currently active campaigns).
@@ -8547,6 +9476,9 @@ export interface ApiCentralNoticeQueryActiveCampaignsParams extends ApiQueryPara
     cnacincludefuture?: boolean;
 }
 
+/**
+ * Get a log of campaign configuration changes.
+ */
 export interface ApiCentralNoticeLogsParams extends ApiQueryParams {
     /**
      * Campaign name (optional). Separate multiple values with a "|" (vertical bar).
@@ -8578,6 +9510,12 @@ export interface ApiCentralNoticeLogsParams extends ApiQueryParams {
     end?: timestamp;
 }
 
+/**
+ * <b>This API has been disabled by the site administrators. Querying the API will return no data.</b> Check which IP addresses are used by a given username or which usernames are used by a given IP address.
+ *
+ * @deprecated
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:CheckUser#API
+ */
 export interface CheckUserApiQueryCheckUserParams extends ApiQueryParams {
     /**
      * Type of CheckUser request:
@@ -8622,8 +9560,18 @@ export interface CheckUserApiQueryCheckUserParams extends ApiQueryParams {
     cutoken?: string;
 }
 
+/**
+ * Return formatted block details for sitewide blocks affecting the current user.
+ *
+ * @private
+ */
 export interface CheckUserApiQueryFormattedBlockInfoParams extends ApiQueryParams {}
 
+/**
+ * Get entries from the CheckUser log.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:CheckUser#API
+ */
 export interface CheckUserApiQueryCheckUserLogParams extends ApiQueryParams {
     /**
      * Username of the CheckUser.
@@ -8666,6 +9614,11 @@ export interface CheckUserApiQueryCheckUserLogParams extends ApiQueryParams {
     culcontinue?: string;
 }
 
+/**
+ * Dump of a CirrusSearch article document from the database servers
+ *
+ * @private
+ */
 export interface CirrusSearchApiQueryBuildDocumentParams extends ApiQueryParams {
     /**
      * Type of data to extract
@@ -8679,6 +9632,11 @@ export interface CirrusSearchApiQueryBuildDocumentParams extends ApiQueryParams 
     cblimiterprofile?: string;
 }
 
+/**
+ * Dump of the document used by the completion suggester
+ *
+ * @private
+ */
 export interface CirrusSearchApiQueryCompSuggestBuildDocParams extends ApiQueryParams {
     /**
      * Provide a score method name to be used by the completion suggester
@@ -8688,6 +9646,11 @@ export interface CirrusSearchApiQueryCompSuggestBuildDocParams extends ApiQueryP
     csbmethod?: string;
 }
 
+/**
+ * Dump of a CirrusSearch article document from the search servers
+ *
+ * @private
+ */
 export interface CirrusSearchApiQueryCirrusDocParams extends ApiQueryParams {
     /**
      * Define which fields should be returned by the search.
@@ -8697,6 +9660,11 @@ export interface CirrusSearchApiQueryCirrusDocParams extends ApiQueryParams {
     cdincludes?: string | string[];
 }
 
+/**
+ * Get Codex icons
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:CodexIcons
+ */
 export interface ApiQueryCodexIconsParams extends ApiQueryParams {
     /**
      * Names of icons
@@ -8957,6 +9925,9 @@ export interface ApiQueryCodexIconsParams extends ApiQueryParams {
     >;
 }
 
+/**
+ * Read the community configuration
+ */
 export interface CommunityConfigurationApiQueryReadParams extends ApiQueryParams {
     /**
      * Community configuration provider ID
@@ -8979,6 +9950,9 @@ export interface CommunityConfigurationApiQueryReadParams extends ApiQueryParams
     ccrassertversion?: string;
 }
 
+/**
+ * Query Content Translation database for translations.
+ */
 export interface ContentTranslationActionApiQueryContentTranslationParams extends ApiQueryParams {
     /**
      * Translation ID.
@@ -9022,6 +9996,9 @@ export interface ContentTranslationActionApiQueryContentTranslationParams extend
     usecase?: "desktop-editor-draft" | "translation-corpora-units" | "unified-dashboard";
 }
 
+/**
+ * Get the section-aligned parallel text for a given translation. See also `list=cxpublishedtranslations`. Dumps are provided in different formats for high volume access.
+ */
 export interface ContentTranslationActionApiQueryContentTranslationCorporaParams
     extends ApiQueryParams {
     /**
@@ -9040,6 +10017,9 @@ export interface ContentTranslationActionApiQueryContentTranslationCorporaParams
     types?: OneOrMore<"mt" | "source" | "user">;
 }
 
+/**
+ * Get user's favorite suggestions for Content Translation.
+ */
 export interface ContentTranslationActionApiQueryContentTranslationFavoriteSuggestionsParams
     extends ApiQueryParams {
     /**
@@ -9054,6 +10034,11 @@ export interface ContentTranslationActionApiQueryContentTranslationFavoriteSugge
     offset?: string;
 }
 
+/**
+ * Get the list of logged-in contributors (including temporary users) and the count of logged-out contributors to a page.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Contributors
+ */
 export interface ApiQueryContributorsParams extends ApiQueryParams {
     /**
      * Only include users in the given groups. Does not include implicit or auto-promoted groups like *, user, or autoconfirmed.
@@ -9535,6 +10520,11 @@ export interface ApiQueryContributorsParams extends ApiQueryParams {
     pccontinue?: string;
 }
 
+/**
+ * Returns coordinates of the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:GeoData#prop.3Dcoordinates
+ */
 export interface GeoDataApiQueryCoordinatesParams extends ApiQueryParams {
     /**
      * How many coordinates to return.
@@ -9581,9 +10571,17 @@ export interface GeoDataApiQueryCoordinatesParams extends ApiQueryParams {
     codistancefrompage?: string;
 }
 
+/**
+ * Get ContentTranslation local configuration settings.
+ */
 export interface ContentTranslationActionApiQueryContentTranslationConfigParams
     extends ApiQueryParams {}
 
+/**
+ * Get the number of your published translations that were deleted.
+ *
+ * @private
+ */
 export interface ContentTranslationActionApiQueryDeletedTranslationsParams extends ApiQueryParams {
     /**
      * Timestamp to get only newer deletions.
@@ -9595,6 +10593,9 @@ export interface ContentTranslationActionApiQueryDeletedTranslationsParams exten
     dtnamespace?: namespace;
 }
 
+/**
+ * Fetch all published translations information.
+ */
 export interface ContentTranslationActionApiQueryPublishedTranslationsParams
     extends ApiQueryParams {
     /**
@@ -9619,6 +10620,9 @@ export interface ContentTranslationActionApiQueryPublishedTranslationsParams
     offset?: number;
 }
 
+/**
+ * Fetch the translation statistics for the given user.
+ */
 export interface ContentTranslationActionApiQueryTranslatorStatsParams extends ApiQueryParams {
     /**
      * The translator's username. This parameter is optional. If not passed, the currently logged-in user will be used.
@@ -9626,6 +10630,16 @@ export interface ContentTranslationActionApiQueryTranslatorStatsParams extends A
     translator?: string;
 }
 
+/**
+ * Get deleted revision information.
+ *
+ * May be used in several ways:
+ *
+ * - Get deleted revisions for a set of pages, by setting titles or pageids. Ordered by title and timestamp.
+ * - Get data about a set of deleted revisions by setting their IDs with revids. Ordered by revision ID.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Deletedrevisions
+ */
 export interface ApiQueryDeletedRevisionsParams extends ApiQueryParams {
     /**
      * Which properties to get for each revision:
@@ -9767,6 +10781,19 @@ export interface ApiQueryDeletedRevisionsParams extends ApiQueryParams {
     drvcontinue?: string;
 }
 
+/**
+ * List deleted revisions.
+ *
+ * Operates in three modes:
+ *
+ * - List deleted revisions for the given titles, sorted by timestamp.
+ * - List deleted contributions for the given user, sorted by timestamp (no titles specified).
+ * - List all deleted revisions in the given namespace, sorted by title and timestamp (no titles specified, druser not set).
+ * Certain parameters only apply to some modes and are ignored in others.
+ *
+ * @deprecated
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Deletedrevs
+ */
 export interface ApiQueryDeletedrevsParams extends ApiQueryParams {
     /**
      * The timestamp to start enumerating from.
@@ -9863,6 +10890,13 @@ export interface ApiQueryDeletedrevsParams extends ApiQueryParams {
     drcontinue?: string;
 }
 
+/**
+ * Get a short description a.k.a. subtitle explaining what the target page is about.
+ *
+ * The description is plain text, on a single line, but otherwise arbitrary (potentially including raw HTML tags, which also should be interpreted as plain text). It must not be used in HTML unescaped!
+ *
+ * @private
+ */
 export interface WikibaseClientApiDescriptionParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -9881,6 +10915,11 @@ export interface WikibaseClientApiDescriptionParams extends ApiQueryParams {
     descprefersource?: "central" | "local";
 }
 
+/**
+ * List all files that are duplicates of the given files based on hash values.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Duplicatefiles
+ */
 export interface ApiQueryDuplicateFilesParams extends ApiQueryParams {
     /**
      * How many duplicate files to return.
@@ -9904,6 +10943,11 @@ export interface ApiQueryDuplicateFilesParams extends ApiQueryParams {
     dflocalonly?: boolean;
 }
 
+/**
+ * Find all pages that embed (transclude) the given title.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Embeddedin
+ */
 export interface ApiQueryBacklinksParams extends ApiQueryParams {
     /**
      * Title to search. Cannot be used together with eipageid.
@@ -9941,6 +10985,11 @@ export interface ApiQueryBacklinksParams extends ApiQueryParams {
     eilimit?: limit;
 }
 
+/**
+ * Returns all external URLs (not interwikis) from the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Extlinks
+ */
 export interface ApiQueryExternalLinksParams extends ApiQueryParams {
     /**
      * How many links to return.
@@ -10000,6 +11049,11 @@ export interface ApiQueryExternalLinksParams extends ApiQueryParams {
     elexpandurl?: boolean;
 }
 
+/**
+ * Returns plain-text or limited HTML extracts of the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:TextExtracts#API
+ */
 export interface TextExtractsApiQueryExtractsParams extends ApiQueryParams {
     /**
      * How many characters to return. Actual text returned might be slightly longer.
@@ -10039,6 +11093,11 @@ export interface TextExtractsApiQueryExtractsParams extends ApiQueryParams {
     excontinue?: number;
 }
 
+/**
+ * Enumerate pages that contain a given URL.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Exturlusage
+ */
 export interface ApiQueryExtLinksUsageParams extends ApiQueryParams {
     /**
      * Which pieces of information to include:
@@ -10114,6 +11173,11 @@ export interface ApiQueryExtLinksUsageParams extends ApiQueryParams {
     euexpandurl?: boolean;
 }
 
+/**
+ * Get a summary of logged API feature usages for a user agent.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ApiFeatureUsage
+ */
 export interface ApiFeatureUsageApiQueryFeatureUsageParams extends ApiQueryParams {
     /**
      * Start of date range to query.
@@ -10133,6 +11197,11 @@ export interface ApiFeatureUsageApiQueryFeatureUsageParams extends ApiQueryParam
     afufeatures?: string | string[];
 }
 
+/**
+ * Enumerate all deleted files sequentially.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Filearchive
+ */
 export interface ApiQueryFilearchiveParams extends ApiQueryParams {
     /**
      * The image title to start enumerating from.
@@ -10204,6 +11273,11 @@ export interface ApiQueryFilearchiveParams extends ApiQueryParams {
     facontinue?: string;
 }
 
+/**
+ * Return meta information about image repositories configured on the wiki.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Filerepoinfo
+ */
 export interface ApiQueryFileRepoInfoParams extends ApiQueryParams {
     /**
      * Which repository properties to get (properties available may vary on other wikis).
@@ -10241,6 +11315,11 @@ export interface ApiQueryFileRepoInfoParams extends ApiQueryParams {
     >;
 }
 
+/**
+ * Find all pages that use the given files.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Fileusage
+ */
 export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
     /**
      * Which properties to get:
@@ -10275,8 +11354,24 @@ export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
     fucontinue?: string;
 }
 
+/**
+ * Get information about the flagging status of the given pages.
+ *
+ * If a page is flagged, the following parameters are returned:
+ *
+ * - **stable_revid**: The revision ID of the latest stable revision.
+ * - **level**: - **level_text**: The highest flagging level of the page.
+ * - **pending_since**: If there are any current unreviewed revisions for that page, holds the timestamp of the first of them.
+ * If the page has protection configuration, the following parameters are returned:
+ *
+ * - **protection_level**: The right a user must have to not require review on the page.
+ * - **protection_expiry**: When the protection expires.
+ */
 export interface ApiQueryFlaggedParams extends ApiQueryParams {}
 
+/**
+ * Returns a list of gadget sections.
+ */
 export interface GadgetsApiQueryGadgetCategoriesParams extends ApiQueryParams {
     /**
      * What gadget section information to get:
@@ -10294,6 +11389,9 @@ export interface GadgetsApiQueryGadgetCategoriesParams extends ApiQueryParams {
     gcnames?: string | string[];
 }
 
+/**
+ * Returns a list of gadgets used on this wiki.
+ */
 export interface GadgetsApiQueryGadgetsParams extends ApiQueryParams {
     /**
      * What gadget information to get:
@@ -10323,6 +11421,11 @@ export interface GadgetsApiQueryGadgetsParams extends ApiQueryParams {
     gaenabledonly?: boolean;
 }
 
+/**
+ * Returns pages having coordinates that are located in a certain area.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:GeoData#list.3Dgeosearch
+ */
 export interface GeoDataApiQueryGeoSearchElasticParams extends ApiQueryParams {
     /**
      * Coordinate around which to search.
@@ -10404,6 +11507,9 @@ export interface GeoDataApiQueryGeoSearchElasticParams extends ApiQueryParams {
     gsdebug?: boolean;
 }
 
+/**
+ * Enumerate all global users.
+ */
 export interface CentralAuthApiQueryGlobalAllUsersParams extends ApiQueryParams {
     /**
      * The username to start enumerating from.
@@ -10505,6 +11611,9 @@ export interface CentralAuthApiQueryGlobalAllUsersParams extends ApiQueryParams 
     aguexcludetemp?: boolean;
 }
 
+/**
+ * List all globally blocked IP addresses.
+ */
 export interface GlobalBlockingApiQueryGlobalBlocksParams extends ApiQueryParams {
     /**
      * The timestamp to start enumerating from.
@@ -10563,6 +11672,9 @@ export interface GlobalBlockingApiQueryGlobalBlocksParams extends ApiQueryParams
     >;
 }
 
+/**
+ * Enumerate all global groups.
+ */
 export interface CentralAuthApiQueryGlobalGroupsParams extends ApiQueryParams {
     /**
      * What pieces of information to include.
@@ -10570,6 +11682,13 @@ export interface CentralAuthApiQueryGlobalGroupsParams extends ApiQueryParams {
     ggpprop?: OneOrMore<"rights">;
 }
 
+/**
+ * Retrieve global preferences for the current user.
+ *
+ * Can retrieve both global preferences and their local overrides.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:GlobalPreferences/API
+ */
 export interface GlobalPreferencesApiQueryGlobalPreferencesParams extends ApiQueryParams {
     /**
      * Which prererences to include:
@@ -10582,6 +11701,9 @@ export interface GlobalPreferencesApiQueryGlobalPreferencesParams extends ApiQue
     gprprop?: OneOrMore<"localoverrides" | "preferences">;
 }
 
+/**
+ * Show information about global renames that are in progress.
+ */
 export interface CentralAuthApiQueryGlobalRenameStatusParams extends ApiQueryParams {
     /**
      * User that is being renamed. Can be either their old name or new name.
@@ -10589,6 +11711,9 @@ export interface CentralAuthApiQueryGlobalRenameStatusParams extends ApiQueryPar
     grsuser?: string;
 }
 
+/**
+ * Returns global image usage for a certain image.
+ */
 export interface GlobalUsageApiQueryGlobalUsageParams extends ApiQueryParams {
     /**
      * Which properties to return:
@@ -10626,6 +11751,9 @@ export interface GlobalUsageApiQueryGlobalUsageParams extends ApiQueryParams {
     gufilterlocal?: boolean;
 }
 
+/**
+ * Show information about a global user.
+ */
 export interface CentralAuthApiQueryGlobalUserInfoParams extends ApiQueryParams {
     /**
      * User to get information about. If `guiuser` and `guiid` both are omitted, it defaults to the current user.
@@ -10647,6 +11775,9 @@ export interface CentralAuthApiQueryGlobalUserInfoParams extends ApiQueryParams 
     guiprop?: OneOrMore<"editcount" | "groups" | "merged" | "rights" | "unattached">;
 }
 
+/**
+ * Fetch associated {@link https://www.mediawiki.org/wiki/wikitech:Add_Image image suggestion data}, if available
+ */
 export interface GrowthExperimentsApiQueryImageSuggestionDataParams extends ApiQueryParams {
     /**
      * Task type ID (to specify whether to fetch data for top-level or section-level image recommendations)
@@ -10660,10 +11791,19 @@ export interface GrowthExperimentsApiQueryImageSuggestionDataParams extends ApiQ
     gisdcontinue?: string;
 }
 
+/**
+ * Query current user's mentee status; see documentation of action=growthsetmenteestatus for detailed information about individual statuses.
+ */
 export interface GrowthExperimentsApiQueryMenteeStatusParams extends ApiQueryParams {}
 
+/**
+ * List all the mentors
+ */
 export interface GrowthExperimentsApiQueryMentorListParams extends ApiQueryParams {}
 
+/**
+ * Get all mentees assigned to a given mentor
+ */
 export interface GrowthExperimentsApiQueryMentorMenteeParams extends ApiQueryParams {
     /**
      * Mentor to query mentees for
@@ -10671,8 +11811,16 @@ export interface GrowthExperimentsApiQueryMentorMenteeParams extends ApiQueryPar
     gemmmentor?: string;
 }
 
+/**
+ * Query current user's mentor status
+ */
 export interface GrowthExperimentsApiQueryMentorStatusParams extends ApiQueryParams {}
 
+/**
+ * Get a suggested task type for a user to try next.
+ *
+ * @private
+ */
 export interface GrowthExperimentsApiQueryNextSuggestedTaskTypeParams extends ApiQueryParams {
     /**
      * The task type that the user is currently working on.
@@ -10687,8 +11835,19 @@ export interface GrowthExperimentsApiQueryNextSuggestedTaskTypeParams extends Ap
         | "update";
 }
 
+/**
+ * Get list of mentees starred by the currently logged in mentor
+ */
 export interface GrowthExperimentsApiQueryStarredMenteesParams extends ApiQueryParams {}
 
+/**
+ * Get task recommendations suitable for newcomers.
+ *
+ * Suggests a set of articles which have some outstanding issues easy enough for a new editor to tackle.
+ *
+ * @private
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:GrowthExperiments#API
+ */
 export interface GrowthExperimentsApiQueryGrowthTasksParams extends ApiQueryParams {
     /**
      * Task types to limit results to. Leave empty to receive all suggestions.
@@ -10820,6 +11979,11 @@ export interface GrowthExperimentsApiQueryGrowthTasksParams extends ApiQueryPara
     gtexcludepageids?: number | number[];
 }
 
+/**
+ * Returns file information and upload history.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Imageinfo
+ */
 export interface ApiQueryImageInfoParams extends ApiQueryParams {
     /**
      * Which file information to get:
@@ -10938,6 +12102,11 @@ export interface ApiQueryImageInfoParams extends ApiQueryParams {
     iilocalonly?: boolean;
 }
 
+/**
+ * Returns all files contained on the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Images
+ */
 export interface ApiQueryImagesParams extends ApiQueryParams {
     /**
      * How many files to return.
@@ -10961,6 +12130,11 @@ export interface ApiQueryImagesParams extends ApiQueryParams {
     imdir?: "ascending" | "descending";
 }
 
+/**
+ * Find all pages that use the given image title.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Imageusage
+ */
 export interface ApiQueryBacklinksParams extends ApiQueryParams {
     /**
      * Title to search. Cannot be used together with iupageid.
@@ -11002,6 +12176,11 @@ export interface ApiQueryBacklinksParams extends ApiQueryParams {
     iuredirect?: boolean;
 }
 
+/**
+ * Get basic page information.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Info
+ */
 export interface ApiQueryInfoParams extends ApiQueryParams {
     /**
      * Which additional properties to get:
@@ -11101,8 +12280,18 @@ export interface ApiQueryInfoParams extends ApiQueryParams {
     incontinue?: string;
 }
 
+/**
+ * Determine if a page is marked as reviewed.
+ */
 export interface PageTriageApiIsReviewedParams extends ApiQueryParams {}
 
+/**
+ * Find all pages that link to the given interwiki link.
+ *
+ * Can be used to find all links with a prefix, or all links to a title (with a given prefix). Using neither parameter is effectively "all interwiki links".
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Iwbacklinks
+ */
 export interface ApiQueryIWBacklinksParams extends ApiQueryParams {
     /**
      * Prefix for the interwiki.
@@ -11139,6 +12328,11 @@ export interface ApiQueryIWBacklinksParams extends ApiQueryParams {
     iwbldir?: "ascending" | "descending";
 }
 
+/**
+ * Returns all interwiki links from the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Iwlinks
+ */
 export interface ApiQueryIWLinksParams extends ApiQueryParams {
     /**
      * Which additional properties to get for each interwiki link:
@@ -11178,6 +12372,15 @@ export interface ApiQueryIWLinksParams extends ApiQueryParams {
     iwurl?: boolean;
 }
 
+/**
+ * Find all pages that link to the given language link.
+ *
+ * Can be used to find all links with a language code, or all links to a title (with a given language). Using neither parameter is effectively "all language links".
+ *
+ * Note that this may not consider language links added by extensions.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Langbacklinks
+ */
 export interface ApiQueryLangBacklinksParams extends ApiQueryParams {
     /**
      * Language for the language link.
@@ -11214,6 +12417,11 @@ export interface ApiQueryLangBacklinksParams extends ApiQueryParams {
     lbldir?: "ascending" | "descending";
 }
 
+/**
+ * Returns all interlanguage links from the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Langlinks
+ */
 export interface ApiQueryLangLinksParams extends ApiQueryParams {
     /**
      * Which additional properties to get for each interlanguage link:
@@ -11261,8 +12469,16 @@ export interface ApiQueryLangLinksParams extends ApiQueryParams {
     llurl?: boolean;
 }
 
+/**
+ * Get the number of other language versions.
+ */
 export interface ContentTranslationActionApiQueryLangLinksCountParams extends ApiQueryParams {}
 
+/**
+ * Return information about available languages.
+ *
+ * {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue Continuation} may be applied if retrieving the information takes too long for one request.
+ */
 export interface ApiQueryLanguageinfoParams extends ApiQueryParams {
     /**
      * Which information to get for each language.
@@ -11293,6 +12509,11 @@ export interface ApiQueryLanguageinfoParams extends ApiQueryParams {
     licontinue?: string;
 }
 
+/**
+ * Returns all links from the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Links
+ */
 export interface ApiQueryLinksParams extends ApiQueryParams {
     /**
      * Show links in these namespaces only.
@@ -11320,6 +12541,11 @@ export interface ApiQueryLinksParams extends ApiQueryParams {
     pldir?: "ascending" | "descending";
 }
 
+/**
+ * Find all pages that link to the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Linkshere
+ */
 export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
     /**
      * Which properties to get:
@@ -11354,6 +12580,9 @@ export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
     lhcontinue?: string;
 }
 
+/**
+ * Get a list of lint errors
+ */
 export interface LinterApiQueryLintErrorsParams extends ApiQueryParams {
     /**
      * Categories of lint errors
@@ -11411,8 +12640,16 @@ export interface LinterApiQueryLintErrorsParams extends ApiQueryParams {
     lntfrom?: number;
 }
 
+/**
+ * Get number of lint errors in each category
+ */
 export interface LinterApiQueryLinterStatsParams extends ApiQueryParams {}
 
+/**
+ * Get events from logs.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Logevents
+ */
 export interface ApiQueryLogEventsParams extends ApiQueryParams {
     /**
      * Which properties to get:
@@ -11667,6 +12904,11 @@ export interface ApiQueryLogEventsParams extends ApiQueryParams {
     lecontinue?: string;
 }
 
+/**
+ * Request all Kartographer map data for the given pages
+ *
+ * @private
+ */
 export interface KartographerApiQueryMapDataParams extends ApiQueryParams {
     /**
      * Pipe-separated groups to return data for
@@ -11693,8 +12935,16 @@ export interface KartographerApiQueryMapDataParams extends ApiQueryParams {
     mpdparser?: "legacy" | "parsoid";
 }
 
+/**
+ * Get the description and targets of a spamlist
+ */
 export interface MassMessageApiQueryMMContentParams extends ApiQueryParams {}
 
+/**
+ * Lists the most viewed pages (based on last day's pageview count).
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:PageViewInfo
+ */
 export interface PageViewInfoApiQueryMostViewedParams extends ApiQueryParams {
     /**
      * The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ({@link /wiki/Special:ApiHelp/query%2Bsiteinfo action=query&meta=siteinfo}) to check which ones are supported, under `pageviewservice-supported-metrics` / _module name_ (`siteviews`, `mostviewed`, etc.)
@@ -11718,6 +12968,11 @@ export interface PageViewInfoApiQueryMostViewedParams extends ApiQueryParams {
     pvimoffset?: number;
 }
 
+/**
+ * Get a list of files in the current user's upload stash.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:mystashedfiles
+ */
 export interface ApiQueryMyStashedFilesParams extends ApiQueryParams {
     /**
      * Which properties to fetch for the files.
@@ -11740,6 +12995,11 @@ export interface ApiQueryMyStashedFilesParams extends ApiQueryParams {
     msfcontinue?: string;
 }
 
+/**
+ * Get notifications waiting for the current user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Echo_(Notifications)/API
+ */
 export interface NotificationsApiEchoNotificationsParams extends ApiQueryParams {
     /**
      * List of wikis to fetch notifications from (defaults to only current wiki).
@@ -11828,6 +13088,11 @@ export interface NotificationsApiEchoNotificationsParams extends ApiQueryParams 
     notcrosswikisummary?: boolean;
 }
 
+/**
+ * Check to see if two-factor authentication (OATH) is enabled for a user.
+ *
+ * @private
+ */
 export interface OATHAuthApiModuleApiQueryOATHParams extends ApiQueryParams {
     /**
      * User to get information about. Defaults to the current user.
@@ -11839,6 +13104,9 @@ export interface OATHAuthApiModuleApiQueryOATHParams extends ApiQueryParams {
     oathreason?: string;
 }
 
+/**
+ * Enumerates pages that have changes pending review.
+ */
 export interface ApiQueryOldreviewedpagesParams extends ApiQueryParams {
     /**
      * Start listing at this timestamp.
@@ -11888,8 +13156,18 @@ export interface ApiQueryOldreviewedpagesParams extends ApiQueryParams {
     orlimit?: limit;
 }
 
+/**
+ * Return ORES configuration and model data for this wiki.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ORES
+ */
 export interface ORESHooksApiQueryORESParams extends ApiQueryParams {}
 
+/**
+ * Return associated projects and assessments for the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:PageAssessments
+ */
 export interface PageAssessmentsApiQueryPageAssessmentsParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -11907,6 +13185,9 @@ export interface PageAssessmentsApiQueryPageAssessmentsParams extends ApiQueryPa
     pasubprojects?: boolean;
 }
 
+/**
+ * Fetch page collection information for the given title.
+ */
 export interface WikimediaCampaignEventsActionApiQueryPageCollectionsMetadataParams
     extends ApiQueryParams {
     /**
@@ -11915,6 +13196,11 @@ export interface WikimediaCampaignEventsActionApiQueryPageCollectionsMetadataPar
     titles?: string | string[];
 }
 
+/**
+ * Returns information about images on the page, such as thumbnail and presence of photos.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:PageImages#API
+ */
 export interface PageImagesApiQueryPageImagesParams extends ApiQueryParams {
     /**
      * Which information to return:
@@ -11957,6 +13243,11 @@ export interface PageImagesApiQueryPageImagesParams extends ApiQueryParams {
     pilangcode?: string;
 }
 
+/**
+ * List all page property names in use on the wiki.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Pagepropnames
+ */
 export interface ApiQueryPagePropNamesParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -11970,6 +13261,11 @@ export interface ApiQueryPagePropNamesParams extends ApiQueryParams {
     ppnlimit?: limit;
 }
 
+/**
+ * Get various page properties defined in the page content.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Pageprops
+ */
 export interface ApiQueryPagePropsParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -11981,6 +13277,11 @@ export interface ApiQueryPagePropsParams extends ApiQueryParams {
     ppprop?: string | string[];
 }
 
+/**
+ * List all pages using a given page property.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Pageswithprop
+ */
 export interface ApiQueryPagesWithPropParams extends ApiQueryParams {
     /**
      * Page property for which to enumerate pages ({@link /wiki/Special:ApiHelp/query%2Bpagepropnames `action=query&list=pagepropnames`} returns page property names in use).
@@ -12014,6 +13315,9 @@ export interface ApiQueryPagesWithPropParams extends ApiQueryParams {
     pwpdir?: "ascending" | "descending";
 }
 
+/**
+ * Get the Wikidata terms (typically labels, descriptions and aliases) associated with a page via a sitelink.
+ */
 export interface WikibaseClientApiPageTermsParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -12665,6 +13969,13 @@ export interface WikibaseClientApiPageTermsParams extends ApiQueryParams {
     wbptterms?: OneOrMore<"alias" | "description" | "label">;
 }
 
+/**
+ * Shows per-page pageview data (the number of daily pageviews for each of the last `pvipdays` days).
+ *
+ * The result format is page title (with underscores) => date (Ymd) => count.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:PageViewInfo
+ */
 export interface PageViewInfoApiQueryPageViewsParams extends ApiQueryParams {
     /**
      * The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ({@link /wiki/Special:ApiHelp/query%2Bsiteinfo action=query&meta=siteinfo}) to check which ones are supported, under `pageviewservice-supported-metrics` / _module name_ (`siteviews`, `mostviewed`, etc.)
@@ -12686,6 +13997,13 @@ export interface PageViewInfoApiQueryPageViewsParams extends ApiQueryParams {
     pvipcontinue?: string;
 }
 
+/**
+ * Perform a prefix search for page titles.
+ *
+ * Despite the similarity in names, this module is not intended to be equivalent to {@link /wiki/Special:PrefixIndex Special:PrefixIndex}; for that, see {@link /wiki/Special:ApiHelp/query%2Ballpages `action=query&list=allpages`} with the `apprefix` parameter. The purpose of this module is similar to {@link /wiki/Special:ApiHelp/opensearch `action=opensearch`}: to take user input and provide the best-matching titles. Depending on the search engine backend, this might include typo correction, redirect avoidance, or other heuristics.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Prefixsearch
+ */
 export interface ApiQueryPrefixSearchParams extends ApiQueryParams {
     /**
      * Search string.
@@ -12724,6 +14042,11 @@ export interface ApiQueryPrefixSearchParams extends ApiQueryParams {
     psprofile?: "classic" | "engine_autoselect" | "fast-fuzzy" | "fuzzy" | "normal" | "strict";
 }
 
+/**
+ * List all pages associated with one or more projects.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:PageAssessments
+ */
 export interface PageAssessmentsApiQueryProjectPagesParams extends ApiQueryParams {
     /**
      * Also return assessments for the pages returned.
@@ -12745,6 +14068,11 @@ export interface PageAssessmentsApiQueryProjectPagesParams extends ApiQueryParam
     wppcontinue?: string;
 }
 
+/**
+ * List all the projects.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:PageAssessments
+ */
 export interface PageAssessmentsApiQueryProjectsParams extends ApiQueryParams {
     /**
      * Also include subprojects.
@@ -12752,6 +14080,11 @@ export interface PageAssessmentsApiQueryProjectsParams extends ApiQueryParams {
     pjsubprojects?: boolean;
 }
 
+/**
+ * List all titles protected from creation.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Protectedtitles
+ */
 export interface ApiQueryProtectedTitlesParams extends ApiQueryParams {
     /**
      * Only list titles in these namespaces.
@@ -12806,6 +14139,11 @@ export interface ApiQueryProtectedTitlesParams extends ApiQueryParams {
     ptcontinue?: string;
 }
 
+/**
+ * Get a list provided by a QueryPage-based special page.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Querypage
+ */
 export interface ApiQueryQueryPageParams extends ApiQueryParams {
     /**
      * The name of the special page. Note, this is case-sensitive.
@@ -12863,6 +14201,13 @@ export interface ApiQueryQueryPageParams extends ApiQueryParams {
     qplimit?: limit;
 }
 
+/**
+ * Get a set of random pages.
+ *
+ * Pages are listed in a fixed sequence, only the starting point is random. This means that if, for example, `Main Page` is the first random page in the list, `List of fictional monkeys` will **always** be second, `List of people on stamps of Vanuatu` third, etc.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Random
+ */
 export interface ApiQueryRandomParams extends ApiQueryParams {
     /**
      * Return pages in these namespaces only.
@@ -12919,6 +14264,14 @@ export interface ApiQueryRandomParams extends ApiQueryParams {
     rncontinue?: string;
 }
 
+/**
+ * List the pages of a certain list.
+ *
+ * This module has three modes of operation. With the `rlelists` parameter, it returns the pages in the given list(s). With the `rlechangedsince` parameter, it returns all list entries from any list of the current user which have been changed since the given date. (This is meant for device sync and, unlike the other modes, includes deleted entries, although not entries of deleted lists.) Without any parameters, it returns all entries from all lists of the current user.
+ *
+ * @private
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReadingLists#API
+ */
 export interface ReadingListsApiQueryReadingListEntriesParams extends ApiQueryParams {
     /**
      * The list IDs for which to return pages. Optional. If not specified, returns entries from all lists.
@@ -12953,6 +14306,14 @@ export interface ReadingListsApiQueryReadingListEntriesParams extends ApiQueryPa
     rlecontinue?: string;
 }
 
+/**
+ * List or filter the user's reading lists and show metadata about them.
+ *
+ * This module has four modes of operation. With the `rllist` parameter, it returns information about the specified list. With the `rlchangedsince` parameter, it returns all lists of the current user which have been changed since the given date. (This is meant for device sync and, unlike the other modes, includes deleted lists. Only changes to list metadata are considered, not changes to list items.) With the `rlproject` and `rltitle` parameters, it returns all lists that include that page. Without any of those parameters, it returns all lists.
+ *
+ * @private
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReadingLists#API
+ */
 export interface ReadingListsApiQueryReadingListsParams extends ApiQueryParams {
     /**
      * List ID.
@@ -12995,6 +14356,11 @@ export interface ReadingListsApiQueryReadingListsParams extends ApiQueryParams {
     rlcontinue?: string;
 }
 
+/**
+ * Enumerate recent changes.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Recentchanges
+ */
 export interface ApiQueryRecentChangesParams extends ApiQueryParams {
     /**
      * The timestamp to start enumerating from.
@@ -13123,6 +14489,11 @@ export interface ApiQueryRecentChangesParams extends ApiQueryParams {
     rcslot?: "main";
 }
 
+/**
+ * Returns all redirects to the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Redirects
+ */
 export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
     /**
      * Which properties to get:
@@ -13159,6 +14530,17 @@ export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
     rdcontinue?: string;
 }
 
+/**
+ * Get revision information.
+ *
+ * May be used in several ways:
+ *
+ * - Get data about a set of pages (last revision), by setting titles or pageids.
+ * - Get revisions for one given page, by using titles or pageids with start, end, or limit.
+ * - Get data about a set of revisions by setting their IDs with revids.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Revisions
+ */
 export interface ApiQueryRevisionsParams extends ApiQueryParams {
     /**
      * Which properties to get for each revision:
@@ -13312,6 +14694,11 @@ export interface ApiQueryRevisionsParams extends ApiQueryParams {
     rvcontinue?: string;
 }
 
+/**
+ * Perform a full text search.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Search
+ */
 export interface ApiQuerySearchParams extends ApiQueryParams {
     /**
      * Search for page titles or content matching this value. You can use the search string to invoke special search features, depending on what the wiki's search backend implements.
@@ -13454,6 +14841,11 @@ export interface ApiQuerySearchParams extends ApiQueryParams {
         | "user_random";
 }
 
+/**
+ * Return general information about the site.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Siteinfo
+ */
 export interface ApiQuerySiteinfoParams extends ApiQueryParams {
     /**
      * Which information to get:
@@ -13541,6 +14933,13 @@ export interface ApiQuerySiteinfoParams extends ApiQueryParams {
     siinlanguagecode?: string;
 }
 
+/**
+ * Shows sitewide pageview data (daily pageview totals for each of the last `pvisdays` days).
+ *
+ * The result format is date (Ymd) => count.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:PageViewInfo
+ */
 export interface PageViewInfoApiQuerySiteViewsParams extends ApiQueryParams {
     /**
      * The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ({@link /wiki/Special:ApiHelp/query%2Bsiteinfo action=query&meta=siteinfo}) to check which ones are supported, under `pageviewservice-supported-metrics` / _module name_ (`siteviews`, `mostviewed`, etc.)
@@ -13559,6 +14958,11 @@ export interface PageViewInfoApiQuerySiteViewsParams extends ApiQueryParams {
     pvisdays?: number;
 }
 
+/**
+ * Returns file information for stashed files.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Stashimageinfo
+ */
 export interface ApiQueryStashImageInfoParams extends ApiQueryParams {
     /**
      * Key that identifies a previous upload that was stashed temporarily.
@@ -13627,6 +15031,11 @@ export interface ApiQueryStashImageInfoParams extends ApiQueryParams {
     siiurlparam?: string;
 }
 
+/**
+ * List change tags.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Tags
+ */
 export interface ApiQueryTagsParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -13655,6 +15064,11 @@ export interface ApiQueryTagsParams extends ApiQueryParams {
     >;
 }
 
+/**
+ * Returns all pages transcluded on the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Templates
+ */
 export interface ApiQueryLinksParams extends ApiQueryParams {
     /**
      * Show templates in these namespaces only.
@@ -13682,6 +15096,11 @@ export interface ApiQueryLinksParams extends ApiQueryParams {
     tldir?: "ascending" | "descending";
 }
 
+/**
+ * Gets tokens for data-modifying actions.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Tokens
+ */
 export interface ApiQueryTokensParams extends ApiQueryParams {
     /**
      * Types of token to request.
@@ -13701,6 +15120,11 @@ export interface ApiQueryTokensParams extends ApiQueryParams {
     >;
 }
 
+/**
+ * Enumerate all existing tracking categories defined in {@link /wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Trackingcategories
+ */
 export interface ApiQueryTrackingCategoriesParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -13735,6 +15159,11 @@ export interface ApiQueryTrackingCategoriesParams extends ApiQueryParams {
     tcprop?: OneOrMore<"hidden" | "size">;
 }
 
+/**
+ * Find all pages that transclude the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Transcludedin
+ */
 export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
     /**
      * Which properties to get:
@@ -13769,8 +15198,16 @@ export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
     ticontinue?: string;
 }
 
+/**
+ * Get transcode status for a given file page.
+ */
 export interface TimedMediaHandlerApiTranscodeStatusParams extends ApiQueryParams {}
 
+/**
+ * Get pages for which there are unread notifications for the current user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Echo_(Notifications)/API
+ */
 export interface NotificationsApiEchoUnreadNotificationPagesParams extends ApiQueryParams {
     /**
      * List of wikis to fetch pages with unread notifications from (defaults to only current wiki).
@@ -13790,6 +15227,11 @@ export interface NotificationsApiEchoUnreadNotificationPagesParams extends ApiQu
     unplimit?: limit;
 }
 
+/**
+ * Get all edits by a user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Usercontribs
+ */
 export interface ApiQueryUserContribsParams extends ApiQueryParams {
     /**
      * The maximum number of contributions to return.
@@ -13901,6 +15343,11 @@ export interface ApiQueryUserContribsParams extends ApiQueryParams {
     uctoponly?: boolean;
 }
 
+/**
+ * Get information about the current user.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Userinfo
+ */
 export interface ApiQueryUserInfoParams extends ApiQueryParams {
     /**
      * Which pieces of information to include:
@@ -13954,6 +15401,11 @@ export interface ApiQueryUserInfoParams extends ApiQueryParams {
     uiattachedwiki?: string;
 }
 
+/**
+ * Get information about a list of users.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Users
+ */
 export interface ApiQueryUsersParams extends ApiQueryParams {
     /**
      * Which pieces of information to include:
@@ -13999,6 +15451,11 @@ export interface ApiQueryUsersParams extends ApiQueryParams {
     ususerids?: number | number[];
 }
 
+/**
+ * Extends imageinfo to include video source (derivatives) information
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Videoinfo
+ */
 export interface TimedMediaHandlerApiQueryVideoInfoParams extends ApiQueryParams {
     /**
      * Which file information to get:
@@ -14121,6 +15578,11 @@ export interface TimedMediaHandlerApiQueryVideoInfoParams extends ApiQueryParams
     vilocalonly?: boolean;
 }
 
+/**
+ * Get recent changes to pages in the current user's watchlist.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Watchlist
+ */
 export interface ApiQueryWatchlistParams extends ApiQueryParams {
     /**
      * Include multiple revisions of the same page within given timeframe.
@@ -14248,6 +15710,11 @@ export interface ApiQueryWatchlistParams extends ApiQueryParams {
     wlcontinue?: string;
 }
 
+/**
+ * Get all pages on the current user's watchlist.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Watchlistraw
+ */
 export interface ApiQueryWatchlistRawParams extends ApiQueryParams {
     /**
      * When more results are available, use this to continue. More detailed information on how to continue queries {@link https://www.mediawiki.org/wiki/Special:MyLanguage/API:Continue can be found on mediawiki.org}.
@@ -14299,6 +15766,11 @@ export interface ApiQueryWatchlistRawParams extends ApiQueryParams {
     wrtotitle?: string;
 }
 
+/**
+ * Returns all entity IDs used in the given pages.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#wbentityusage
+ */
 export interface WikibaseClientApiPropsEntityUsageParams extends ApiQueryParams {
     /**
      * Properties to add to the result.
@@ -14334,6 +15806,11 @@ export interface WikibaseClientApiPropsEntityUsageParams extends ApiQueryParams 
     wbeucontinue?: string;
 }
 
+/**
+ * Returns all pages that use the given entity IDs.
+ *
+ * @see https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API
+ */
 export interface WikibaseClientApiListEntityUsageParams extends ApiQueryParams {
     /**
      * Properties to add to the result.
@@ -14369,6 +15846,9 @@ export interface WikibaseClientApiListEntityUsageParams extends ApiQueryParams {
     wbleucontinue?: string;
 }
 
+/**
+ * Get information about the Wikibase client and the associated Wikibase repository.
+ */
 export interface WikibaseClientApiClientInfoParams extends ApiQueryParams {
     /**
      * Which properties to get:
@@ -14381,6 +15861,9 @@ export interface WikibaseClientApiClientInfoParams extends ApiQueryParams {
     wbprop?: OneOrMore<"siteid" | "url">;
 }
 
+/**
+ * Enumerate all wiki sets.
+ */
 export interface CentralAuthApiQueryWikiSetsParams extends ApiQueryParams {
     /**
      * The name of the wiki set to start from.
