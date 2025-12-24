@@ -124,7 +124,7 @@ export interface AbuseFilterApiUnblockAutopromoteParams extends ApiParams {
      */
     user?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -146,7 +146,7 @@ export interface AbuseFilterApiAbuseLogPrivateDetailsParams extends ApiParams {
      */
     reason?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -263,7 +263,7 @@ export interface ApiBlockParams extends ApiParams {
      */
     actionrestrictions?: OneOrMore<"create" | "move" | "thanks" | "upload">;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -319,7 +319,7 @@ export interface ApiCentralNoticeCdnCacheUpdateBannerParams extends ApiParams {
      */
     language?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -357,11 +357,11 @@ export interface ApiCentralNoticeQueryCampaignParams extends ApiParams {
  */
 export interface ApiChangeAuthenticationDataParams extends ApiParams {
     /**
-     * Use this authentication request, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=change`.
+     * Use this authentication request, by the `id` returned from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=change`.
      */
     changeauthrequest?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -411,7 +411,7 @@ export interface ApiChangeContentModelParams extends ApiParams {
      */
     bot?: boolean;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -431,7 +431,7 @@ export interface ChartApiChartInfoParams extends ApiParams {
 }
 
 /**
- * Check the validity of a token from {@link /wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
+ * Check the validity of a token from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
  *
  * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Checktoken
  */
@@ -547,7 +547,7 @@ export interface ApiClearHasMsgParams extends ApiParams {}
  *
  * The general procedure to use this module is:
  *
- * - Fetch the fields available from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=login`, and a `login` token from {@link /wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
+ * - Fetch the fields available from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=login`, and a `login` token from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
  * - Present the fields to the user, and obtain their submission.
  * - Post to this module, supplying `loginreturnurl` and any relevant fields.
  * - Check the `status` in the response.
@@ -560,7 +560,7 @@ export interface ApiClearHasMsgParams extends ApiParams {}
  */
 export interface ApiClientLoginParams extends ApiParams {
     /**
-     * Only use these authentication requests, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=login` or from a previous response from this module.
+     * Only use these authentication requests, by the `id` returned from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=login` or from a previous response from this module.
      */
     loginrequests?: string | string[];
     /**
@@ -588,7 +588,7 @@ export interface ApiClientLoginParams extends ApiParams {
      */
     logincontinue?: boolean;
     /**
-     * A "login" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "login" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -604,22 +604,22 @@ export interface CollectionApiCollectionParams extends ApiParams {
     /**
      * Submodule for performing various operations on a wiki user's collection.
      *
-     * - **{@link /wiki/Special:ApiHelp/collection%2Baddarticle addarticle}**: API module for adding a page to the collection
-     * - **{@link /wiki/Special:ApiHelp/collection%2Baddcategory addcategory}**: API module for adding pages from a given category to a user's collection.
-     * - **{@link /wiki/Special:ApiHelp/collection%2Baddchapter addchapter}**: API module for adding a chapter to the collection
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bclearcollection clearcollection}**: API module for clearing the collection and the suggestions
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bgetbookcreatorboxcontent getbookcreatorboxcontent}**: API submodule for grabbing the box content of the user's book creator box special page.
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bgetcollection getcollection}**: API module for listing the current pages in a collection
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bgetpopupdata getpopupdata}**: API module to get data and HTML to construct a popup
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bpostcollection postcollection}**: API module for posting pages to a user's collection
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bremovearticle removearticle}**: API module for removing a page from the collection
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bremoveitem removeitem}**: API module for removing an item from the collection index-wise via the Special:Book page.
-     * - **{@link /wiki/Special:ApiHelp/collection%2Brenamechapter renamechapter}**: API module for renaming a chapter in the user's collection
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bsetsorting setsorting}**: API module for reordering items in a collection
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bsettitles settitles}**: API module for setting the collection's title, subtitle, and settings
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bsortitems sortitems}**: API module to sort pages in a collection alphabetically. Pages within chapters are grouped and sorted together.
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bsuggestarticleaction suggestarticleaction}**: API module to interact with suggestions
-     * - **{@link /wiki/Special:ApiHelp/collection%2Bsuggestundoarticleaction suggestundoarticleaction}**: API module to undo actions done from suggestarticleaction
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Baddarticle addarticle}**: API module for adding a page to the collection
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Baddcategory addcategory}**: API module for adding pages from a given category to a user's collection.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Baddchapter addchapter}**: API module for adding a chapter to the collection
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bclearcollection clearcollection}**: API module for clearing the collection and the suggestions
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bgetbookcreatorboxcontent getbookcreatorboxcontent}**: API submodule for grabbing the box content of the user's book creator box special page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bgetcollection getcollection}**: API module for listing the current pages in a collection
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bgetpopupdata getpopupdata}**: API module to get data and HTML to construct a popup
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bpostcollection postcollection}**: API module for posting pages to a user's collection
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bremovearticle removearticle}**: API module for removing a page from the collection
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bremoveitem removeitem}**: API module for removing an item from the collection index-wise via the Special:Book page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Brenamechapter renamechapter}**: API module for renaming a chapter in the user's collection
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bsetsorting setsorting}**: API module for reordering items in a collection
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bsettitles settitles}**: API module for setting the collection's title, subtitle, and settings
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bsortitems sortitems}**: API module to sort pages in a collection alphabetically. Pages within chapters are grouped and sorted together.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bsuggestarticleaction suggestarticleaction}**: API module to interact with suggestions
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/collection%2Bsuggestundoarticleaction suggestundoarticleaction}**: API module to undo actions done from suggestarticleaction
      */
     submodule?:
         | "addarticle"
@@ -670,7 +670,7 @@ export interface CommunityConfigurationApiEditParams extends ApiParams {
      */
     summary?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -878,7 +878,7 @@ export interface ApiComparePagesParams extends ApiParams {
  *
  * The general procedure to use this module is:
  *
- * - Fetch the fields available from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=create`, and a `createaccount` token from {@link /wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
+ * - Fetch the fields available from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=create`, and a `createaccount` token from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
  * - Present the fields to the user, and obtain their submission.
  * - Post to this module, supplying `createreturnurl` and any relevant fields.
  * - Check the `status` in the response.
@@ -891,7 +891,7 @@ export interface ApiComparePagesParams extends ApiParams {
  */
 export interface ApiAMCreateAccountParams extends ApiParams {
     /**
-     * Only use these authentication requests, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=create` or from a previous response from this module.
+     * Only use these authentication requests, by the `id` returned from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=create` or from a previous response from this module.
      */
     createrequests?: string | string[];
     /**
@@ -907,7 +907,7 @@ export interface ApiAMCreateAccountParams extends ApiParams {
     /**
      * Preserve state from a previous failed login attempt, if possible.
      *
-     * If {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} returned true for `hasprimarypreservedstate`, requests marked as `primary-required` should be omitted. If it returned a non-empty value for `preservedusername`, that username must be used for the `username` parameter.
+     * If {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} returned true for `hasprimarypreservedstate`, requests marked as `primary-required` should be omitted. If it returned a non-empty value for `preservedusername`, that username must be used for the `username` parameter.
      */
     createpreservestate?: boolean;
     /**
@@ -921,7 +921,7 @@ export interface ApiAMCreateAccountParams extends ApiParams {
      */
     createcontinue?: boolean;
     /**
-     * A "createaccount" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "createaccount" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -941,7 +941,7 @@ export interface CentralAuthApiCreateLocalAccountParams extends ApiParams {
      */
     reason?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -991,7 +991,7 @@ export interface ContentTranslationActionApiContentTranslationDeleteParams exten
      */
     sourcetitle?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1022,7 +1022,7 @@ export interface ContentTranslationActionApiContentTranslationFavoriteSuggestion
      */
     to?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1076,7 +1076,7 @@ export interface ContentTranslationActionApiContentTranslationPublishParams exte
      */
     cxversion?: number;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1142,7 +1142,7 @@ export interface ContentTranslationActionApiSectionTranslationPublishParams exte
      */
     captchaword?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1196,7 +1196,7 @@ export interface ContentTranslationActionApiContentTranslationSaveParams extends
      */
     targetcategories?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1214,7 +1214,7 @@ export interface ContentTranslationActionApiContentTranslationSplitParams extend
      */
     translationid?: number;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1226,7 +1226,7 @@ export interface ContentTranslationActionApiContentTranslationSplitParams extend
  */
 export interface ContentTranslationActionApiContentTranslationTokenParams extends ApiParams {
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1282,11 +1282,11 @@ export interface ApiDeleteParams extends ApiParams {
      */
     unwatch?: boolean;
     /**
-     * The name of the old image to delete as provided by {@link /wiki/Special:ApiHelp/query%2Bimageinfo action=query&prop=imageinfo&iiprop=archivename}.
+     * The name of the old image to delete as provided by {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimageinfo action=query&prop=imageinfo&iiprop=archivename}.
      */
     oldimage?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1306,7 +1306,7 @@ export interface CentralAuthApiDeleteGlobalAccountParams extends ApiParams {
      */
     reason?: string;
     /**
-     * A "deleteglobalaccount" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "deleteglobalaccount" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1359,7 +1359,7 @@ export interface DiscussionToolsApiDiscussionToolsEditParams extends ApiParams {
      */
     page?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1567,7 +1567,7 @@ export interface DiscussionToolsApiDiscussionToolsSubscribeParams extends ApiPar
      */
     page?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1595,7 +1595,7 @@ export interface DiscussionToolsApiDiscussionToolsThankParams extends ApiParams 
      */
     commentid?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1635,7 +1635,7 @@ export interface NotificationsApiEchoCreateEventParams extends ApiParams {
      */
     email?: boolean;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1671,7 +1671,7 @@ export interface NotificationsApiEchoMarkReadParams extends ApiParams {
      */
     sections?: OneOrMore<"alert" | "message">;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1713,7 +1713,7 @@ export interface NotificationsApiEchoMuteParams extends ApiParams {
      */
     unmute?: string | string[];
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1730,12 +1730,12 @@ export interface NotificationsPushApiEchoPushSubscriptionsParams extends ApiPara
     /**
      * Action to perform.
      *
-     * - **{@link /wiki/Special:ApiHelp/echopushsubscriptions%2Bcreate create}**: Internal. Register push subscriptions for the current user.
-     * - **{@link /wiki/Special:ApiHelp/echopushsubscriptions%2Bdelete delete}**: Internal. Unregister push subscriptions for the current user or another specified user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/echopushsubscriptions%2Bcreate create}**: Internal. Register push subscriptions for the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/echopushsubscriptions%2Bdelete delete}**: Internal. Unregister push subscriptions for the current user or another specified user.
      */
     command?: "create" | "delete";
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -1793,15 +1793,15 @@ export interface ApiEditPageParams extends ApiParams {
      */
     bot?: boolean;
     /**
-     * ID of the base revision, used to detect edit conflicts. May be obtained through {@link /wiki/Special:ApiHelp/query%2Brevisions action=query&prop=revisions}. Self-conflicts cause the edit to fail unless basetimestamp is set.
+     * ID of the base revision, used to detect edit conflicts. May be obtained through {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brevisions action=query&prop=revisions}. Self-conflicts cause the edit to fail unless basetimestamp is set.
      */
     baserevid?: number;
     /**
-     * Timestamp of the base revision, used to detect edit conflicts. May be obtained through {@link /wiki/Special:ApiHelp/query%2Brevisions action=query&prop=revisions&rvprop=timestamp}. Self-conflicts are ignored.
+     * Timestamp of the base revision, used to detect edit conflicts. May be obtained through {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brevisions action=query&prop=revisions&rvprop=timestamp}. Self-conflicts are ignored.
      */
     basetimestamp?: timestamp;
     /**
-     * Timestamp when the editing process began, used to detect edit conflicts. An appropriate value may be obtained using {@link /wiki/Special:ApiHelp/main `curtimestamp`} when beginning the edit process (e.g. when loading the page content to edit).
+     * Timestamp when the editing process began, used to detect edit conflicts. An appropriate value may be obtained using {@link https://www.mediawiki.org/wiki/Special:ApiHelp/main `curtimestamp`} when beginning the edit process (e.g. when loading the page content to edit).
      */
     starttimestamp?: timestamp;
     /**
@@ -1899,7 +1899,7 @@ export interface ApiEditPageParams extends ApiParams {
         | "vue"
         | "wikitext";
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * The token should always be sent as the last parameter, or at least after the text parameter.
      *
@@ -1983,7 +1983,7 @@ export interface MassMessageApiEditMassMessageListParams extends ApiParams {
      */
     watchlist?: "nochange" | "preferences" | "unwatch" | "watch";
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2013,7 +2013,7 @@ export interface ApiEmailUserParams extends ApiParams {
      */
     ccme?: boolean;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2079,7 +2079,7 @@ export interface ApiExpandTemplatesParams extends ApiParams {
      */
     generatexml?: boolean;
     /**
-     * Template sandbox prefix, as with {@link /wiki/Special:TemplateSandbox Special:TemplateSandbox}.
+     * Template sandbox prefix, as with {@link https://www.mediawiki.org/wiki/Special:TemplateSandbox Special:TemplateSandbox}.
      */
     templatesandboxprefix?: string | string[];
     /**
@@ -2326,7 +2326,7 @@ export interface ApiFeedWatchlistParams extends ApiParams {
      */
     wlowner?: string;
     /**
-     * A security token (available in the user's {@link /wiki/Special:Preferences#mw-prefsection-watchlist preferences}) to allow access to another user's watchlist.
+     * A security token (available in the user's {@link https://www.mediawiki.org/wiki/Special:Preferences#mw-prefsection-watchlist preferences}) to allow access to another user's watchlist.
      *
      * Sensitive parameter.
      */
@@ -2387,7 +2387,7 @@ export interface ApiFileRevertParams extends ApiParams {
      */
     archivename?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2466,7 +2466,7 @@ export interface GlobalBlockingApiGlobalBlockParams extends ApiParams {
      */
     "local-allow-account-creation"?: boolean;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2500,7 +2500,7 @@ export interface GlobalPreferencesApiGlobalPreferenceOverridesParams extends Api
         | "userjs"
     >;
     /**
-     * List of changes, formatted name=value (e.g. skin=vector). If no value is given (not even an equals sign), e.g., preferencename|otherpreference|..., the override will be removed. If any value passed contains the pipe character (`|`), use the {@link /wiki/Special:ApiHelp/main#main/datatypes alternative multiple-value separator} for correct operation.
+     * List of changes, formatted name=value (e.g. skin=vector). If no value is given (not even an equals sign), e.g., preferencename|otherpreference|..., the override will be removed. If any value passed contains the pipe character (`|`), use the {@link https://www.mediawiki.org/wiki/Special:ApiHelp/main#main/datatypes alternative multiple-value separator} for correct operation.
      */
     change?: string | string[];
     /**
@@ -2512,7 +2512,7 @@ export interface GlobalPreferencesApiGlobalPreferenceOverridesParams extends Api
      */
     optionvalue?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2546,7 +2546,7 @@ export interface GlobalPreferencesApiGlobalPreferencesParams extends ApiParams {
         | "userjs"
     >;
     /**
-     * List of changes, formatted name=value (e.g. skin=vector). If no value is given (not even an equals sign), e.g., preferencename|otherpreference|..., the preference will be made non-global. If any value passed contains the pipe character (`|`), use the {@link /wiki/Special:ApiHelp/main#main/datatypes alternative multiple-value separator} for correct operation.
+     * List of changes, formatted name=value (e.g. skin=vector). If no value is given (not even an equals sign), e.g., preferencename|otherpreference|..., the preference will be made non-global. If any value passed contains the pipe character (`|`), use the {@link https://www.mediawiki.org/wiki/Special:ApiHelp/main#main/datatypes alternative multiple-value separator} for correct operation.
      */
     change?: string | string[];
     /**
@@ -2558,7 +2558,7 @@ export interface GlobalPreferencesApiGlobalPreferencesParams extends ApiParams {
      */
     optionvalue?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2652,7 +2652,7 @@ export interface CentralAuthApiGlobalUserRightsParams extends ApiParams {
      */
     reason?: string;
     /**
-     * A "userrights" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "userrights" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * For compatibility, the token used in the web UI is also accepted.
      *
@@ -2671,7 +2671,7 @@ export interface CentralAuthApiGlobalUserRightsParams extends ApiParams {
  * Calling this API will:
  *
  * - Reset the {@link https://www.mediawiki.org/wiki/wikitech:Add_Image "hasrecommendation:image" weighted tag} for the article, so the article is no longer returned in search results for image suggestions.
- * - Add the article to a short-lived cache, which the {@link https://www.mediawiki.org/wiki/Extension:GrowthExperiments GrowthExperiments} extension's ImageRecommendationFilter consults to decide if the article should be excluded from the user's suggested edits queue when accessed on {@link /wiki/Special:Homepage Special:Homepage} or via the {@link /wiki/Special:ApiHelp/query%2Bgrowthtasks action=query&list=growthtasks} API.
+ * - Add the article to a short-lived cache, which the {@link https://www.mediawiki.org/wiki/Extension:GrowthExperiments GrowthExperiments} extension's ImageRecommendationFilter consults to decide if the article should be excluded from the user's suggested edits queue when accessed on {@link https://www.mediawiki.org/wiki/Special:Homepage Special:Homepage} or via the {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthtasks action=query&list=growthtasks} API.
  * - Generate and send an event to EventGate to the {@link https://schema.wikimedia.org/#!/secondary/jsonschema/mediawiki/page/image-suggestions-feedback image-suggestion-feedback stream}. This allows improvements in the image suggestion pipeline, as the code in the pipeline can account for user feedback when generating recommendations.
  * Further reading: {@link https://www.mediawiki.org/wiki/Special:MyLanguage/Growth/Personalized_first_day/Structured_tasks/Add_an_image mediawiki.org}
  *
@@ -2701,7 +2701,7 @@ export interface GrowthExperimentsApiInvalidateImageRecommendationParams extends
      */
     sectionnumber?: number;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2728,7 +2728,7 @@ export interface GrowthExperimentsApiInvalidatePersonalizedPraiseSuggestionParam
      */
     skipreason?: "already-praised" | "not-now" | "not-praiseworthy" | "other";
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2746,7 +2746,7 @@ export interface GrowthExperimentsApiInvalidateReviseToneRecommendationParams ex
      */
     title?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2754,7 +2754,7 @@ export interface GrowthExperimentsApiInvalidateReviseToneRecommendationParams ex
 }
 
 /**
- * Manage information in the structured mentor list (usually stored in {@link /wiki/MediaWiki:GrowthMentors.json MediaWiki:GrowthMentors.json}). This module can be used by both current and future mentors (to add themselves or change their details) and administrators (for all users).
+ * Manage information in the structured mentor list (usually stored in {@link https://www.mediawiki.org/wiki/MediaWiki:GrowthMentors.json MediaWiki:GrowthMentors.json}). This module can be used by both current and future mentors (to add themselves or change their details) and administrators (for all users).
  */
 export interface GrowthExperimentsApiManageMentorListParams extends ApiParams {
     /**
@@ -2788,7 +2788,7 @@ export interface GrowthExperimentsApiManageMentorListParams extends ApiParams {
      */
     username?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2800,7 +2800,7 @@ export interface GrowthExperimentsApiManageMentorListParams extends ApiParams {
  */
 export interface GrowthExperimentsApiMentorDashboardUpdateDataParams extends ApiParams {
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2820,7 +2820,7 @@ export interface GrowthExperimentsApiSetMenteeStatusParams extends ApiParams {
      */
     state?: "disabled" | "enabled" | "optout";
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2846,7 +2846,7 @@ export interface GrowthExperimentsApiSetMentorParams extends ApiParams {
      */
     reason?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2866,7 +2866,7 @@ export interface GrowthExperimentsApiStarMenteeParams extends ApiParams {
      */
     gesmentee?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -2937,7 +2937,7 @@ export interface GrowthExperimentsApiHelpPanelPostQuestionParams extends ApiPara
      */
     relevanttitle?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3022,7 +3022,7 @@ export interface ApiImportParams extends ApiParams {
      */
     tags?: string | string[];
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3178,7 +3178,7 @@ export interface ApiLanguageSearchParams extends ApiParams {
  *
  * The general procedure to use this module is:
  *
- * - Fetch the fields available from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=link`, and a `csrf` token from {@link /wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
+ * - Fetch the fields available from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=link`, and a `csrf` token from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens `action=query&meta=tokens`}.
  * - Present the fields to the user, and obtain their submission.
  * - Post to this module, supplying `linkreturnurl` and any relevant fields.
  * - Check the `status` in the response.
@@ -3191,7 +3191,7 @@ export interface ApiLanguageSearchParams extends ApiParams {
  */
 export interface ApiLinkAccountParams extends ApiParams {
     /**
-     * Only use these authentication requests, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=link` or from a previous response from this module.
+     * Only use these authentication requests, by the `id` returned from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=link` or from a previous response from this module.
      */
     linkrequests?: string | string[];
     /**
@@ -3215,7 +3215,7 @@ export interface ApiLinkAccountParams extends ApiParams {
      */
     linkcontinue?: boolean;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3225,7 +3225,7 @@ export interface ApiLinkAccountParams extends ApiParams {
 /**
  * Log in and get authentication cookies.
  *
- * This action should only be used in combination with {@link /wiki/Special:BotPasswords Special:BotPasswords}; use for main-account login is deprecated and may fail without warning. To safely log in to the main account, use {@link /wiki/Special:ApiHelp/clientlogin `action=clientlogin`}.
+ * This action should only be used in combination with {@link https://www.mediawiki.org/wiki/Special:BotPasswords Special:BotPasswords}; use for main-account login is deprecated and may fail without warning. To safely log in to the main account, use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/clientlogin `action=clientlogin`}.
  *
  * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Login
  */
@@ -3245,7 +3245,7 @@ export interface ApiLoginParams extends ApiParams {
      */
     lgdomain?: string;
     /**
-     * A "login" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "login" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3259,7 +3259,7 @@ export interface ApiLoginParams extends ApiParams {
  */
 export interface ApiLogoutParams extends ApiParams {
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3306,7 +3306,7 @@ export interface ApiManageTagsParams extends ApiParams {
      */
     tags?: string | string[];
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3336,7 +3336,7 @@ export interface MassMessageApiMassMessageParams extends ApiParams {
      */
     "page-message"?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3380,7 +3380,7 @@ export interface ApiMergeHistoryParams extends ApiParams {
      */
     starttimestamp?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3442,7 +3442,7 @@ export interface ApiMoveParams extends ApiParams {
      */
     tags?: string | string[];
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3471,7 +3471,7 @@ export interface OATHAuthApiModuleApiOATHValidateParams extends ApiParams {
      */
     data?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3566,7 +3566,7 @@ export interface ApiOptionsParams extends ApiParams {
         | "userjs"
     >;
     /**
-     * List of changes, formatted name=value (e.g. skin=vector). If no value is given (not even an equals sign), e.g., optionname|otheroption|..., the option will be reset to its default value. If any value passed contains the pipe character (`|`), use the {@link /wiki/Special:ApiHelp/main#main/datatypes alternative multiple-value separator} for correct operation.
+     * List of changes, formatted name=value (e.g. skin=vector). If no value is given (not even an equals sign), e.g., optionname|otheroption|..., the option will be reset to its default value. If any value passed contains the pipe character (`|`), use the {@link https://www.mediawiki.org/wiki/Special:ApiHelp/main#main/datatypes alternative multiple-value separator} for correct operation.
      */
     change?: string | string[];
     /**
@@ -3589,7 +3589,7 @@ export interface ApiOptionsParams extends ApiParams {
      */
     global?: "create" | "ignore" | "override" | "update";
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3613,7 +3613,7 @@ export interface PageTriageApiPageTriageActionParams extends ApiParams {
      */
     enqueue?: boolean;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3929,7 +3929,7 @@ export interface PageTriageApiPageTriageTagCopyvioParams extends ApiParams {
      */
     untag?: boolean;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -3945,7 +3945,7 @@ export interface PageTriageApiPageTriageTaggingParams extends ApiParams {
      */
     pageid?: number;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -4154,7 +4154,7 @@ export interface ApiParamInfoParams extends ApiParams {
 /**
  * Parses content and returns parser output.
  *
- * See the various prop-modules of {@link /wiki/Special:ApiHelp/query `action=query`} to get information from the current version of a page.
+ * See the various prop-modules of {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query `action=query`} to get information from the current version of a page.
  *
  * There are several ways to specify the text to parse:
  *
@@ -4166,7 +4166,7 @@ export interface ApiParamInfoParams extends ApiParams {
  */
 export interface ApiParseParams extends ApiParams {
     /**
-     * Title of page the text belongs to. If omitted, `contentmodel` must be specified, and {@link /wiki/API API} will be used as the title.
+     * Title of page the text belongs to. If omitted, `contentmodel` must be specified, and {@link https://www.mediawiki.org/wiki/API API} will be used as the title.
      */
     title?: string;
     /**
@@ -4408,7 +4408,7 @@ export interface ApiParseParams extends ApiParams {
      */
     mobileformat?: boolean;
     /**
-     * Template sandbox prefix, as with {@link /wiki/Special:TemplateSandbox Special:TemplateSandbox}.
+     * Template sandbox prefix, as with {@link https://www.mediawiki.org/wiki/Special:TemplateSandbox Special:TemplateSandbox}.
      */
     templatesandboxprefix?: string | string[];
     /**
@@ -4499,7 +4499,7 @@ export interface ApiPatrolParams extends ApiParams {
      */
     tags?: string | string[];
     /**
-     * A "patrol" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "patrol" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -4603,7 +4603,7 @@ export interface ApiProtectParams extends ApiParams {
      */
     watchlistexpiry?: expiry;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -4645,50 +4645,50 @@ export interface ApiPurgeParams extends ApiParams {
      *
      * **Note:** Generator parameter names must be prefixed with a "g", see examples.
      *
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
-     * - **{@link /wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link /wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
-     * - **{@link /wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link https://www.mediawiki.org/wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
      */
     generator?:
         | "allcategories"
@@ -4759,46 +4759,46 @@ export interface ApiQueryParams extends ApiParams {
     /**
      * Which properties to get for the queried pages.
      *
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategoryinfo categoryinfo}**: Returns information about the given categories.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcontributors contributors}**: Get the list of logged-in contributors (including temporary users) and the count of logged-out contributors to a page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcoordinates coordinates}**: Returns coordinates of the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bextlinks extlinks}**: Returns all external URLs (not interwikis) from the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bextracts extracts}**: Returns plain-text or limited HTML extracts of the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bflagged flagged}**: Get information about the flagging status of the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bglobalusage globalusage}**: Returns global image usage for a certain image.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthimagesuggestiondata growthimagesuggestiondata}**: Fetch associated {@link https://www.mediawiki.org/wiki/wikitech:Add_Image image suggestion data}, if available
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimageinfo imageinfo}**: Returns file information and upload history.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Binfo info}**: Get basic page information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bisreviewed isreviewed}**: Determine if a page is marked as reviewed.
-     * - **{@link /wiki/Special:ApiHelp/query%2Biwlinks iwlinks}**: Returns all interwiki links from the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blanglinks langlinks}**: Returns all interlanguage links from the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blanglinkscount langlinkscount}**: Get the number of other language versions.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bmmcontent mmcontent}**: Get the description and targets of a spamlist
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpageassessments pageassessments}**: Return associated projects and assessments for the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpageimages pageimages}**: Returns information about images on the page, such as thumbnail and presence of photos.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpageprops pageprops}**: Get various page properties defined in the page content.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpageterms pageterms}**: Get the Wikidata terms (typically labels, descriptions and aliases) associated with a page via a sitelink.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpageviews pageviews}**: Shows per-page pageview data (the number of daily pageviews for each of the last `pvipdays` days).
-     * - **{@link /wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bstashimageinfo stashimageinfo}**: Returns file information for stashed files.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btranscodestatus transcodestatus}**: Get transcode status for a given file page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bvideoinfo videoinfo}**: Extends imageinfo to include video source (derivatives) information
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwbentityusage wbentityusage}**: Returns all entity IDs used in the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcirrusbuilddoc cirrusbuilddoc}**: Internal. Dump of a CirrusSearch article document from the database servers
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcirruscompsuggestbuilddoc cirruscompsuggestbuilddoc}**: Internal. Dump of the document used by the completion suggester
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcirrusdoc cirrusdoc}**: Internal. Dump of a CirrusSearch article document from the search servers
-     * - **{@link /wiki/Special:ApiHelp/query%2Bdescription description}**: Internal. Get a short description a.k.a. subtitle explaining what the target page is about.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bmapdata mapdata}**: Internal. Request all Kartographer map data for the given pages
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategoryinfo categoryinfo}**: Returns information about the given categories.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcontributors contributors}**: Get the list of logged-in contributors (including temporary users) and the count of logged-out contributors to a page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcoordinates coordinates}**: Returns coordinates of the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bextlinks extlinks}**: Returns all external URLs (not interwikis) from the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bextracts extracts}**: Returns plain-text or limited HTML extracts of the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bflagged flagged}**: Get information about the flagging status of the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bglobalusage globalusage}**: Returns global image usage for a certain image.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthimagesuggestiondata growthimagesuggestiondata}**: Fetch associated {@link https://www.mediawiki.org/wiki/wikitech:Add_Image image suggestion data}, if available
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimageinfo imageinfo}**: Returns file information and upload history.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Binfo info}**: Get basic page information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bisreviewed isreviewed}**: Determine if a page is marked as reviewed.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Biwlinks iwlinks}**: Returns all interwiki links from the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blanglinks langlinks}**: Returns all interlanguage links from the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blanglinkscount langlinkscount}**: Get the number of other language versions.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bmmcontent mmcontent}**: Get the description and targets of a spamlist
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpageassessments pageassessments}**: Return associated projects and assessments for the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpageimages pageimages}**: Returns information about images on the page, such as thumbnail and presence of photos.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpageprops pageprops}**: Get various page properties defined in the page content.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpageterms pageterms}**: Get the Wikidata terms (typically labels, descriptions and aliases) associated with a page via a sitelink.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpageviews pageviews}**: Shows per-page pageview data (the number of daily pageviews for each of the last `pvipdays` days).
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bstashimageinfo stashimageinfo}**: Returns file information for stashed files.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btranscodestatus transcodestatus}**: Get transcode status for a given file page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bvideoinfo videoinfo}**: Extends imageinfo to include video source (derivatives) information
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwbentityusage wbentityusage}**: Returns all entity IDs used in the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcirrusbuilddoc cirrusbuilddoc}**: Internal. Dump of a CirrusSearch article document from the database servers
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcirruscompsuggestbuilddoc cirruscompsuggestbuilddoc}**: Internal. Dump of the document used by the completion suggester
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcirrusdoc cirrusdoc}**: Internal. Dump of a CirrusSearch article document from the search servers
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bdescription description}**: Internal. Get a short description a.k.a. subtitle explaining what the target page is about.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bmapdata mapdata}**: Internal. Request all Kartographer map data for the given pages
      */
     prop?: OneOrMore<
         | "categories"
@@ -4845,75 +4845,75 @@ export interface ApiQueryParams extends ApiParams {
     /**
      * Which lists to get.
      *
-     * - **{@link /wiki/Special:ApiHelp/query%2Babusefilters abusefilters}**: Show details of the edit filters.
-     * - **{@link /wiki/Special:ApiHelp/query%2Babuselog abuselog}**: Show events that were caught by one of the edit filters.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballusers allusers}**: Enumerate all registered users.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bautomatictranslationdenselanguages automatictranslationdenselanguages}**: Fetch the list of sitelinks for the article that corresponds to a given Wikidata ID, ordered by article size.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bbetafeatures betafeatures}**: List all BetaFeatures
-     * - **{@link /wiki/Special:ApiHelp/query%2Bblocks blocks}**: List all blocked users and IP addresses.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcentralnoticeactivecampaigns centralnoticeactivecampaigns}**: Get a list of currently active campaigns with start and end dates and associated banners.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcentralnoticelogs centralnoticelogs}**: Get a log of campaign configuration changes.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcheckuserlog checkuserlog}**: Get entries from the CheckUser log.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcodexicons codexicons}**: Get Codex icons
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcontenttranslation contenttranslation}**: Query Content Translation database for translations.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcontenttranslationcorpora contenttranslationcorpora}**: Get the section-aligned parallel text for a given translation. See also `list=cxpublishedtranslations`. Dumps are provided in different formats for high volume access.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcontenttranslationfavoritesuggestions contenttranslationfavoritesuggestions}**: Get user's favorite suggestions for Content Translation.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcxpublishedtranslations cxpublishedtranslations}**: Fetch all published translations information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcxtranslatorstats cxtranslatorstats}**: Fetch the translation statistics for the given user.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bfilearchive filearchive}**: Enumerate all deleted files sequentially.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgadgetcategories gadgetcategories}**: Returns a list of gadget sections.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgadgets gadgets}**: Returns a list of gadgets used on this wiki.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bglobalallusers globalallusers}**: Enumerate all global users.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bglobalblocks globalblocks}**: List all globally blocked IP addresses.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bglobalgroups globalgroups}**: Enumerate all global groups.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthmentorlist growthmentorlist}**: List all the mentors
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthmentormentee growthmentormentee}**: Get all mentees assigned to a given mentor
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthstarredmentees growthstarredmentees}**: Get list of mentees starred by the currently logged in mentor
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinterrors linterrors}**: Get a list of lint errors
-     * - **{@link /wiki/Special:ApiHelp/query%2Blogevents logevents}**: Get events from logs.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
-     * - **{@link /wiki/Special:ApiHelp/query%2Bmystashedfiles mystashedfiles}**: Get a list of files in the current user's upload stash.
-     * - **{@link /wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpagecollectionsmetadata pagecollectionsmetadata}**: Fetch page collection information for the given title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpagepropnames pagepropnames}**: List all page property names in use on the wiki.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprojects projects}**: List all the projects.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btags tags}**: List change tags.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link /wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
-     * - **{@link /wiki/Special:ApiHelp/query%2Busercontribs usercontribs}**: Get all edits by a user.
-     * - **{@link /wiki/Special:ApiHelp/query%2Busers users}**: Get information about a list of users.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwikisets wikisets}**: Enumerate all wiki sets.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcheckuser checkuser}**: Deprecated. <b>This API has been disabled by the site administrators. Querying the API will return no data.</b> Check which IP addresses are used by a given username or which usernames are used by a given IP address.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bdeletedrevs deletedrevs}**: Deprecated. List deleted revisions.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
-     * - **{@link /wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Babusefilters abusefilters}**: Show details of the edit filters.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Babuselog abuselog}**: Show events that were caught by one of the edit filters.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballusers allusers}**: Enumerate all registered users.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bautomatictranslationdenselanguages automatictranslationdenselanguages}**: Fetch the list of sitelinks for the article that corresponds to a given Wikidata ID, ordered by article size.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bbetafeatures betafeatures}**: List all BetaFeatures
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bblocks blocks}**: List all blocked users and IP addresses.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcentralnoticeactivecampaigns centralnoticeactivecampaigns}**: Get a list of currently active campaigns with start and end dates and associated banners.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcentralnoticelogs centralnoticelogs}**: Get a log of campaign configuration changes.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcheckuserlog checkuserlog}**: Get entries from the CheckUser log.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcodexicons codexicons}**: Get Codex icons
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcontenttranslation contenttranslation}**: Query Content Translation database for translations.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcontenttranslationcorpora contenttranslationcorpora}**: Get the section-aligned parallel text for a given translation. See also `list=cxpublishedtranslations`. Dumps are provided in different formats for high volume access.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcontenttranslationfavoritesuggestions contenttranslationfavoritesuggestions}**: Get user's favorite suggestions for Content Translation.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcxpublishedtranslations cxpublishedtranslations}**: Fetch all published translations information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcxtranslatorstats cxtranslatorstats}**: Fetch the translation statistics for the given user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bfilearchive filearchive}**: Enumerate all deleted files sequentially.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgadgetcategories gadgetcategories}**: Returns a list of gadget sections.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgadgets gadgets}**: Returns a list of gadgets used on this wiki.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bglobalallusers globalallusers}**: Enumerate all global users.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bglobalblocks globalblocks}**: List all globally blocked IP addresses.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bglobalgroups globalgroups}**: Enumerate all global groups.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthmentorlist growthmentorlist}**: List all the mentors
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthmentormentee growthmentormentee}**: Get all mentees assigned to a given mentor
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthstarredmentees growthstarredmentees}**: Get list of mentees starred by the currently logged in mentor
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinterrors linterrors}**: Get a list of lint errors
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blogevents logevents}**: Get events from logs.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bmystashedfiles mystashedfiles}**: Get a list of files in the current user's upload stash.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpagecollectionsmetadata pagecollectionsmetadata}**: Fetch page collection information for the given title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpagepropnames pagepropnames}**: List all page property names in use on the wiki.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprojects projects}**: List all the projects.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btags tags}**: List change tags.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link https://www.mediawiki.org/wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Busercontribs usercontribs}**: Get all edits by a user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Busers users}**: Get information about a list of users.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwikisets wikisets}**: Enumerate all wiki sets.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcheckuser checkuser}**: Deprecated. <b>This API has been disabled by the site administrators. Querying the API will return no data.</b> Check which IP addresses are used by a given username or which usernames are used by a given IP address.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bdeletedrevs deletedrevs}**: Deprecated. List deleted revisions.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
      */
     list?: OneOrMore<
         | "abusefilters"
@@ -4989,33 +4989,33 @@ export interface ApiQueryParams extends ApiParams {
     /**
      * Which metadata to get.
      *
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballmessages allmessages}**: Return messages from this site.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo authmanagerinfo}**: Retrieve information about the current authentication status.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bbabel babel}**: Get information about what languages the user knows
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcommunityconfiguration communityconfiguration}**: Read the community configuration
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcxconfig cxconfig}**: Get ContentTranslation local configuration settings.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bfeatureusage featureusage}**: Get a summary of logged API feature usages for a user agent.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bfilerepoinfo filerepoinfo}**: Return meta information about image repositories configured on the wiki.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bglobalpreferences globalpreferences}**: Retrieve global preferences for the current user.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bglobalrenamestatus globalrenamestatus}**: Show information about global renames that are in progress.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bglobaluserinfo globaluserinfo}**: Show information about a global user.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthmenteestatus growthmenteestatus}**: Query current user's mentee status; see documentation of action=growthsetmenteestatus for detailed information about individual statuses.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthmentorstatus growthmentorstatus}**: Query current user's mentor status
-     * - **{@link /wiki/Special:ApiHelp/query%2Blanguageinfo languageinfo}**: Return information about available languages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinterstats linterstats}**: Get number of lint errors in each category
-     * - **{@link /wiki/Special:ApiHelp/query%2Bnotifications notifications}**: Get notifications waiting for the current user.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bores ores}**: Return ORES configuration and model data for this wiki.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bsiteinfo siteinfo}**: Return general information about the site.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bsiteviews siteviews}**: Shows sitewide pageview data (daily pageview totals for each of the last `pvisdays` days).
-     * - **{@link /wiki/Special:ApiHelp/query%2Btokens tokens}**: Gets tokens for data-modifying actions.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bunreadnotificationpages unreadnotificationpages}**: Get pages for which there are unread notifications for the current user.
-     * - **{@link /wiki/Special:ApiHelp/query%2Buserinfo userinfo}**: Get information about the current user.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwikibase wikibase}**: Get information about the Wikibase client and the associated Wikibase repository.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcheckuserformattedblockinfo checkuserformattedblockinfo}**: Internal. Return formatted block details for sitewide blocks affecting the current user.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcxdeletedtranslations cxdeletedtranslations}**: Internal. Get the number of your published translations that were deleted.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthnextsuggestedtasktype growthnextsuggestedtasktype}**: Internal. Get a suggested task type for a user to try next.
-     * - **{@link /wiki/Special:ApiHelp/query%2Boath oath}**: Internal. Check to see if two-factor authentication (OATH) is enabled for a user.
-     * - **{@link /wiki/Special:ApiHelp/query%2Breadinglists readinglists}**: Internal. List or filter the user's reading lists and show metadata about them.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballmessages allmessages}**: Return messages from this site.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bauthmanagerinfo authmanagerinfo}**: Retrieve information about the current authentication status.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bbabel babel}**: Get information about what languages the user knows
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcommunityconfiguration communityconfiguration}**: Read the community configuration
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcxconfig cxconfig}**: Get ContentTranslation local configuration settings.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bfeatureusage featureusage}**: Get a summary of logged API feature usages for a user agent.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bfilerepoinfo filerepoinfo}**: Return meta information about image repositories configured on the wiki.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bglobalpreferences globalpreferences}**: Retrieve global preferences for the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bglobalrenamestatus globalrenamestatus}**: Show information about global renames that are in progress.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bglobaluserinfo globaluserinfo}**: Show information about a global user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthmenteestatus growthmenteestatus}**: Query current user's mentee status; see documentation of action=growthsetmenteestatus for detailed information about individual statuses.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthmentorstatus growthmentorstatus}**: Query current user's mentor status
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blanguageinfo languageinfo}**: Return information about available languages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinterstats linterstats}**: Get number of lint errors in each category
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bnotifications notifications}**: Get notifications waiting for the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bores ores}**: Return ORES configuration and model data for this wiki.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bsiteinfo siteinfo}**: Return general information about the site.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bsiteviews siteviews}**: Shows sitewide pageview data (daily pageview totals for each of the last `pvisdays` days).
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens tokens}**: Gets tokens for data-modifying actions.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bunreadnotificationpages unreadnotificationpages}**: Get pages for which there are unread notifications for the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Buserinfo userinfo}**: Get information about the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwikibase wikibase}**: Get information about the Wikibase client and the associated Wikibase repository.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcheckuserformattedblockinfo checkuserformattedblockinfo}**: Internal. Return formatted block details for sitewide blocks affecting the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcxdeletedtranslations cxdeletedtranslations}**: Internal. Get the number of your published translations that were deleted.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthnextsuggestedtasktype growthnextsuggestedtasktype}**: Internal. Get a suggested task type for a user to try next.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Boath oath}**: Internal. Check to see if two-factor authentication (OATH) is enabled for a user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Breadinglists readinglists}**: Internal. List or filter the user's reading lists and show metadata about them.
      */
     meta?: OneOrMore<
         | "allmessages"
@@ -5055,7 +5055,7 @@ export interface ApiQueryParams extends ApiParams {
      */
     export?: boolean;
     /**
-     * Return the export XML without wrapping it in an XML result (same format as {@link /wiki/Special:Export Special:Export}). Can only be used with query+export.
+     * Return the export XML without wrapping it in an XML result (same format as {@link https://www.mediawiki.org/wiki/Special:Export Special:Export}). Can only be used with query+export.
      */
     exportnowrap?: boolean;
     /**
@@ -5093,50 +5093,50 @@ export interface ApiQueryParams extends ApiParams {
      *
      * **Note:** Generator parameter names must be prefixed with a "g", see examples.
      *
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
-     * - **{@link /wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link /wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
-     * - **{@link /wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link https://www.mediawiki.org/wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
      */
     generator?:
         | "allcategories"
@@ -5217,17 +5217,17 @@ export interface ReadingListsApiReadingListsParams extends ApiParams {
     /**
      * Command (API submodule) for reading list write operations.
      *
-     * - **{@link /wiki/Special:ApiHelp/readinglists%2Bcreate create}**: Internal. Create a new list for the current user.
-     * - **{@link /wiki/Special:ApiHelp/readinglists%2Bcreateentry createentry}**: Internal. Add a new page to a list belonging to the current user.
-     * - **{@link /wiki/Special:ApiHelp/readinglists%2Bdelete delete}**: Internal. Delete a list belonging to the current user.
-     * - **{@link /wiki/Special:ApiHelp/readinglists%2Bdeleteentry deleteentry}**: Internal. Delete a page from a list belonging to the current user.
-     * - **{@link /wiki/Special:ApiHelp/readinglists%2Bsetup setup}**: Internal. Enable lists for the current user.
-     * - **{@link /wiki/Special:ApiHelp/readinglists%2Bteardown teardown}**: Internal. Disable lists for the current user.
-     * - **{@link /wiki/Special:ApiHelp/readinglists%2Bupdate update}**: Internal. Update a list belonging to the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/readinglists%2Bcreate create}**: Internal. Create a new list for the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/readinglists%2Bcreateentry createentry}**: Internal. Add a new page to a list belonging to the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/readinglists%2Bdelete delete}**: Internal. Delete a list belonging to the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/readinglists%2Bdeleteentry deleteentry}**: Internal. Delete a page from a list belonging to the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/readinglists%2Bsetup setup}**: Internal. Enable lists for the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/readinglists%2Bteardown teardown}**: Internal. Disable lists for the current user.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/readinglists%2Bupdate update}**: Internal. Update a list belonging to the current user.
      */
     command?: "create" | "createentry" | "delete" | "deleteentry" | "setup" | "teardown" | "update";
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -5241,11 +5241,11 @@ export interface ReadingListsApiReadingListsParams extends ApiParams {
  */
 export interface ApiRemoveAuthenticationDataParams extends ApiParams {
     /**
-     * Use this authentication request, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=remove`.
+     * Use this authentication request, by the `id` returned from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=remove`.
      */
     request?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -5267,7 +5267,7 @@ export interface ApiResetPasswordParams extends ApiParams {
      */
     email?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -5291,7 +5291,7 @@ export interface ApiReviewParams extends ApiParams {
      */
     unapprove?: boolean;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -5339,7 +5339,7 @@ export interface ApiRevisionDeleteParams extends ApiParams {
      */
     tags?: string | string[];
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -5391,7 +5391,7 @@ export interface ApiRollbackParams extends ApiParams {
      */
     watchlistexpiry?: expiry;
     /**
-     * A "rollback" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "rollback" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * For compatibility, the token used in the web UI is also accepted.
      *
@@ -5452,7 +5452,7 @@ export interface ScribuntoApiScribuntoConsoleParams extends ApiParams {
      */
     clear?: boolean;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -5500,7 +5500,7 @@ export interface CentralAuthApiSetGlobalAccountStatusParams extends ApiParams {
      */
     statecheck?: string;
     /**
-     * A "setglobalaccountstatus" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "setglobalaccountstatus" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -5552,50 +5552,50 @@ export interface ApiSetNotificationTimestampParams extends ApiParams {
      *
      * **Note:** Generator parameter names must be prefixed with a "g", see examples.
      *
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
-     * - **{@link /wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link /wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
-     * - **{@link /wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link https://www.mediawiki.org/wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
      */
     generator?:
         | "allcategories"
@@ -5651,7 +5651,7 @@ export interface ApiSetNotificationTimestampParams extends ApiParams {
      */
     converttitles?: boolean;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6235,7 +6235,7 @@ export interface ApiSetPageLanguageParams extends ApiParams {
      */
     tags?: string | string[];
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6342,7 +6342,7 @@ export interface ApiStabilizeProtectParams extends ApiParams {
      */
     title?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6423,7 +6423,7 @@ export interface ApiStashEditParams extends ApiParams {
      */
     baserevid?: number;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6472,7 +6472,7 @@ export interface SecurePollApiStrikeVoteParams extends ApiParams {
      */
     voteid?: number;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6496,7 +6496,7 @@ export interface ContentTranslationActionApiSectionTranslationDeleteParams exten
      */
     sectionid?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6554,7 +6554,7 @@ export interface ContentTranslationActionApiSectionTranslationSaveParams extends
      */
     progress?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6638,7 +6638,7 @@ export interface ApiTagParams extends ApiParams {
      */
     tags?: string | string[];
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6682,50 +6682,50 @@ export interface TemplateDataApiTemplateDataParams extends ApiParams {
      *
      * **Note:** Generator parameter names must be prefixed with a "g", see examples.
      *
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
-     * - **{@link /wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link /wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
-     * - **{@link /wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link https://www.mediawiki.org/wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
      */
     generator?:
         | "allcategories"
@@ -6797,7 +6797,7 @@ export interface ThanksApiCoreThankParams extends ApiParams {
      */
     log?: number;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6872,11 +6872,11 @@ export interface TimedMediaHandlerApiTranscodeResetParams extends ApiParams {
      */
     title?: string;
     /**
-     * The transcode key you wish to reset. Fetch from {@link /wiki/Special:ApiHelp/query%2Btranscodestatus action=query&prop=transcodestatus}.
+     * The transcode key you wish to reset. Fetch from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btranscodestatus action=query&prop=transcodestatus}.
      */
     transcodekey?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6906,7 +6906,7 @@ export interface UniversalLanguageSelectorApiULSSetLanguageParams extends ApiPar
      */
     languagecode?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6952,7 +6952,7 @@ export interface ApiUnblockParams extends ApiParams {
      */
     watchlistexpiry?: expiry;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -6962,7 +6962,7 @@ export interface ApiUnblockParams extends ApiParams {
 /**
  * Undelete revisions of a deleted page.
  *
- * A list of deleted revisions (including timestamps) can be retrieved through {@link /wiki/Special:ApiHelp/query%2Bdeletedrevisions prop=deletedrevisions}, and a list of deleted file IDs can be retrieved through {@link /wiki/Special:ApiHelp/query%2Bfilearchive list=filearchive}.
+ * A list of deleted revisions (including timestamps) can be retrieved through {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bdeletedrevisions prop=deletedrevisions}, and a list of deleted file IDs can be retrieved through {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bfilearchive list=filearchive}.
  *
  * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Undelete
  */
@@ -7004,7 +7004,7 @@ export interface ApiUndeleteParams extends ApiParams {
      */
     watchlistexpiry?: expiry;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -7018,11 +7018,11 @@ export interface ApiUndeleteParams extends ApiParams {
  */
 export interface ApiRemoveAuthenticationDataParams extends ApiParams {
     /**
-     * Use this authentication request, by the `id` returned from {@link /wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=unlink`.
+     * Use this authentication request, by the `id` returned from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bauthmanagerinfo `action=query&meta=authmanagerinfo`} with `amirequestsfor=unlink`.
      */
     request?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -7124,7 +7124,7 @@ export interface ApiUploadParams extends ApiParams {
      */
     checkstatus?: boolean;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -7230,7 +7230,7 @@ export interface ApiUserrightsParams extends ApiParams {
      */
     reason?: string;
     /**
-     * A "userrights" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "userrights" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * For compatibility, the token used in the web UI is also accepted.
      *
@@ -7352,7 +7352,7 @@ export interface VisualEditorApiVisualEditorEditParams extends ApiParams {
      */
     page?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -7507,50 +7507,50 @@ export interface ApiWatchParams extends ApiParams {
      *
      * **Note:** Generator parameter names must be prefixed with a "g", see examples.
      *
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
-     * - **{@link /wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
-     * - **{@link /wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
-     * - **{@link /wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
-     * - **{@link /wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link /wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
-     * - **{@link /wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
-     * - **{@link /wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
-     * - **{@link /wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballcategories allcategories}**: Enumerate all categories.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balldeletedrevisions alldeletedrevisions}**: List all deleted revisions by a user or in a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballfileusages allfileusages}**: List all file usages, including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballimages allimages}**: Enumerate all images sequentially.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balllinks alllinks}**: Enumerate all links that point to a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballpages allpages}**: Enumerate all pages sequentially in a given namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballredirects allredirects}**: List all redirects to a namespace.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballrevisions allrevisions}**: List all revisions.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Balltransclusions alltransclusions}**: List all transclusions (pages embedded using {{x}}), including non-existing.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bbacklinks backlinks}**: Find all pages that link to the given page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategories categories}**: List all categories the pages belong to.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bcategorymembers categorymembers}**: List all pages in a given category.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bdeletedrevisions deletedrevisions}**: Get deleted revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bduplicatefiles duplicatefiles}**: List all files that are duplicates of the given files based on hash values.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bembeddedin embeddedin}**: Find all pages that embed (transclude) the given title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bexturlusage exturlusage}**: Enumerate pages that contain a given URL.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bfileusage fileusage}**: Find all pages that use the given files.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgeosearch geosearch}**: Returns pages having coordinates that are located in a certain area.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimages images}**: Returns all files contained on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimageusage imageusage}**: Find all pages that use the given image title.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Biwbacklinks iwbacklinks}**: Find all pages that link to the given interwiki link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blangbacklinks langbacklinks}**: Find all pages that link to the given language link.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinks links}**: Returns all links from the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Blinkshere linkshere}**: Find all pages that link to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bmostviewed mostviewed}**: Lists the most viewed pages (based on last day's pageview count).
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Boldreviewedpages oldreviewedpages}**: Enumerates pages that have changes pending review.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpageswithprop pageswithprop}**: List all pages using a given page property.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprefixsearch prefixsearch}**: Perform a prefix search for page titles.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprojectpages projectpages}**: List all pages associated with one or more projects.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bprotectedtitles protectedtitles}**: List all titles protected from creation.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bquerypage querypage}**: Get a list provided by a QueryPage-based special page.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brandom random}**: Get a set of random pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brecentchanges recentchanges}**: Enumerate recent changes.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bredirects redirects}**: Returns all redirects to the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Brevisions revisions}**: Get revision information.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bsearch search}**: Perform a full text search.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btemplates templates}**: Returns all pages transcluded on the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btrackingcategories trackingcategories}**: Enumerate all existing tracking categories defined in {@link https://www.mediawiki.org/wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btranscludedin transcludedin}**: Find all pages that transclude the given pages.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlist watchlist}**: Get recent changes to pages in the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwatchlistraw watchlistraw}**: Get all pages on the current user's watchlist.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bwblistentityusage wblistentityusage}**: Returns all pages that use the given entity IDs.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bgrowthtasks growthtasks}**: Internal. Get task recommendations suitable for newcomers.
+     * - **{@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Breadinglistentries readinglistentries}**: Internal. List the pages of a certain list.
      */
     generator?:
         | "allcategories"
@@ -7606,7 +7606,7 @@ export interface ApiWatchParams extends ApiParams {
      */
     converttitles?: boolean;
     /**
-     * A "watch" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "watch" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -7654,7 +7654,7 @@ export interface WikiLoveApiWikiLoveParams extends ApiParams {
      */
     message?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -7942,7 +7942,7 @@ export interface ApiQueryAllDeletedRevisionsParams extends ApiQueryParams {
      * - **content**: Content of each revision slot. If the content has been revision deleted, a `texthidden` property will be returned. For performance reasons, if this option is used, `adrlimit` is enforced to 50.
      * - **tags**: Tags for the revision.
      * - **roles**: List content slot roles that exist in the revision.
-     * - **parsetree**: Deprecated. Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. The XML parse tree of revision content (requires content model `wikitext`). For performance reasons, if this option is used, `adrlimit` is enforced to 50.
+     * - **parsetree**: Deprecated. Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. The XML parse tree of revision content (requires content model `wikitext`). For performance reasons, if this option is used, `adrlimit` is enforced to 50.
      *
      * Defaults to `ids`, `timestamp`, `flags`, `comment`, and `user`.
      */
@@ -7973,19 +7973,19 @@ export interface ApiQueryAllDeletedRevisionsParams extends ApiQueryParams {
      */
     adrlimit?: limit;
     /**
-     * Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} instead. Expand templates in revision content (requires adrprop=content).
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} instead. Expand templates in revision content (requires adrprop=content).
      *
      * @deprecated
      */
     adrexpandtemplates?: boolean;
     /**
-     * Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. Generate XML parse tree for revision content (requires adrprop=content).
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. Generate XML parse tree for revision content (requires adrprop=content).
      *
      * @deprecated
      */
     adrgeneratexml?: boolean;
     /**
-     * Use {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. Parse revision content (requires `adrprop=content`). For performance reasons, if this option is used, `adrlimit` is enforced to 1.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. Parse revision content (requires `adrprop=content`). For performance reasons, if this option is used, `adrlimit` is enforced to 1.
      *
      * @deprecated
      */
@@ -7995,19 +7995,19 @@ export interface ApiQueryAllDeletedRevisionsParams extends ApiQueryParams {
      */
     adrsection?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Revision ID to diff each revision to. Use `prev`, `next` and `cur` for the previous, next and current revision respectively. For performance reasons, if this option is used, `adrlimit` is enforced to 50.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Revision ID to diff each revision to. Use `prev`, `next` and `cur` for the previous, next and current revision respectively. For performance reasons, if this option is used, `adrlimit` is enforced to 50.
      *
      * @deprecated
      */
     adrdiffto?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Text to diff each revision to. Only diffs a limited number of revisions. Overrides `adrdiffto`. If `adrsection` is set, only that section will be diffed against this text. For performance reasons, if this option is used, `adrlimit` is enforced to 50.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Text to diff each revision to. Only diffs a limited number of revisions. Overrides `adrdiffto`. If `adrsection` is set, only that section will be diffed against this text. For performance reasons, if this option is used, `adrlimit` is enforced to 50.
      *
      * @deprecated
      */
     adrdifftotext?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Perform a pre-save transform on the text before diffing it. Only valid when used with `adrdifftotext`.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Perform a pre-save transform on the text before diffing it. Only valid when used with `adrdifftotext`.
      *
      * @deprecated
      */
@@ -8197,7 +8197,7 @@ export interface ApiQueryAllImagesParams extends ApiQueryParams {
      * **Note:** This is an expensive property to request, and should be avoided unless you need it. When using it, you should request only a few results at a time to avoid too much load.
      *
      * - **bitdepth**: Adds the bit depth of the version. If the file has been revision deleted, a `filehidden` property will be returned.
-     * - **badfile**: Adds whether the file is on the {@link /wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
+     * - **badfile**: Adds whether the file is on the {@link https://www.mediawiki.org/wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
      *
      * Defaults to `timestamp` and `url`.
      */
@@ -8344,7 +8344,7 @@ export interface ApiQueryAllMessagesParams extends ApiQueryParams {
     amnocontent?: boolean;
     /**
      * Also include local messages, i.e. messages that don't exist in the software but do exist as in the MediaWiki namespace.
-     * This lists all MediaWiki-namespace pages, so it will also list those that aren't really messages such as {@link /wiki/MediaWiki:Common.js Common.js}.
+     * This lists all MediaWiki-namespace pages, so it will also list those that aren't really messages such as {@link https://www.mediawiki.org/wiki/MediaWiki:Common.js Common.js}.
      */
     amincludelocal?: boolean;
     /**
@@ -8555,7 +8555,7 @@ export interface ApiQueryAllRevisionsParams extends ApiQueryParams {
      * - **content**: Content of each revision slot. If the content has been revision deleted, a `texthidden` property will be returned. For performance reasons, if this option is used, `arvlimit` is enforced to 50.
      * - **tags**: Tags for the revision.
      * - **roles**: List content slot roles that exist in the revision.
-     * - **parsetree**: Deprecated. Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. The XML parse tree of revision content (requires content model `wikitext`). For performance reasons, if this option is used, `arvlimit` is enforced to 50.
+     * - **parsetree**: Deprecated. Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. The XML parse tree of revision content (requires content model `wikitext`). For performance reasons, if this option is used, `arvlimit` is enforced to 50.
      * - **oresscores**: ORES scores for the revision.
      *
      * Defaults to `ids`, `timestamp`, `flags`, `comment`, and `user`.
@@ -8588,19 +8588,19 @@ export interface ApiQueryAllRevisionsParams extends ApiQueryParams {
      */
     arvlimit?: limit;
     /**
-     * Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} instead. Expand templates in revision content (requires arvprop=content).
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} instead. Expand templates in revision content (requires arvprop=content).
      *
      * @deprecated
      */
     arvexpandtemplates?: boolean;
     /**
-     * Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. Generate XML parse tree for revision content (requires arvprop=content).
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. Generate XML parse tree for revision content (requires arvprop=content).
      *
      * @deprecated
      */
     arvgeneratexml?: boolean;
     /**
-     * Use {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. Parse revision content (requires `arvprop=content`). For performance reasons, if this option is used, `arvlimit` is enforced to 1.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. Parse revision content (requires `arvprop=content`). For performance reasons, if this option is used, `arvlimit` is enforced to 1.
      *
      * @deprecated
      */
@@ -8610,19 +8610,19 @@ export interface ApiQueryAllRevisionsParams extends ApiQueryParams {
      */
     arvsection?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Revision ID to diff each revision to. Use `prev`, `next` and `cur` for the previous, next and current revision respectively. For performance reasons, if this option is used, `arvlimit` is enforced to 50.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Revision ID to diff each revision to. Use `prev`, `next` and `cur` for the previous, next and current revision respectively. For performance reasons, if this option is used, `arvlimit` is enforced to 50.
      *
      * @deprecated
      */
     arvdiffto?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Text to diff each revision to. Only diffs a limited number of revisions. Overrides `arvdiffto`. If `arvsection` is set, only that section will be diffed against this text. For performance reasons, if this option is used, `arvlimit` is enforced to 50.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Text to diff each revision to. Only diffs a limited number of revisions. Overrides `arvdiffto`. If `arvsection` is set, only that section will be diffed against this text. For performance reasons, if this option is used, `arvlimit` is enforced to 50.
      *
      * @deprecated
      */
     arvdifftotext?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Perform a pre-save transform on the text before diffing it. Only valid when used with `arvdifftotext`.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Perform a pre-save transform on the text before diffing it. Only valid when used with `arvdifftotext`.
      *
      * @deprecated
      */
@@ -9553,7 +9553,7 @@ export interface CheckUserApiQueryCheckUserParams extends ApiQueryParams {
      */
     cuxff?: string;
     /**
-     * A "csrf" token retrieved from {@link /wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
+     * A "csrf" token retrieved from {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Btokens action=query&meta=tokens}
      *
      * Sensitive parameter.
      */
@@ -10659,7 +10659,7 @@ export interface ApiQueryDeletedRevisionsParams extends ApiQueryParams {
      * - **content**: Content of each revision slot. If the content has been revision deleted, a `texthidden` property will be returned. For performance reasons, if this option is used, `drvlimit` is enforced to 50.
      * - **tags**: Tags for the revision.
      * - **roles**: List content slot roles that exist in the revision.
-     * - **parsetree**: Deprecated. Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. The XML parse tree of revision content (requires content model `wikitext`). For performance reasons, if this option is used, `drvlimit` is enforced to 50.
+     * - **parsetree**: Deprecated. Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. The XML parse tree of revision content (requires content model `wikitext`). For performance reasons, if this option is used, `drvlimit` is enforced to 50.
      *
      * Defaults to `ids`, `timestamp`, `flags`, `comment`, and `user`.
      */
@@ -10690,19 +10690,19 @@ export interface ApiQueryDeletedRevisionsParams extends ApiQueryParams {
      */
     drvlimit?: limit;
     /**
-     * Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} instead. Expand templates in revision content (requires drvprop=content).
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} instead. Expand templates in revision content (requires drvprop=content).
      *
      * @deprecated
      */
     drvexpandtemplates?: boolean;
     /**
-     * Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. Generate XML parse tree for revision content (requires drvprop=content).
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. Generate XML parse tree for revision content (requires drvprop=content).
      *
      * @deprecated
      */
     drvgeneratexml?: boolean;
     /**
-     * Use {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. Parse revision content (requires `drvprop=content`). For performance reasons, if this option is used, `drvlimit` is enforced to 1.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. Parse revision content (requires `drvprop=content`). For performance reasons, if this option is used, `drvlimit` is enforced to 1.
      *
      * @deprecated
      */
@@ -10712,19 +10712,19 @@ export interface ApiQueryDeletedRevisionsParams extends ApiQueryParams {
      */
     drvsection?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Revision ID to diff each revision to. Use `prev`, `next` and `cur` for the previous, next and current revision respectively. For performance reasons, if this option is used, `drvlimit` is enforced to 50.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Revision ID to diff each revision to. Use `prev`, `next` and `cur` for the previous, next and current revision respectively. For performance reasons, if this option is used, `drvlimit` is enforced to 50.
      *
      * @deprecated
      */
     drvdiffto?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Text to diff each revision to. Only diffs a limited number of revisions. Overrides `drvdiffto`. If `drvsection` is set, only that section will be diffed against this text. For performance reasons, if this option is used, `drvlimit` is enforced to 50.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Text to diff each revision to. Only diffs a limited number of revisions. Overrides `drvdiffto`. If `drvsection` is set, only that section will be diffed against this text. For performance reasons, if this option is used, `drvlimit` is enforced to 50.
      *
      * @deprecated
      */
     drvdifftotext?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Perform a pre-save transform on the text before diffing it. Only valid when used with `drvdifftotext`.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Perform a pre-save transform on the text before diffing it. Only valid when used with `drvdifftotext`.
      *
      * @deprecated
      */
@@ -11150,7 +11150,7 @@ export interface ApiQueryExtLinksUsageParams extends ApiQueryParams {
         | "worldwind"
         | "xmpp";
     /**
-     * Search string without protocol. See {@link /wiki/Special:LinkSearch Special:LinkSearch}. Leave empty to list all external links.
+     * Search string without protocol. See {@link https://www.mediawiki.org/wiki/Special:LinkSearch Special:LinkSearch}. Leave empty to list all external links.
      */
     euquery?: string;
     /**
@@ -11290,7 +11290,7 @@ export interface ApiQueryFileRepoInfoParams extends ApiQueryParams {
      * - **fetchDescription**: Whether file description pages are fetched from this repository when viewing local file description pages.
      * - **initialCapital**: Whether file names implicitly start with a capital letter.
      * - **local**: Whether that repository is the local one or not.
-     * - **name**: The key of the repository - used in e.g. {@link https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:$wgForeignFileRepos `$wgForeignFileRepos`} and {@link /wiki/Special:ApiHelp/query%2Bimageinfo imageinfo} return values.
+     * - **name**: The key of the repository - used in e.g. {@link https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:$wgForeignFileRepos `$wgForeignFileRepos`} and {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bimageinfo imageinfo} return values.
      * - **rootUrl**: Root URL path for image paths.
      * - **scriptDirUrl**: Root URL path for the repository wiki's MediaWiki installation.
      * - **thumbUrl**: Root URL path for thumbnail paths.
@@ -11455,7 +11455,7 @@ export interface GeoDataApiQueryGeoSearchElasticParams extends ApiQueryParams {
      * Set the sort order of returned results.
      *
      * - **distance**: Rank pages by their distance to the center.
-     * - **relevance**: Rank pages by their relevance according to {@link https://www.mediawiki.org/wiki/Extension:CirrusSearch CirrusSearch}, similar to how {@link /wiki/Special:Search Special:Search} does it. Currently only supported on wikis that use the ElasticSearch backend, see {@link https://www.mediawiki.org/wiki/Extension:GeoData#Search_backends mw:Extension:GeoData#Search backends}.
+     * - **relevance**: Rank pages by their relevance according to {@link https://www.mediawiki.org/wiki/Extension:CirrusSearch CirrusSearch}, similar to how {@link https://www.mediawiki.org/wiki/Special:Search Special:Search} does it. Currently only supported on wikis that use the ElasticSearch backend, see {@link https://www.mediawiki.org/wiki/Extension:GeoData#Search_backends mw:Extension:GeoData#Search backends}.
      *
      * Defaults to `distance`.
      */
@@ -12009,7 +12009,7 @@ export interface ApiQueryImageInfoParams extends ApiQueryParams {
      * - **archivename**: Adds the filename of the archive version for non-latest versions. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **bitdepth**: Adds the bit depth of the version. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **uploadwarning**: Used by the Special:Upload page to get information about an existing file. Not intended for use outside MediaWiki core.
-     * - **badfile**: Adds whether the file is on the {@link /wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
+     * - **badfile**: Adds whether the file is on the {@link https://www.mediawiki.org/wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
      *
      * Defaults to `timestamp` and `user`.
      */
@@ -12089,7 +12089,7 @@ export interface ApiQueryImageInfoParams extends ApiQueryParams {
      */
     iiurlparam?: string;
     /**
-     * If `badfilecontexttitleprop=badfile` is set, this is the page title used when evaluating the {@link /wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
+     * If `badfilecontexttitleprop=badfile` is set, this is the page title used when evaluating the {@link https://www.mediawiki.org/wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
      */
     iibadfilecontexttitle?: string;
     /**
@@ -12235,7 +12235,7 @@ export interface ApiQueryInfoParams extends ApiQueryParams {
      */
     intestactions?: string | string[];
     /**
-     * Detail level for `intestactions`. Use the {@link /wiki/Special:ApiHelp/main main module}'s `errorformat` and `errorlang` parameters to control the format of the messages returned.
+     * Detail level for `intestactions`. Use the {@link https://www.mediawiki.org/wiki/Special:ApiHelp/main main module}'s `errorformat` and `errorlang` parameters to control the format of the messages returned.
      *
      * - **boolean**: Return a boolean value for each action.
      * - **full**: Return messages describing why the action is disallowed, or an empty array if it is allowed.
@@ -12947,7 +12947,7 @@ export interface MassMessageApiQueryMMContentParams extends ApiQueryParams {}
  */
 export interface PageViewInfoApiQueryMostViewedParams extends ApiQueryParams {
     /**
-     * The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ({@link /wiki/Special:ApiHelp/query%2Bsiteinfo action=query&meta=siteinfo}) to check which ones are supported, under `pageviewservice-supported-metrics` / _module name_ (`siteviews`, `mostviewed`, etc.)
+     * The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ({@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bsiteinfo action=query&meta=siteinfo}) to check which ones are supported, under `pageviewservice-supported-metrics` / _module name_ (`siteviews`, `mostviewed`, etc.)
      *
      * - **pageviews**: Plain pageviews.
      *
@@ -13272,7 +13272,7 @@ export interface ApiQueryPagePropsParams extends ApiQueryParams {
      */
     ppcontinue?: string;
     /**
-     * Only list these page properties ({@link /wiki/Special:ApiHelp/query%2Bpagepropnames `action=query&list=pagepropnames`} returns page property names in use). Useful for checking whether pages use a certain page property.
+     * Only list these page properties ({@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpagepropnames `action=query&list=pagepropnames`} returns page property names in use). Useful for checking whether pages use a certain page property.
      */
     ppprop?: string | string[];
 }
@@ -13284,7 +13284,7 @@ export interface ApiQueryPagePropsParams extends ApiQueryParams {
  */
 export interface ApiQueryPagesWithPropParams extends ApiQueryParams {
     /**
-     * Page property for which to enumerate pages ({@link /wiki/Special:ApiHelp/query%2Bpagepropnames `action=query&list=pagepropnames`} returns page property names in use).
+     * Page property for which to enumerate pages ({@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bpagepropnames `action=query&list=pagepropnames`} returns page property names in use).
      */
     pwppropname?: string;
     /**
@@ -13978,7 +13978,7 @@ export interface WikibaseClientApiPageTermsParams extends ApiQueryParams {
  */
 export interface PageViewInfoApiQueryPageViewsParams extends ApiQueryParams {
     /**
-     * The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ({@link /wiki/Special:ApiHelp/query%2Bsiteinfo action=query&meta=siteinfo}) to check which ones are supported, under `pageviewservice-supported-metrics` / _module name_ (`siteviews`, `mostviewed`, etc.)
+     * The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ({@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bsiteinfo action=query&meta=siteinfo}) to check which ones are supported, under `pageviewservice-supported-metrics` / _module name_ (`siteviews`, `mostviewed`, etc.)
      *
      * - **pageviews**: Plain pageviews.
      *
@@ -14000,7 +14000,7 @@ export interface PageViewInfoApiQueryPageViewsParams extends ApiQueryParams {
 /**
  * Perform a prefix search for page titles.
  *
- * Despite the similarity in names, this module is not intended to be equivalent to {@link /wiki/Special:PrefixIndex Special:PrefixIndex}; for that, see {@link /wiki/Special:ApiHelp/query%2Ballpages `action=query&list=allpages`} with the `apprefix` parameter. The purpose of this module is similar to {@link /wiki/Special:ApiHelp/opensearch `action=opensearch`}: to take user input and provide the best-matching titles. Depending on the search engine backend, this might include typo correction, redirect avoidance, or other heuristics.
+ * Despite the similarity in names, this module is not intended to be equivalent to {@link https://www.mediawiki.org/wiki/Special:PrefixIndex Special:PrefixIndex}; for that, see {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Ballpages `action=query&list=allpages`} with the `apprefix` parameter. The purpose of this module is similar to {@link https://www.mediawiki.org/wiki/Special:ApiHelp/opensearch `action=opensearch`}: to take user input and provide the best-matching titles. Depending on the search engine backend, this might include typo correction, redirect avoidance, or other heuristics.
  *
  * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Prefixsearch
  */
@@ -14560,7 +14560,7 @@ export interface ApiQueryRevisionsParams extends ApiQueryParams {
      * - **content**: Content of each revision slot. If the content has been revision deleted, a `texthidden` property will be returned. For performance reasons, if this option is used, `rvlimit` is enforced to 50.
      * - **tags**: Tags for the revision.
      * - **roles**: List content slot roles that exist in the revision.
-     * - **parsetree**: Deprecated. Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. The XML parse tree of revision content (requires content model `wikitext`). For performance reasons, if this option is used, `rvlimit` is enforced to 50.
+     * - **parsetree**: Deprecated. Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. The XML parse tree of revision content (requires content model `wikitext`). For performance reasons, if this option is used, `rvlimit` is enforced to 50.
      * - **flagged**: Flagged status of the revision.
      * - **oresscores**: ORES scores for the revision.
      *
@@ -14595,19 +14595,19 @@ export interface ApiQueryRevisionsParams extends ApiQueryParams {
      */
     rvlimit?: limit;
     /**
-     * Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} instead. Expand templates in revision content (requires rvprop=content).
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} instead. Expand templates in revision content (requires rvprop=content).
      *
      * @deprecated
      */
     rvexpandtemplates?: boolean;
     /**
-     * Use {@link /wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. Generate XML parse tree for revision content (requires rvprop=content).
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/expandtemplates `action=expandtemplates`} or {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. Generate XML parse tree for revision content (requires rvprop=content).
      *
      * @deprecated
      */
     rvgeneratexml?: boolean;
     /**
-     * Use {@link /wiki/Special:ApiHelp/parse `action=parse`} instead. Parse revision content (requires `rvprop=content`). For performance reasons, if this option is used, `rvlimit` is enforced to 1.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/parse `action=parse`} instead. Parse revision content (requires `rvprop=content`). For performance reasons, if this option is used, `rvlimit` is enforced to 1.
      *
      * @deprecated
      */
@@ -14617,19 +14617,19 @@ export interface ApiQueryRevisionsParams extends ApiQueryParams {
      */
     rvsection?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Revision ID to diff each revision to. Use `prev`, `next` and `cur` for the previous, next and current revision respectively. For performance reasons, if this option is used, `rvlimit` is enforced to 50.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Revision ID to diff each revision to. Use `prev`, `next` and `cur` for the previous, next and current revision respectively. For performance reasons, if this option is used, `rvlimit` is enforced to 50.
      *
      * @deprecated
      */
     rvdiffto?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Text to diff each revision to. Only diffs a limited number of revisions. Overrides `rvdiffto`. If `rvsection` is set, only that section will be diffed against this text. For performance reasons, if this option is used, `rvlimit` is enforced to 50.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Text to diff each revision to. Only diffs a limited number of revisions. Overrides `rvdiffto`. If `rvsection` is set, only that section will be diffed against this text. For performance reasons, if this option is used, `rvlimit` is enforced to 50.
      *
      * @deprecated
      */
     rvdifftotext?: string;
     /**
-     * Use {@link /wiki/Special:ApiHelp/compare `action=compare`} instead. Perform a pre-save transform on the text before diffing it. Only valid when used with `rvdifftotext`.
+     * Use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/compare `action=compare`} instead. Perform a pre-save transform on the text before diffing it. Only valid when used with `rvdifftotext`.
      *
      * @deprecated
      */
@@ -14942,7 +14942,7 @@ export interface ApiQuerySiteinfoParams extends ApiQueryParams {
  */
 export interface PageViewInfoApiQuerySiteViewsParams extends ApiQueryParams {
     /**
-     * The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ({@link /wiki/Special:ApiHelp/query%2Bsiteinfo action=query&meta=siteinfo}) to check which ones are supported, under `pageviewservice-supported-metrics` / _module name_ (`siteviews`, `mostviewed`, etc.)
+     * The metric to use for counting views. Depending on what backend is used, not all metrics might be supported. You can use the siteinfo API ({@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Bsiteinfo action=query&meta=siteinfo}) to check which ones are supported, under `pageviewservice-supported-metrics` / _module name_ (`siteviews`, `mostviewed`, etc.)
      *
      * - **pageviews**: Plain pageviews.
      * - **uniques**: Unique visitors.
@@ -14991,7 +14991,7 @@ export interface ApiQueryStashImageInfoParams extends ApiQueryParams {
      * **Note:** This is an expensive property to request, and should be avoided unless you need it. When using it, you should request only a few results at a time to avoid too much load.
      *
      * - **bitdepth**: Adds the bit depth of the version. If the file has been revision deleted, a `filehidden` property will be returned.
-     * - **badfile**: Adds whether the file is on the {@link /wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
+     * - **badfile**: Adds whether the file is on the {@link https://www.mediawiki.org/wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
      *
      * Defaults to `timestamp` and `url`.
      */
@@ -15121,7 +15121,7 @@ export interface ApiQueryTokensParams extends ApiQueryParams {
 }
 
 /**
- * Enumerate all existing tracking categories defined in {@link /wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
+ * Enumerate all existing tracking categories defined in {@link https://www.mediawiki.org/wiki/Special:TrackingCategories Special:TrackingCategories}. A tracking category exists if it contains pages or if its category page exists.
  *
  * @see https://www.mediawiki.org/wiki/Special:MyLanguage/API:Trackingcategories
  */
@@ -15131,7 +15131,7 @@ export interface ApiQueryTrackingCategoriesParams extends ApiQueryParams {
      */
     tccontinue?: string;
     /**
-     * Search for all existing tracking category titles that match the provided tracking category name (as defined by "message name" on {@link /wiki/Special:TrackingCategories Special:TrackingCategories}.)
+     * Search for all existing tracking category titles that match the provided tracking category name (as defined by "message name" on {@link https://www.mediawiki.org/wiki/Special:TrackingCategories Special:TrackingCategories}.)
      */
     tctrackingcatname?: string | string[];
     /**
@@ -15371,7 +15371,7 @@ export interface ApiQueryUserInfoParams extends ApiQueryParams {
      * - **watchlistlabels**: Adds watchlist labels the user has set up.
      * - **centralids**: Adds the central IDs and attachment status for the user.
      * - **latestcontrib**: Adds the date of user's latest contribution.
-     * - **cancreateaccount**: Indicates whether the user is allowed to create accounts. To check whether some specific account can be created, use {@link /wiki/Special:ApiHelp/query%2Busers `action=query&list=users&usprop=cancreate`}.
+     * - **cancreateaccount**: Indicates whether the user is allowed to create accounts. To check whether some specific account can be created, use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Busers `action=query&list=users&usprop=cancreate`}.
      */
     uiprop?: OneOrMore<
         | "acceptlang"
@@ -15417,10 +15417,10 @@ export interface ApiQueryUsersParams extends ApiQueryParams {
      * - **rights**: Lists all the rights each user has.
      * - **editcount**: Adds the user's edit count.
      * - **registration**: Adds the user's registration timestamp.
-     * - **emailable**: Tags if the user can and wants to receive email through {@link /wiki/Special:EmailUser Special:Emailuser}.
+     * - **emailable**: Tags if the user can and wants to receive email through {@link https://www.mediawiki.org/wiki/Special:EmailUser Special:Emailuser}.
      * - **gender**: Tags the gender of the user. Returns "male", "female", or "unknown".
      * - **centralids**: Adds the central IDs and attachment status for the user.
-     * - **cancreate**: Indicates whether an account for valid but unregistered usernames can be created. To check whether the current user can perform the account creation, use {@link /wiki/Special:ApiHelp/query%2Buserinfo `action=query&meta=userinfo&uiprop=cancreateaccount`}.
+     * - **cancreate**: Indicates whether an account for valid but unregistered usernames can be created. To check whether the current user can perform the account creation, use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Buserinfo `action=query&meta=userinfo&uiprop=cancreateaccount`}.
      * - **tempexpired**: Indicates whether the temporary account has expired or not. If account isn't temporary, null is returned.
      */
     usprop?: OneOrMore<
@@ -15481,7 +15481,7 @@ export interface TimedMediaHandlerApiQueryVideoInfoParams extends ApiQueryParams
      * - **archivename**: Adds the filename of the archive version for non-latest versions. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **bitdepth**: Adds the bit depth of the version. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **uploadwarning**: Used by the Special:Upload page to get information about an existing file. Not intended for use outside MediaWiki core.
-     * - **badfile**: Adds whether the file is on the {@link /wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
+     * - **badfile**: Adds whether the file is on the {@link https://www.mediawiki.org/wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
      * - **derivatives**: Adds an array of the different format and quality versions of an audio or video file that are available.
      * - **timedtext**: Adds an array of the subtitles, captions and descriptions of an audio or video file that are available.
      *
@@ -15565,7 +15565,7 @@ export interface TimedMediaHandlerApiQueryVideoInfoParams extends ApiQueryParams
      */
     viurlparam?: string;
     /**
-     * If `badfilecontexttitleprop=badfile` is set, this is the page title used when evaluating the {@link /wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
+     * If `badfilecontexttitleprop=badfile` is set, this is the page title used when evaluating the {@link https://www.mediawiki.org/wiki/MediaWiki:Bad_image_list MediaWiki:Bad image list}
      */
     vibadfilecontexttitle?: string;
     /**
@@ -15699,7 +15699,7 @@ export interface ApiQueryWatchlistParams extends ApiQueryParams {
      */
     wlowner?: string;
     /**
-     * A security token (available in the user's {@link /wiki/Special:Preferences#mw-prefsection-watchlist preferences}) to allow access to another user's watchlist.
+     * A security token (available in the user's {@link https://www.mediawiki.org/wiki/Special:Preferences#mw-prefsection-watchlist preferences}) to allow access to another user's watchlist.
      *
      * Sensitive parameter.
      */
@@ -15745,7 +15745,7 @@ export interface ApiQueryWatchlistRawParams extends ApiQueryParams {
      */
     wrowner?: string;
     /**
-     * A security token (available in the user's {@link /wiki/Special:Preferences#mw-prefsection-watchlist preferences}) to allow access to another user's watchlist.
+     * A security token (available in the user's {@link https://www.mediawiki.org/wiki/Special:Preferences#mw-prefsection-watchlist preferences}) to allow access to another user's watchlist.
      *
      * Sensitive parameter.
      */
