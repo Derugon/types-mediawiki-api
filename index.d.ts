@@ -63,10 +63,6 @@ export interface ApiParams extends UnknownApiParams {
     formatversion?: "1" | "2" | "latest";
 }
 
-export {};
-
-// AUTOMATICALLY GENERATED FROM HERE:
-
 /**
  * Check to see if an AbuseFilter matches a set of variables, an edit, or a logged AbuseFilter event.
  *
@@ -3869,7 +3865,7 @@ export interface PageTriageApiPageTriageStatsParams extends ApiParams {
      */
     show_predicted_issues_copyvio?: boolean;
     /**
-     * Whether to include only pages created by bots.
+     * Whether to include only pages created by bots.
      */
     showbots?: boolean;
     /**
@@ -3905,31 +3901,31 @@ export interface PageTriageApiPageTriageStatsParams extends ApiParams {
      */
     afc_state?: number;
     /**
-     * Whether to include only pages with no category.
+     * Whether to include only pages with no category.
      */
     no_category?: boolean;
     /**
-     * Whether to include only pages with no references.
+     * Whether to include only pages with no references.
      */
     unreferenced?: boolean;
     /**
-     * Whether to include only pages with no inbound links.
+     * Whether to include only pages with no inbound links.
      */
     no_inbound_links?: boolean;
     /**
-     * Whether to include only pages that were previously deleted.
+     * Whether to include only pages that were previously deleted.
      */
     recreated?: boolean;
     /**
-     * Whether to include only pages created by non-autoconfirmed users.
+     * Whether to include only pages created by non-autoconfirmed users.
      */
     non_autoconfirmed_users?: boolean;
     /**
-     * Whether to include only pages created by newly autoconfirmed users.
+     * Whether to include only pages created by newly autoconfirmed users.
      */
     learners?: boolean;
     /**
-     * Whether to include only pages created by blocked users.
+     * Whether to include only pages created by blocked users.
      */
     blocked_users?: boolean;
     /**
@@ -16033,3 +16029,5 @@ export interface CentralAuthApiQueryWikiSetsParams extends ApiQueryParams {
      */
     wsorderbyname?: boolean;
 }
+
+export {};
