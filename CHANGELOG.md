@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 2.1.0
+
 - Updated types.
 - Added JSdoc to interfaces and properties.
 - Fixed some extensible enumerated types being too specific, specifically:
