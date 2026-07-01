@@ -257,7 +257,7 @@ export interface ApiBlockParams extends ApiParams {
     /**
      * List of namespace IDs to block the user from editing. Only applies when `partial` is set to true.
      */
-    namespacerestrictions?: namespace | namespace[];
+    namespacerestrictions?: namespace | namespace[] | "*";
     /**
      * List of actions to block the user from performing. Only applies when `partial` is set to true.
      */
@@ -829,7 +829,7 @@ export interface ApiComparePagesParams extends ApiParams {
     /**
      * Return individual diffs for these slots, rather than one combined diff for all slots.
      */
-    slots?: OneOrMore<"main">;
+    slots?: OneOrMore<"main"> | "*";
     /**
      * Return the comparison formatted as inline HTML.
      *
@@ -3356,7 +3356,7 @@ export interface ApiOpenSearchParams extends ApiParams {
      *
      * Defaults to 0.
      */
-    namespace?: namespace | namespace[];
+    namespace?: namespace | namespace[] | "*";
     /**
      * Maximum number of results to return.
      *
@@ -3697,7 +3697,7 @@ export interface PageTriageApiPageTriageStatsParams extends ApiParams {
      */
     show_predicted_issues_copyvio?: boolean;
     /**
-     * Whether to include only pages created by bots.
+     * Whether to include only pages created by bots.
      */
     showbots?: boolean;
     /**
@@ -3733,31 +3733,31 @@ export interface PageTriageApiPageTriageStatsParams extends ApiParams {
      */
     afc_state?: number;
     /**
-     * Whether to include only pages with no category.
+     * Whether to include only pages with no category.
      */
     no_category?: boolean;
     /**
-     * Whether to include only pages with no references.
+     * Whether to include only pages with no references.
      */
     unreferenced?: boolean;
     /**
-     * Whether to include only pages with no inbound links.
+     * Whether to include only pages with no inbound links.
      */
     no_inbound_links?: boolean;
     /**
-     * Whether to include only pages that were previously deleted.
+     * Whether to include only pages that were previously deleted.
      */
     recreated?: boolean;
     /**
-     * Whether to include only pages created by non-autoconfirmed users.
+     * Whether to include only pages created by non-autoconfirmed users.
      */
     non_autoconfirmed_users?: boolean;
     /**
-     * Whether to include only pages created by newly autoconfirmed users.
+     * Whether to include only pages created by newly autoconfirmed users.
      */
     learners?: boolean;
     /**
-     * Whether to include only pages created by blocked users.
+     * Whether to include only pages created by blocked users.
      */
     blocked_users?: boolean;
     /**
@@ -7082,7 +7082,7 @@ export interface ApiQueryAllDeletedRevisionsParams extends ApiQueryParams {
     /**
      * Which revision slots to return data for, when slot-related properties are included in `adrprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
-    adrslots?: OneOrMore<"main">;
+    adrslots?: OneOrMore<"main"> | "*";
     /**
      * Limit how many revisions will be returned. If `adrprop=content`, `adrprop=parsetree`, `adrdiffto` or `adrdifftotext` is used, the limit is 50. If `adrparse` is used, the limit is 1.
      */
@@ -7144,7 +7144,7 @@ export interface ApiQueryAllDeletedRevisionsParams extends ApiQueryParams {
      *
      * **Note:** Due to {@link https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:$wgMiserMode miser mode}, using `adruser` and `adrnamespace` together may result in fewer than `adrlimit` results returned before continuing; in extreme cases, zero results may be returned.
      */
-    adrnamespace?: namespace | namespace[];
+    adrnamespace?: namespace | namespace[] | "*";
     /**
      * The timestamp to start enumerating from.
      */
@@ -7688,7 +7688,7 @@ export interface ApiQueryAllRevisionsParams extends ApiQueryParams {
     /**
      * Which revision slots to return data for, when slot-related properties are included in `arvprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
-    arvslots?: OneOrMore<"main">;
+    arvslots?: OneOrMore<"main"> | "*";
     /**
      * Limit how many revisions will be returned. If `arvprop=content`, `arvprop=parsetree`, `arvdiffto` or `arvdifftotext` is used, the limit is 50. If `arvparse` is used, the limit is 1.
      */
@@ -7748,7 +7748,7 @@ export interface ApiQueryAllRevisionsParams extends ApiQueryParams {
      *
      * **Note:** Due to {@link https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:$wgMiserMode miser mode}, using this may result in fewer than `arvlimit` results returned before continuing; in extreme cases, zero results may be returned.
      */
-    arvnamespace?: namespace | namespace[];
+    arvnamespace?: namespace | namespace[] | "*";
     /**
      * The timestamp to start enumerating from.
      */
@@ -8013,7 +8013,7 @@ export interface ApiQueryBacklinksParams extends ApiQueryParams {
     /**
      * The namespace to enumerate.
      */
-    blnamespace?: namespace | namespace[];
+    blnamespace?: namespace | namespace[] | "*";
     /**
      * The direction in which to list.
      *
@@ -8221,7 +8221,7 @@ export interface ApiQueryCategoryMembersParams extends ApiQueryParams {
      *
      * **Note:** Due to {@link https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:$wgMiserMode miser mode}, using this may result in fewer than `cmlimit` results returned before continuing; in extreme cases, zero results may be returned.
      */
-    cmnamespace?: namespace | namespace[];
+    cmnamespace?: namespace | namespace[] | "*";
     /**
      * Which type of category members to include. Ignored when `cmsort=timestamp` is set.
      *
@@ -8491,7 +8491,7 @@ export interface ApiQueryCodexIconsParams extends ApiQueryParams {
     /**
      * Names of icons
      */
-    names?: string | string[];
+    names?: string | string[] | "*";
 }
 
 /**
@@ -8802,7 +8802,7 @@ export interface ApiQueryDeletedRevisionsParams extends ApiQueryParams {
     /**
      * Which revision slots to return data for, when slot-related properties are included in `drvprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
-    drvslots?: OneOrMore<"main">;
+    drvslots?: OneOrMore<"main"> | "*";
     /**
      * Limit how many revisions will be returned. If `drvprop=content`, `drvprop=parsetree`, `drvdiffto` or `drvdifftotext` is used, the limit is 50. If `drvparse` is used, the limit is 1.
      */
@@ -9071,7 +9071,7 @@ export interface ApiQueryBacklinksParams extends ApiQueryParams {
     /**
      * The namespace to enumerate.
      */
-    einamespace?: namespace | namespace[];
+    einamespace?: namespace | namespace[] | "*";
     /**
      * The direction in which to list.
      *
@@ -9265,7 +9265,7 @@ export interface ApiQueryExtLinksUsageParams extends ApiQueryParams {
      *
      * **Note:** Due to {@link https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:$wgMiserMode miser mode}, using this may result in fewer than `eulimit` results returned before continuing; in extreme cases, zero results may be returned.
      */
-    eunamespace?: namespace | namespace[];
+    eunamespace?: namespace | namespace[] | "*";
     /**
      * How many pages to return.
      *
@@ -9441,7 +9441,7 @@ export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
     /**
      * Only include pages in these namespaces.
      */
-    funamespace?: namespace | namespace[];
+    funamespace?: namespace | namespace[] | "*";
     /**
      * Show only items that meet these criteria:
      *
@@ -9584,7 +9584,7 @@ export interface GeoDataApiQueryGeoSearchElasticParams extends ApiQueryParams {
      *
      * Defaults to 0.
      */
-    gsnamespace?: namespace | namespace[];
+    gsnamespace?: namespace | namespace[] | "*";
     /**
      * Which additional coordinate properties to return. (Properties that are always returned: `lat`, `lon`, and either `primary` or `secondary` as a boolean flag.)
      *
@@ -9793,7 +9793,7 @@ export interface GlobalUsageApiQueryGlobalUsageParams extends ApiQueryParams {
      *
      * Defaults to `*`.
      */
-    gunamespace?: namespace | namespace[];
+    gunamespace?: namespace | namespace[] | "*";
     /**
      * Limit results to these sites.
      */
@@ -10248,7 +10248,7 @@ export interface ApiQueryBacklinksParams extends ApiQueryParams {
     /**
      * The namespace to enumerate.
      */
-    iunamespace?: namespace | namespace[];
+    iunamespace?: namespace | namespace[] | "*";
     /**
      * The direction in which to list.
      *
@@ -10634,7 +10634,7 @@ export interface ApiQueryLinksParams extends ApiQueryParams {
     /**
      * Show links in these namespaces only.
      */
-    plnamespace?: namespace | namespace[];
+    plnamespace?: namespace | namespace[] | "*";
     /**
      * How many links to return.
      *
@@ -10676,7 +10676,7 @@ export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
     /**
      * Only include pages in these namespaces.
      */
-    lhnamespace?: namespace | namespace[];
+    lhnamespace?: namespace | namespace[] | "*";
     /**
      * Show only items that meet these criteria:
      *
@@ -10742,7 +10742,7 @@ export interface LinterApiQueryLintErrorsParams extends ApiQueryParams {
     /**
      * Only include lint errors from the specified namespaces
      */
-    lntnamespace?: namespace | namespace[];
+    lntnamespace?: namespace | namespace[] | "*";
     /**
      * Only include lint errors from the specified page IDs
      */
@@ -11239,7 +11239,7 @@ export interface ApiQueryOldreviewedpagesParams extends ApiQueryParams {
      *
      * Defaults to 0.
      */
-    ornamespace?: namespace | namespace[];
+    ornamespace?: namespace | namespace[] | "*";
     /**
      * Show pages only in the given category.
      */
@@ -11484,7 +11484,7 @@ export interface ApiQueryPrefixSearchParams extends ApiQueryParams {
      *
      * Defaults to 0.
      */
-    psnamespace?: namespace | namespace[];
+    psnamespace?: namespace | namespace[] | "*";
     /**
      * Maximum number of results to return.
      *
@@ -11559,7 +11559,7 @@ export interface ApiQueryProtectedTitlesParams extends ApiQueryParams {
     /**
      * Only list titles in these namespaces.
      */
-    ptnamespace?: namespace | namespace[];
+    ptnamespace?: namespace | namespace[] | "*";
     /**
      * Only list titles with these protection levels.
      */
@@ -11683,7 +11683,7 @@ export interface ApiQueryRandomParams extends ApiQueryParams {
     /**
      * Return pages in these namespaces only.
      */
-    rnnamespace?: namespace | namespace[];
+    rnnamespace?: namespace | namespace[] | "*";
     /**
      * How to filter for redirects.
      *
@@ -11842,7 +11842,7 @@ export interface ApiQueryRecentChangesParams extends ApiQueryParams {
     /**
      * Filter changes to only these namespaces.
      */
-    rcnamespace?: namespace | namespace[];
+    rcnamespace?: namespace | namespace[] | "*";
     /**
      * Only list changes by this user.
      */
@@ -11970,7 +11970,7 @@ export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
      *
      * **Note:** Due to {@link https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:$wgMiserMode miser mode}, using this may result in fewer than `rdlimit` results returned before continuing; in extreme cases, zero results may be returned.
      */
-    rdnamespace?: namespace | namespace[];
+    rdnamespace?: namespace | namespace[] | "*";
     /**
      * Show only items that meet these criteria:
      *
@@ -12049,7 +12049,7 @@ export interface ApiQueryRevisionsParams extends ApiQueryParams {
     /**
      * Which revision slots to return data for, when slot-related properties are included in `rvprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
-    rvslots?: OneOrMore<"main">;
+    rvslots?: OneOrMore<"main"> | "*";
     /**
      * Limit how many revisions will be returned. If `rvprop=content`, `rvprop=parsetree`, `rvdiffto` or `rvdifftotext` is used, the limit is 50. If `rvparse` is used, the limit is 1.
      */
@@ -12158,7 +12158,7 @@ export interface ApiQuerySearchParams extends ApiQueryParams {
      *
      * Defaults to 0.
      */
-    srnamespace?: namespace | namespace[];
+    srnamespace?: namespace | namespace[] | "*";
     /**
      * How many total pages to return.
      *
@@ -12530,7 +12530,7 @@ export interface ApiQueryLinksParams extends ApiQueryParams {
     /**
      * Show templates in these namespaces only.
      */
-    tlnamespace?: namespace | namespace[];
+    tlnamespace?: namespace | namespace[] | "*";
     /**
      * How many templates to return.
      *
@@ -12564,17 +12564,19 @@ export interface ApiQueryTokensParams extends ApiQueryParams {
      *
      * Defaults to `csrf`.
      */
-    type?: OneOrMore<
-        | "createaccount"
-        | "csrf"
-        | "deleteglobalaccount"
-        | "login"
-        | "patrol"
-        | "rollback"
-        | "setglobalaccountstatus"
-        | "userrights"
-        | "watch"
-    >;
+    type?:
+        | OneOrMore<
+              | "createaccount"
+              | "csrf"
+              | "deleteglobalaccount"
+              | "login"
+              | "patrol"
+              | "rollback"
+              | "setglobalaccountstatus"
+              | "userrights"
+              | "watch"
+          >
+        | "*";
 }
 
 /**
@@ -12635,7 +12637,7 @@ export interface ApiQueryBacklinkspropParams extends ApiQueryParams {
     /**
      * Only include pages in these namespaces.
      */
-    tinamespace?: namespace | namespace[];
+    tinamespace?: namespace | namespace[] | "*";
     /**
      * Show only items that meet these criteria:
      *
@@ -12736,7 +12738,7 @@ export interface ApiQueryUserContribsParams extends ApiQueryParams {
     /**
      * Only list contributions in these namespaces.
      */
-    ucnamespace?: namespace | namespace[];
+    ucnamespace?: namespace | namespace[] | "*";
     /**
      * Include additional pieces of information:
      *
@@ -12830,28 +12832,30 @@ export interface ApiQueryUserInfoParams extends ApiQueryParams {
      * - **latestcontrib**: Adds the date of user's latest contribution.
      * - **cancreateaccount**: Indicates whether the user is allowed to create accounts. To check whether some specific account can be created, use {@link https://www.mediawiki.org/wiki/Special:ApiHelp/query%2Busers `action=query&list=users&usprop=cancreate`}.
      */
-    uiprop?: OneOrMore<
-        | "acceptlang"
-        | "blockinfo"
-        | "cancreateaccount"
-        | "centralids"
-        | "changeablegroups"
-        | "editcount"
-        | "email"
-        | "groupmemberships"
-        | "groups"
-        | "hasmsg"
-        | "implicitgroups"
-        | "latestcontrib"
-        | "options"
-        | "ratelimits"
-        | "realname"
-        | "registrationdate"
-        | "rights"
-        | "theoreticalratelimits"
-        | "unreadcount"
-        | "watchlistlabels"
-    >;
+    uiprop?:
+        | OneOrMore<
+              | "acceptlang"
+              | "blockinfo"
+              | "cancreateaccount"
+              | "centralids"
+              | "changeablegroups"
+              | "editcount"
+              | "email"
+              | "groupmemberships"
+              | "groups"
+              | "hasmsg"
+              | "implicitgroups"
+              | "latestcontrib"
+              | "options"
+              | "ratelimits"
+              | "realname"
+              | "registrationdate"
+              | "rights"
+              | "theoreticalratelimits"
+              | "unreadcount"
+              | "watchlistlabels"
+          >
+        | "*";
     /**
      * With `uiprop=centralids`, indicate whether the user is attached with the wiki identified by this ID.
      */
@@ -13058,7 +13062,7 @@ export interface ApiQueryWatchlistParams extends ApiQueryParams {
     /**
      * Filter changes to only the given namespaces.
      */
-    wlnamespace?: namespace | namespace[];
+    wlnamespace?: namespace | namespace[] | "*";
     /**
      * Only list changes by this user.
      */
@@ -13188,7 +13192,7 @@ export interface ApiQueryWatchlistRawParams extends ApiQueryParams {
     /**
      * Only list pages in the given namespaces.
      */
-    wrnamespace?: namespace | namespace[];
+    wrnamespace?: namespace | namespace[] | "*";
     /**
      * How many total results to return per request.
      *
