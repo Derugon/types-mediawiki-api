@@ -1314,12 +1314,6 @@ export interface DiscussionToolsApiDiscussionToolsEditParams extends ApiParams {
      */
     paction?: "addcomment" | "addtopic";
     /**
-     * Automatically subscribe the user to the talk page thread?
-     *
-     * Defaults to `default`.
-     */
-    autosubscribe?: "default" | "no" | "yes";
-    /**
      * The page to perform actions on.
      */
     page?: string;
@@ -3703,7 +3697,7 @@ export interface PageTriageApiPageTriageStatsParams extends ApiParams {
      */
     show_predicted_issues_copyvio?: boolean;
     /**
-     * Whether to include only pages created by bots.
+     * Whether to include only pages created by bots.
      */
     showbots?: boolean;
     /**
@@ -3739,31 +3733,31 @@ export interface PageTriageApiPageTriageStatsParams extends ApiParams {
      */
     afc_state?: number;
     /**
-     * Whether to include only pages with no category.
+     * Whether to include only pages with no category.
      */
     no_category?: boolean;
     /**
-     * Whether to include only pages with no references.
+     * Whether to include only pages with no references.
      */
     unreferenced?: boolean;
     /**
-     * Whether to include only pages with no inbound links.
+     * Whether to include only pages with no inbound links.
      */
     no_inbound_links?: boolean;
     /**
-     * Whether to include only pages that were previously deleted.
+     * Whether to include only pages that were previously deleted.
      */
     recreated?: boolean;
     /**
-     * Whether to include only pages created by non-autoconfirmed users.
+     * Whether to include only pages created by non-autoconfirmed users.
      */
     non_autoconfirmed_users?: boolean;
     /**
-     * Whether to include only pages created by newly autoconfirmed users.
+     * Whether to include only pages created by newly autoconfirmed users.
      */
     learners?: boolean;
     /**
-     * Whether to include only pages created by blocked users.
+     * Whether to include only pages created by blocked users.
      */
     blocked_users?: boolean;
     /**
@@ -4091,6 +4085,7 @@ export interface ApiParseParams extends ApiParams {
      * - **properties**: Gives various properties defined in the parsed wikitext.
      * - **limitreportdata**: Gives the limit report in a structured way. Gives no data, when `disablelimitreport` is set.
      * - **limitreporthtml**: Gives the HTML version of the limit report. Gives no data, when `disablelimitreport` is set.
+     * - **parseroutput**: Internal. Gives the JSON-serialized `ParserOutput` object for the parsed content. The format of this property may change at any time; {@link https://www.mediawiki.org/wiki/Manual:Parser_cache/Serialization_compatibility mw:Manual:Parser cache/Serialization compatibility} does not provide any guarantee of API stability.
      * - **parsetree**: The XML parse tree of revision content (requires content model `wikitext`)
      * - **parsewarnings**: Gives the warnings that occurred while parsing content (as wikitext).
      * - **parsewarningshtml**: Gives the warnings that occurred while parsing content (as HTML).
@@ -4114,6 +4109,7 @@ export interface ApiParseParams extends ApiParams {
         | "limitreporthtml"
         | "links"
         | "modules"
+        | "parseroutput"
         | "parsetree"
         | "parsewarnings"
         | "parsewarningshtml"
@@ -7298,6 +7294,7 @@ export interface ApiQueryAllImagesParams extends ApiQueryParams {
      * - **dimensions**: Alias for size.
      * - **sha1**: Adds SHA-1 hash for the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **mime**: Adds MIME type of the file. If the file has been revision deleted, a `filehidden` property will be returned.
+     * - **thumburls**: Adds thumbnail URLs of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **mediatype**: Adds the media type of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **metadata**: Lists Exif metadata for the version of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **commonmetadata**: Lists file format generic metadata for the version of the file. If the file has been revision deleted, a `filehidden` property will be returned.
@@ -7323,6 +7320,7 @@ export interface ApiQueryAllImagesParams extends ApiQueryParams {
         | "parsedcomment"
         | "sha1"
         | "size"
+        | "thumburls"
         | "timestamp"
         | "url"
         | "user"
@@ -10097,6 +10095,7 @@ export interface ApiQueryImageInfoParams extends ApiQueryParams {
      * - **sha1**: Adds SHA-1 hash for the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **mime**: Adds MIME type of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **thumbmime**: Adds MIME type of the image thumbnail (requires url and param iiurlwidth). If the file has been revision deleted, a `filehidden` property will be returned.
+     * - **thumburls**: Adds thumbnail URLs of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **mediatype**: Adds the media type of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **metadata**: Lists Exif metadata for the version of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **commonmetadata**: Lists file format generic metadata for the version of the file. If the file has been revision deleted, a `filehidden` property will be returned.
@@ -10126,6 +10125,7 @@ export interface ApiQueryImageInfoParams extends ApiQueryParams {
         | "sha1"
         | "size"
         | "thumbmime"
+        | "thumburls"
         | "timestamp"
         | "uploadwarning"
         | "url"
@@ -12331,6 +12331,7 @@ export interface ApiQuerySiteinfoParams extends ApiQueryParams {
      * - **autopromote**: Returns the automatic promotion configuration.
      * - **autopromoteonce**: Returns the automatic promotion configuration that are only done once.
      * - **copyuploaddomains**: Returns the list of allowed copy upload domains
+     * - **crosssiteajaxdomains**: Returns the list of allowed CORS domains
      * - **sbom**: Returns a Software Bill of Materials (SBOM) for the MediaWiki installation in the CycloneDX 1.6 format.
      *
      * Defaults to `general`.
@@ -12341,6 +12342,7 @@ export interface ApiQuerySiteinfoParams extends ApiQueryParams {
         | "autopromoteonce"
         | "clientlibraries"
         | "copyuploaddomains"
+        | "crosssiteajaxdomains"
         | "dbrepllag"
         | "defaultoptions"
         | "doubleunderscores"
@@ -12438,6 +12440,7 @@ export interface ApiQueryStashImageInfoParams extends ApiQueryParams {
      * - **sha1**: Adds SHA-1 hash for the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **mime**: Adds MIME type of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **thumbmime**: Adds MIME type of the image thumbnail (requires url and param siiurlwidth). If the file has been revision deleted, a `filehidden` property will be returned.
+     * - **thumburls**: Adds thumbnail URLs of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **metadata**: Lists Exif metadata for the version of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **commonmetadata**: Lists file format generic metadata for the version of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **extmetadata**: Lists formatted metadata combined from multiple sources. Results are HTML formatted. If the file has been revision deleted, a `filehidden` property will be returned.
@@ -12460,6 +12463,7 @@ export interface ApiQueryStashImageInfoParams extends ApiQueryParams {
         | "sha1"
         | "size"
         | "thumbmime"
+        | "thumburls"
         | "timestamp"
         | "url"
     >;
@@ -12925,6 +12929,7 @@ export interface TimedMediaHandlerApiQueryVideoInfoParams extends ApiQueryParams
      * - **sha1**: Adds SHA-1 hash for the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **mime**: Adds MIME type of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **thumbmime**: Adds MIME type of the image thumbnail (requires url and param viurlwidth). If the file has been revision deleted, a `filehidden` property will be returned.
+     * - **thumburls**: Adds thumbnail URLs of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **mediatype**: Adds the media type of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **metadata**: Lists Exif metadata for the version of the file. If the file has been revision deleted, a `filehidden` property will be returned.
      * - **commonmetadata**: Lists file format generic metadata for the version of the file. If the file has been revision deleted, a `filehidden` property will be returned.
@@ -12957,6 +12962,7 @@ export interface TimedMediaHandlerApiQueryVideoInfoParams extends ApiQueryParams
         | "sha1"
         | "size"
         | "thumbmime"
+        | "thumburls"
         | "timedtext"
         | "timestamp"
         | "uploadwarning"
