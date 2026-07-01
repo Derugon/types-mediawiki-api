@@ -721,6 +721,22 @@ export interface ApiComparePagesParams extends ApiParams {
      */
     fromslots?: OneOrMore<"main">;
     /**
+     * Text of the specified slot. If omitted, the slot is removed from the revision.
+     */
+    [k: `fromtext-${string}`]: string;
+    /**
+     * When `fromtext-{slot}` is the content of a single section, this is the section identifier. It will be merged into the revision specified by `fromtitle`, `fromid` or `fromrev` as if for a section edit.
+     */
+    [k: `fromsection-${string}`]: string;
+    /**
+     * Content serialization format of `fromtext-{slot}`.
+     */
+    [k: `fromcontentformat-${string}`]: string;
+    /**
+     * Content model of `fromtext-{slot}`. If not supplied, it will be guessed based on the other parameters.
+     */
+    [k: `fromcontentmodel-${string}`]: string;
+    /**
      * Do a pre-save transform on `fromtext-{slot}`.
      */
     frompst?: boolean;
@@ -770,6 +786,22 @@ export interface ApiComparePagesParams extends ApiParams {
      * This parameter specifies the slots that are to be modified. Use `totext-{slot}`, `tocontentmodel-{slot}`, and `tocontentformat-{slot}` to specify content for each slot.
      */
     toslots?: OneOrMore<"main">;
+    /**
+     * Text of the specified slot. If omitted, the slot is removed from the revision.
+     */
+    [k: `totext-${string}`]: string;
+    /**
+     * When `totext-{slot}` is the content of a single section, this is the section identifier. It will be merged into the revision specified by `totitle`, `toid` or `torev` as if for a section edit.
+     */
+    [k: `tosection-${string}`]: string;
+    /**
+     * Content serialization format of `totext-{slot}`.
+     */
+    [k: `tocontentformat-${string}`]: string;
+    /**
+     * Content model of `totext-{slot}`. If not supplied, it will be guessed based on the other parameters.
+     */
+    [k: `tocontentmodel-${string}`]: string;
     /**
      * Do a pre-save transform on `totext`.
      */
@@ -6559,6 +6591,18 @@ export interface VisualEditorApiVisualEditorEditParams extends ApiParams {
      */
     plugins?: string | string[];
     /**
+     * Arbitrary data sent by a plugin with the API request.
+     *
+     * - **For the `ge-task-link-recommendation` plugin**: A JSON string of an object with these keys:
+     *
+     * - `acceptedTargets`: (optional) Array with the titles of pages, the recommended link to which was accepted by the user.
+     * - `rejectedTargets`: (optional) Array with the titles of pages, the recommended link to which was rejected by the user.
+     * - `skippedTargets`: (optional) Array with the titles of pages, the recommended link to which was skipped (ignored) by the user.
+     *
+     * - **For the `ge-task-revise-tone` plugin**: No data should be included for this plugin.
+     */
+    [k: `data-${string}`]: string;
+    /**
      * Whether the shown hCaptcha CAPTCHA was force shown, such as by an AbuseFilter extension consequence (and so used a more restrictive sitekey). Set this if the JS configuration variable with the same name is true or if the first attempt to use this API returned a 'forcecaptcha' error with a specified sitekey.
      */
     wgConfirmEditForceShowCaptcha?: boolean;
@@ -7083,6 +7127,10 @@ export interface ApiQueryAllDeletedRevisionsParams extends ApiQueryParams {
      * Which revision slots to return data for, when slot-related properties are included in `adrprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
     adrslots?: OneOrMore<"main">;
+    /**
+     * Content serialization format used for output of content.
+     */
+    [k: `adrcontentformat-${string}`]: string;
     /**
      * Limit how many revisions will be returned. If `adrprop=content`, `adrprop=parsetree`, `adrdiffto` or `adrdifftotext` is used, the limit is 50. If `adrparse` is used, the limit is 1.
      */
@@ -7689,6 +7737,10 @@ export interface ApiQueryAllRevisionsParams extends ApiQueryParams {
      * Which revision slots to return data for, when slot-related properties are included in `arvprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
     arvslots?: OneOrMore<"main">;
+    /**
+     * Content serialization format used for output of content.
+     */
+    [k: `arvcontentformat-${string}`]: string;
     /**
      * Limit how many revisions will be returned. If `arvprop=content`, `arvprop=parsetree`, `arvdiffto` or `arvdifftotext` is used, the limit is 50. If `arvparse` is used, the limit is 1.
      */
@@ -8803,6 +8855,10 @@ export interface ApiQueryDeletedRevisionsParams extends ApiQueryParams {
      * Which revision slots to return data for, when slot-related properties are included in `drvprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
     drvslots?: OneOrMore<"main">;
+    /**
+     * Content serialization format used for output of content.
+     */
+    [k: `drvcontentformat-${string}`]: string;
     /**
      * Limit how many revisions will be returned. If `drvprop=content`, `drvprop=parsetree`, `drvdiffto` or `drvdifftotext` is used, the limit is 50. If `drvparse` is used, the limit is 1.
      */
@@ -12050,6 +12106,10 @@ export interface ApiQueryRevisionsParams extends ApiQueryParams {
      * Which revision slots to return data for, when slot-related properties are included in `rvprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
     rvslots?: OneOrMore<"main">;
+    /**
+     * Content serialization format used for output of content.
+     */
+    [k: `rvcontentformat-${string}`]: string;
     /**
      * Limit how many revisions will be returned. If `rvprop=content`, `rvprop=parsetree`, `rvdiffto` or `rvdifftotext` is used, the limit is 50. If `rvparse` is used, the limit is 1.
      */
