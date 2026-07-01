@@ -719,7 +719,7 @@ export interface ApiComparePagesParams extends ApiParams {
      *
      * This parameter specifies the slots that are to be modified. Use `fromtext-{slot}`, `fromcontentmodel-{slot}`, and `fromcontentformat-{slot}` to specify content for each slot.
      */
-    fromslots?: OneOrMore<"main">;
+    fromslots?: string | string[];
     /**
      * Text of the specified slot. If omitted, the slot is removed from the revision.
      */
@@ -785,7 +785,7 @@ export interface ApiComparePagesParams extends ApiParams {
      *
      * This parameter specifies the slots that are to be modified. Use `totext-{slot}`, `tocontentmodel-{slot}`, and `tocontentformat-{slot}` to specify content for each slot.
      */
-    toslots?: OneOrMore<"main">;
+    toslots?: string | string[];
     /**
      * Text of the specified slot. If omitted, the slot is removed from the revision.
      */
@@ -7126,7 +7126,7 @@ export interface ApiQueryAllDeletedRevisionsParams extends ApiQueryParams {
     /**
      * Which revision slots to return data for, when slot-related properties are included in `adrprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
-    adrslots?: OneOrMore<"main">;
+    adrslots?: string | string[];
     /**
      * Content serialization format used for output of content.
      */
@@ -7736,7 +7736,7 @@ export interface ApiQueryAllRevisionsParams extends ApiQueryParams {
     /**
      * Which revision slots to return data for, when slot-related properties are included in `arvprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
-    arvslots?: OneOrMore<"main">;
+    arvslots?: string | string[];
     /**
      * Content serialization format used for output of content.
      */
@@ -8854,7 +8854,7 @@ export interface ApiQueryDeletedRevisionsParams extends ApiQueryParams {
     /**
      * Which revision slots to return data for, when slot-related properties are included in `drvprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
-    drvslots?: OneOrMore<"main">;
+    drvslots?: string | string[];
     /**
      * Content serialization format used for output of content.
      */
@@ -12105,7 +12105,7 @@ export interface ApiQueryRevisionsParams extends ApiQueryParams {
     /**
      * Which revision slots to return data for, when slot-related properties are included in `rvprops`. If omitted, data from the `main` slot will be returned in a backwards-compatible format.
      */
-    rvslots?: OneOrMore<"main">;
+    rvslots?: string | string[];
     /**
      * Content serialization format used for output of content.
      */
